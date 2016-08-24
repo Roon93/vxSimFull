@@ -1,0 +1,110 @@
+$(LIBDIR)/mathHardLib.o: mathHardLib.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/math.h d:/Tornado2.2/target/h/logLib.h \
+  d:/Tornado2.2/target/h/fppLib.h d:/Tornado2.2/target/h/taskLib.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h d:/Tornado2.2/target/h/regs.h \
+  d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/stdlib.h \
+  d:/Tornado2.2/target/h/arch/i86/fppI86Lib.h \
+  d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h
+$(LIBDIR)/mathSoftLib.o: mathSoftLib.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h
+$(LIBDIR)/emuFncALib.o: emuFncALib.s d:/Tornado2.2/target/h/vxWorks.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/asm.h d:/Tornado2.2/target/h/arch/i86/asmI86.h \
+  emuIncALib.s
+$(LIBDIR)/emuIncALib.o: emuIncALib.s
+$(LIBDIR)/emuMainALib.o: emuMainALib.s d:/Tornado2.2/target/h/vxWorks.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/asm.h d:/Tornado2.2/target/h/arch/i86/asmI86.h \
+  emuIncALib.s
+$(LIBDIR)/emuOperALib.o: emuOperALib.s d:/Tornado2.2/target/h/vxWorks.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/asm.h d:/Tornado2.2/target/h/arch/i86/asmI86.h \
+  emuIncALib.s
+$(LIBDIR)/emuSubALib.o: emuSubALib.s d:/Tornado2.2/target/h/vxWorks.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/asm.h d:/Tornado2.2/target/h/arch/i86/asmI86.h \
+  emuIncALib.s
+$(LIBDIR)/mathALib.o: mathALib.s d:/Tornado2.2/target/h/vxWorks.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/asm.h d:/Tornado2.2/target/h/arch/i86/asmI86.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h
+$(LIBDIR)/mathHardALib.o: mathHardALib.s d:/Tornado2.2/target/h/vxWorks.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/asm.h d:/Tornado2.2/target/h/arch/i86/asmI86.h \
+  d:/Tornado2.2/target/h/fppLib.h \
+  d:/Tornado2.2/target/h/arch/i86/fppI86Lib.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h

@@ -1,0 +1,49 @@
+# make.PENTIUM4gnu - GNU compilation tools definitions for PENTIUM4
+#
+# modification history
+# --------------------
+# 01h,24apr02,pai  redefined HLL_PREFIX for GNU ELF support (SPR 73382).
+# 01g,12feb02,sn   removed obsolete refs to GCC_EXEC_PREFIX
+# 01f,21jan02,sn   removed unused C++_TEMPLATE_INST
+# 01e,06nov01,tpw  Add %.old rule to facilitate conversions to old OMFs
+# 01d,02nov01,hdn  used PENTIUM3's options temporary
+# 01c,30oct01,tpw  Standardize kernel links and bootrom conversions.
+# 01b,25sep01,dat  Location of defs.gnu changed to tool/gnu
+# 01a,15aug01,hdn  written based on 01g version of make.PENTIUMgnu
+#
+# DESCRIPTION
+# This file contains PENTIUM4 specific definitions and flags for the GNU
+# software generation tools (compiler, assembler, linker etc.).
+#*/
+
+include $(TGT_DIR)/h/tool/gnu/defs.gnu
+
+CPU             = PENTIUM4
+TOOL            = gnu
+
+CC_OPTIM_DRIVER = -fvolatile -nostdlib -fno-builtin -fno-defer-pop
+CC_OPTIM_NORMAL = -O2 -nostdlib -fno-builtin -fno-defer-pop
+CC_OPTIM_TARGET = -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop
+# Generate code for (-mcpu=) and schedule for (-march=) pentium4
+CC_ARCH_SPEC	= -mcpu=pentiumiii -march=p3
+
+
+
+
+AR              = arpentium
+AS              = aspentium
+CC              = ccpentium
+CF              = 
+LD              = ldpentium
+RANLIB          = ranlibpentium
+NM              = nmpentium
+
+TOOLENV         = pentium
+VX_CPU_FAMILY   = pentium
+ARCH_DIR        = i86
+
+HLL_PREFIX      =
+
+OBJCOPY_OLD_OMF	= -O a.out-i386 --gap-fill=0
+
+# end of make.PENTIUM4gnu

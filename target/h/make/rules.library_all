@@ -1,0 +1,813 @@
+# rules.library - Host independent rules for making libraries
+#
+# Copyright 1984-2002, Wind River Systems, Inc.
+#
+
+ifeq ($(LIB_COMMON),)
+LIB_COMMON	= true
+endif
+
+## New Archive Directory Hierarchy (LIB_BASE_NAME != ""):
+
+ifneq ($(LIB_BASE_NAME),)
+
+#     - Object modules are installed in the toolchain dependant directory
+#     if LIB_COMMON is equal to false, and in the toolchain independant
+#     directory otherwise.
+#     - Objects modules populate the archive whose name is selected by
+#     LIB_BASE_NAME
+#     - note that LIB_DIR_TAG is only set when building archive(s) for CPU
+#     variants.
+
+ifeq ($(LIBDIRBASE),)
+ifeq ($(findstring false,$(LIB_COMMON)),false)
+LIBDIRBASE	= $(subst /,$(DIRCHAR),$(VX_CPU_FAMILY)/$(CPU)/$(TOOL)$(LIB_DIR_TAG))
+else
+LIBDIRBASE	= $(subst /,$(DIRCHAR),$(VX_CPU_FAMILY)/$(CPU)/$(TOOL_COMMON_DIR)$(LIB_DIR_TAG))
+endif
+endif
+
+ifeq ($(LIBNAME),)
+LIBNAME		= $(subst /,$(DIRCHAR),$(LIBDIRBASE)/lib$(LIB_BASE_NAME).a)
+endif
+ifeq ($(LIBDIRNAME),)
+LIBDIRNAME	= $(subst /,$(DIRCHAR),$(LIBDIRBASE)/obj$(LIB_BASE_NAME))
+endif
+
+endif	# ifeq ($(LIB_BASE_NAME),)
+
+
+## Build of specific target archive(s) via VX_ARCHIVE_LIST:
+# If VX_ARCHIVE_LIST is set only the specified target archive(s) are built. 
+# This means that source directories not contributing to these archive(s) 
+# are skipped. VX_ARCHIVE_LIST is used with CPU variant builds.
+
+ifneq ($(VX_ARCHIVE_LIST),)
+ifeq ($(LIB_BASE_NAME),)
+SKIP_DIR 	= true
+else
+ifneq ($(filter lib$(LIB_BASE_NAME).a, $(VX_ARCHIVE_LIST)), \
+       lib$(LIB_BASE_NAME).a)
+SKIP_DIR 	= true
+endif
+endif
+endif
+
+## CPU variant builds:
+# List of CPU variant builds: CPU_VARIANT_TAG_LIST
+# This list is computed for the current CPU/TOOL combinaison. Note that CPU
+# variant build(s) are started as part of the 'Default' rule (see further below)
+
+ifneq ($(CPU_VARIANT_LIST),)
+CPU_VARIANT_TAG_LIST_TMP1 = 				\
+    $(foreach cpuVariantTag, $(CPU_VARIANT_LIST),	\
+	$(filter $(CPU)$(TOOL),				\
+	    $(CPU_VARIANT_CPU_TOOL_LIST$(cpuVariantTag)))$(cpuVariantTag))
+CPU_VARIANT_TAG_LIST_TMP2 = $(filter $(CPU)$(TOOL)%, 	\
+				$(CPU_VARIANT_TAG_LIST_TMP1))
+CPU_VARIANT_TAG_LIST = $(patsubst $(CPU)$(TOOL)%, %,	\
+			    $(CPU_VARIANT_TAG_LIST_TMP2))
+
+# Generate list of make commands for CPU variant builds: CPU_VARIANT_MAKE_CMD
+
+ifneq  ($(CPU_VARIANT_TAG_LIST),)
+CPU_VARIANT_MAKE_CMD = echo "Build of CPU variants"
+CPU_VARIANT_MAKE_CMD += $(foreach cpuVariant, $(CPU_VARIANT_TAG_LIST), 	       \
+    $(CMD_SEPARATOR) $(MAKE) CPU=$(CPU) TOOL=$(TOOL) LIB_DIR_TAG=$(cpuVariant) \
+	VX_ARCHIVE_LIST="$(VX_ARCHIVE_LIST$(cpuVariant))" TARGET=$(TARGET))
+endif
+endif
+
+
+#include $(TGT_DIR)/h/make/defs.default
+################################################BEGIN DEFS.DEFAULT
+.SUFFIXES:  .cpp .out .mib .cxx
+
+## default CPU and TOOL settings
+
+CPU=PENTIUM
+TOOL=gnu
+
+# NOTE: we redefine MAKETAIL and CLEANTAIL: provbably unsupported from now on 
+
+MAKETAIL =
+CLEANTAIL =
+
+## default flags
+
+CFLAGS		= $(CC_ARCH_SPEC) $(CC_COMPILER) $(CC_OPTIM) $(CC_WARNINGS) \
+		  $(CC_INCLUDE) $(CC_DEFINES) $(CC_SOFT_FLOAT) $(ADDED_CFLAGS) 
+
+C++FLAGS	= $(CC_ARCH_SPEC) $(C++_COMPILER) $(CC_OPTIM) $(C++_WARNINGS) \
+		  $(CC_INCLUDE) $(CC_DEFINES) $(CC_SOFT_FLOAT) $(ADDED_C++FLAGS)
+
+CASFLAGS	= $(CC_ARCH_SPEC) $(OPTION_PP) $(OPTION_LANG_ASM) $(CC_INCLUDE) \
+	          $(CC_DEFINES)
+
+CFLAGS_AS	= $(CC_ARCH_SPEC) $(CC_COMPILER) $(CC_OPTIM) $(CC_INCLUDE) \
+		  $(CC_DEFINES) $(OPTION_PP_AS) $(OPTION_LANG_ASM) \
+		  $(ADDED_CFLAGS)
+
+# For Position Independant Code (bootInit.o)
+CFLAGS_PIC	= $(CC_ARCH_SPEC) $(CC_COMPILER) $(CC_OPTIM) $(CC_WARNINGS) \
+		  $(CC_INCLUDE) $(CC_DEFINES) $(CC_PIC) $(CC_SOFT_FLOAT) \
+		  $(ADDED_CFLAGS) 
+
+CC_WARNINGS	= $(CC_WARNINGS_ALL)
+
+C++_WARNINGS    = $(CC_WARNINGS_NONE)
+
+CC_OPTIM	= $(CC_OPTIM_NORMAL)
+
+CC_INCLUDE	= $(PRE_INCLUDE) $(OPTION_INCLUDE_DIR)$(TGT_DIR)/h \
+		  $(INCLUDE_CC) $(EXTRA_INCLUDE)
+
+CC_DEFINES	= $(OPTION_DEFINE_MACRO)CPU=$(CPU) \
+		  $(OPTION_DEFINE_MACRO)TOOL_FAMILY=$(TOOL_FAMILY) \
+		  $(OPTION_DEFINE_MACRO)TOOL=$(TOOL) \
+		  $(DEFINE_CC) $(EXTRA_DEFINE)
+
+COMPILE_SYMTBL	= $(CC) $(OPTION_OBJECT_ONLY) $(CFLAGS)
+
+C++_COMPILER		= $(OPTION_ANSI)
+
+# We have this only because win95 host does not allow -DCPU=$(CPU) to be
+# passed as one parameter
+
+CC_DEPFLAGS     = $(CC_OPTIM) $(CC_WARNINGS) $(CC_INCLUDE) $(CC_COMPILER) \
+		  $(DEFINE_CC) $(EXTRA_DEFINE)
+CXX_DEPFLAGS	= $(CC_OPTIM) $(CC_INCLUDE) $(C++_WARNINGS) $(C++_COMPILER) \
+		  $(DEFINE_CC) $(EXTRA_DEFINE) $(ADDED_C++FLAGS)
+
+TARGET=default
+
+## top of vxWorks tree
+
+ifneq ($(WIND_HOST_TYPE),x86-win32)
+BIN_DIR=$(WIND_BASE)/host/$(WIND_HOST_TYPE)/bin
+DIRCHAR=/
+else
+BIN_DIR=$(WIND_BASE)\host\$(WIND_HOST_TYPE)\bin
+DIRCHAR=\\
+endif
+
+## docs flags and variables
+
+DOCS_ROOT	= $(WIND_BASE)/docs
+DOC_DIR		= $(DOCS_ROOT)/vxworks/bsp
+MAN_PAGE_DIR	= $(WIND_BASE)/man
+DOC_BOOK	= VxWorks_API_Reference
+DOC_CHAPTER	= OS_Libraries
+DOC_OPTS	= $(DOC_OPTS_MAN)
+MAN_PAGE_OPTS	= $(DOC_OPTS_MAN) -config Auto2txt
+DOC_OPTS_C_TCL	= -config CTcl2html
+DOC_OPTS_CPP	= -cpp
+DOC_OPTS_FILE	= -config File2html
+DOC_OPTS_MAN	= -mg
+
+
+## map TOOL to TOOL_FAMILY, if not already done elsewhere (it should)
+
+ifeq ($(TOOL_FAMILY),)
+ifeq  ($(findstring gnu,$(TOOL)),gnu)
+TOOL_FAMILY	= gnu
+else
+ifeq  ($(findstring diab,$(TOOL)),diab)
+TOOL_FAMILY	= diab
+endif
+endif
+endif
+################################################END DEFS.DEFAULT
+#include $(TGT_DIR)/h/tool/$(TOOL_FAMILY)/make.$(CPU)$(TOOL)
+################################################BEGIN MAKE.PENTIUMGNU
+#include $(TGT_DIR)/h/tool/gnu/defs.gnu
+#################################################BEGIN DEFS.GNU
+#include $(TGT_DIR)/h/tool/common/defs.common
+#################################################BEGIN DEFS.COMMON
+EXTRACT_BIN_FLAG= -O binary --binary-without-bss
+EXTRACT_HEX_FLAG= -O srec --gap-fill=0
+EXTRACT_SYM_FLAG= --extract-symbol
+
+START_FLAGS     =
+HEX_FLAGS	=
+
+VMA_START	= 0x0
+VMA_FLAGS	= -O srec --ignore-vma --set-start=$(VMA_START)
+
+## obsolete macros
+
+EXTRACT_BIN_NAME= false Used obsolete EXTRACT_BIN_NAME macro
+BINXSYM_NAME	= false Used obsolete BINXSYM_NAME macro
+BINHEX_NAME	= false Used obsolete BINHEX_NAME macro
+#################################################END DEFS.COMMON
+
+# get TOOL_COMMON_DIR, TOOL_DIAB and TOOL_GNU from TOOL
+
+TOOL_FAMILY	= gnu
+TOOL_COMMON_DIR	= $(subst gnu,common,$(TOOL))
+TOOL_DIAB	= $(subst gnu,diab,$(TOOL))
+TOOL_GNU	= $(TOOL)
+
+# Deprecated, use TOOL_FAMILY instead
+TOOL_VENDOR     = gnu
+
+# Preprocessor option forcing every input file to be treated as a "C" file
+OPTION_LANG_C=-xc
+
+# Preprocessor option forcing every input file to be treated as a assembly
+# file requiring C preprocessing
+OPTION_LANG_ASM=-xassembler-with-cpp
+
+# Library containing compiler support routines
+CC_LIB=
+
+
+OPTION_PP		= -E
+OPTION_PP_AS		= -P
+OPTION_PP_NOLINENO	= -P
+OPTION_PP_COMMENT	= -C
+OPTION_DOLLAR_SYMBOLS	= -fdollars-in-identifiers
+OPTION_DEPEND		= -M -w
+OPTION_DEPEND_GEN	= -M -MG -w
+OPTION_DEPEND_C		= $(OPTION_DEPEND_GEN)
+OPTION_DEPEND_AS	= $(OPTION_DEPEND)
+OPTION_NO_WARNINGS	= -w
+OPTION_ANSI		= -ansi
+OPTION_OBJECT_ONLY	= -c
+OPTION_INCLUDE_DIR	= -I
+# this line has a space at the end ("-o ")
+OPTION_OBJECT_NAME	= -o 
+OPTION_EXE_NAME		= $(OPTION_OBJECT_NAME)
+OPTION_DEFINE_MACRO	= -D
+OPTION_PIC		= -fpic
+
+CC_OPTIM_DRIVER		= -fvolatile
+CC_OPTIM_NORMAL		= -O -fstrength-reduce -fcombine-regs
+CC_OPTIM_TARGET		= -O -fvolatile
+
+CC_WARNINGS_ALL		= -Wall
+CC_WARNINGS_NONE	=
+
+CC_COMPILER		= -ansi 
+C++_COMPILER		= -ansi
+
+# used by project facility
+
+CC_PROJECT_OPTIMIZE_FLAGS = -O -O1 -O2 -O3 -O4
+PROJECT_BSP_FLAGS_EXTRA = $(filter -fvolatile,$(CC_OPTIM_TARGET))
+
+# For generating PIC code
+# For T2.2, CC_PIC is only defined for MIPS architecture see defs.mips.
+# CC_PIC		= $(OPTION_PIC)
+
+
+## toolchain binaries
+
+AS              	= as$(TOOLENV)
+CC              	= cc$(TOOLENV)
+CF			= CC
+CXX			= $(CC)
+LD              	= ld$(TOOLENV)
+RANLIB          	= ranlib$(TOOLENV)
+CPP			= $(CC) -E -P
+CPP_PRINT_MACROS        = $(CPP) -dM -E -pipe $(CC_INCLUDE) $(CC_DEFINES)
+TCL			= wtxtcl
+OBJCPY	         	= objcopy
+SIZE            	= size$(TOOLENV)
+NM              	= nm$(TOOLENV)
+AR              	= ar$(TOOLENV)
+
+MUNCH           	= wtxtcl $(WIND_BASE)/host/src/hutils/munch.tcl $(MUNCH_FLAGS)
+LARGE_PROJECT   	= true
+OPTION_INDIRECT_FILE    = @
+OPTION_NM_INDIRECT_FILE = @
+
+MUNCH_FLAGS     	= -c $(TOOLENV)
+NM_GLOB_FLAGS		= -g
+
+
+HLL_PREFIX              = _
+
+ROM_ENTRY               = $(HLL_PREFIX)romInit
+SYS_ENTRY               = $(HLL_PREFIX)sysInit
+USR_ENTRY               = $(HLL_PREFIX)usrInit
+
+BOOTCONFIG_FLAGS	=
+
+
+LDFLAGS         	= -X -N
+
+LD_ENTRY_OPT		= -e
+LD_PARTIAL_FLAGS	= -X -r
+
+# Wherever possible we use the compiler driver as a frontend to
+# the linker. In particular this facilitates the GNU -frepo
+# template repository system. Configurations using GNU Tools
+# but non-GNU linkers (such as SIMHPPA)  should define
+# GNU_USE_LD_TO_LINK = yes
+
+ifeq ($(GNU_USE_LD_TO_LINK),)
+BASE_LD_PARTIAL_FLAGS   = $(filter-out -r -nostdlib,$(LD_PARTIAL_FLAGS))
+LD_PARTIAL              = $(CC) -r -nostdlib $(subst -,$(OPTION_PASS_TO_LD)-,$(BASE_LD_PARTIAL_FLAGS))
+OPTION_PASS_TO_LD       = -Wl,
+else
+LD_PARTIAL            = $(LD) $(LD_PARTIAL_FLAGS)
+OPTION_PASS_TO_LD     =
+endif
+
+# These are flags to pass to the linker the last time we do a
+# relocatable link. They never get used by a bootable project
+# and they only get used once by a downloadable project.
+
+LD_SCRIPT_DOWNLOAD      = -T $(TGT_DIR)/h/tool/gnu/ldscripts/link.OUT
+LD_COLLAPSE_SECTIONS    = $(LD_SCRIPT_DOWNLOAD)
+LD_PARTIAL_LAST_FLAGS   = $(LD_COLLAPSE_SECTIONS)
+
+LD_SCRIPT_RAM	= -T $(TGT_DIR)/h/tool/gnu/ldscripts/link.RAM
+LD_SCRIPT_ROM	= -T $(TGT_DIR)/h/tool/gnu/ldscripts/link.ROM
+
+# for cyclic link support
+
+LD_START_GROUP  	= --start-group
+LD_END_GROUP		= --end-group
+LD_PARTIAL_START_GROUP	= $(OPTION_PASS_TO_LD)$(LD_START_GROUP)
+LD_PARTIAL_END_GROUP	= $(OPTION_PASS_TO_LD)$(LD_END_GROUP)
+
+
+LD_LOW_FLAGS    	= -Ttext $(RAM_LOW_ADRS)
+LD_HIGH_FLAGS   	= -Ttext $(RAM_HIGH_ADRS)
+RES_LOW_FLAGS   	= -Ttext $(ROM_LINK_ADRS) -Tdata $(RAM_LOW_ADRS)
+RES_HIGH_FLAGS  	= -Ttext $(ROM_LINK_ADRS) -Tdata $(RAM_HIGH_ADRS)
+
+# For 960 IMI
+LD_IMI_ADRS		= -Ttext $(IMI_TEXT_ADRS) -Tdata $(IMI_DATA_ADRS)
+#################################################END DEFS.GNU
+
+CPU             = PENTIUM
+TOOL            = gnu
+
+CC_OPTIM_DRIVER = -fvolatile -nostdlib -fno-builtin -fno-defer-pop
+CC_OPTIM_NORMAL = -O2 -nostdlib -fno-builtin -fno-defer-pop
+CC_OPTIM_TARGET = -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop
+# Generate code for (-mcpu=) and schedule for (-march=) pentium
+CC_ARCH_SPEC	= -mcpu=pentium -march=pentium
+
+
+
+#modify by wangxy
+AR              = ar
+AS              = as
+CC              = cc
+CF              = 
+LD              = ldpentium
+RANLIB          = ranlibpentium
+NM              = nmpentium
+
+TOOLENV         = pentium
+VX_CPU_FAMILY   = pentium
+ARCH_DIR        = i86
+
+HLL_PREFIX      =
+
+OBJCOPY_OLD_OMF	= -O a.out-i386 --gap-fill=0
+
+# end of make.PENTIUMgnu
+################################################END MAKE.PENTIUMGNU
+#include $(TGT_DIR)/h/make/defs.$(WIND_HOST_TYPE)
+#################################################BEGIN DEFS.X86-LINUX
+DIRCHAR=/
+
+## directories
+
+BIN_DIR         = $(WIND_BASE)/host/$(WIND_HOST_TYPE)/bin
+TGT_DIR         = $(WIND_BASE)/target
+CONFIG_ALL      = $(TGT_DIR)/config/all
+DEMO_DIR	= $(TGT_DIR)/lib/obj$(CPU)$(TOOL)test
+LIBDIR		= $(TGT_DIR)/lib/$(LIBDIRNAME)
+DOCS_ROOT	= $(WIND_BASE)/docs
+MAN_PAGE_DIR	= $(WIND_BASE)/man
+
+## tools
+
+ENV_BIN		= VX_CPU_FAMILY=$(TOOLENV) $(BIN_DIR)/
+EXTRACT_BIN	= $(ENV_BIN)$(OBJCPY)$(TOOLENV) $(EXTRACT_BIN_FLAG)
+BINXSYM		= $(ENV_BIN)$(OBJCPY)$(TOOLENV) $(EXTRACT_SYM_FLAG)
+BINHEX		= $(ENV_BIN)$(OBJCPY)$(TOOLENV) $(EXTRACT_HEX_FLAG)
+BINCONV		= $(ENV_BIN)$(OBJCPY)$(TOOLENV)
+COMPRESS	= $(ENV_BIN)deflate
+ROMSIZEPROG	= $(ENV_BIN)romsize
+VXSIZEPROG	= $(ENV_BIN)vxsize
+MKSYMTBL	= $(ENV_BIN)makeSymTbl
+BINTOASM	= $(ENV_BIN)binToAsm
+MKPREP          = $(ENV_BIN)mkprep
+MG		= $(ENV_BIN)mg
+LDOUT_SYMS      = true
+LDOUT_CONV      = true 
+LDOUT_HOST      = true 
+MV_BIN		= echo
+MKDIR		= mkdir -p
+RMDIR		= rm -f -r
+RM		= rm -f
+MV		= mv
+ECHO		= echo
+CP		= cp
+ASM_P1		= cat
+ASM_P2		= cat
+TARGET		=
+BSPBUILD_TCL	= $(BIN_DIR)/bspBuild.tcl
+NOP		= \#
+
+ifneq ($(NEW_RULES),TRUE)
+## files
+
+USRCONFIG	= $(CONFIG_ALL)/usrConfig.c
+BOOTCONFIG	= $(CONFIG_ALL)/bootConfig.c
+BOOTINIT	= $(CONFIG_ALL)/bootInit.c 
+DATASEGPAD	= $(CONFIG_ALL)/dataSegPad.c
+CONFIG_ALL_H    = $(CONFIG_ALL)/configAll.h
+endif
+
+## Miscellaneous
+
+CMD_SEPARATOR	= ;
+NULL_DEVICE	= /dev/null
+
+#################################################EDN DEFS.X86-LINUX
+
+## implicit rules
+
+.s.o :
+	@ $(RM) $@
+	$(CC) $(CFLAGS_AS) $(CFLAGS_AS_$(<:.s=.o)) $(OPTION_OBJECT_ONLY) $(OPTION_OBJECT_NAME)$@ $<
+
+.c.o :
+	@ $(RM) $@
+	$(CC) $(CFLAGS) $(CFLAGS_$(<:.c=.o)) $(OPTION_OBJECT_ONLY) $<
+
+# rules to build objects in $(LIBDIR)
+$(LIBDIR)/%.o : %.c
+	@ $(RM) $(subst /,$(DIRCHAR),$@)
+	$(CC) $(CFLAGS) $(CFLAGS_$(<:.c=.o)) $(OPTION_OBJECT_ONLY) $(OPTION_OBJECT_NAME)$@ $<
+
+$(LIBDIR)/%.o : %.s
+	@ $(RM) $(subst /,$(DIRCHAR),$@)
+	$(CC) $(CFLAGS_AS) $(CFLAGS_AS_$(<:.s=.o)) $(OPTION_OBJECT_ONLY) $(OPTION_OBJECT_NAME)$@ $<
+
+# rule for munchless C++ compiles
+$(LIBDIR)/%.o : %.cpp
+	@ $(RM) $(subst /,$(DIRCHAR),$@)
+	$(CXX) $(C++FLAGS) $(CFLAGS_$(<:.cpp=.o)) $(OPTION_OBJECT_ONLY) $(OPTION_OBJECT_NAME)$@ $<
+
+## Rule for standalone "munched" C++ modules.
+
+# In general the only library modules that should be munched are 
+# standalone test programs. Certainly nothing in the runtime should be 
+# munched until BSP or Project build time. If you want your
+# module to be munched, specify a .out target in $(OBJS) instead
+# of a .o.
+
+$(LIBDIR)/%.out : %.cpp
+	@ $(RM) $@
+	$(CXX) $(C++FLAGS) $(OPTION_OBJECT_ONLY) $(OPTION_OBJECT_NAME) \
+      $(basename $@).o $<
+	@ $(RM) ctdt.c
+	$(NM) $(basename $@).o | $(MUNCH) > ctdt.c
+	$(MAKE) CC_COMPILER=$(OPTION_DOLLAR_SYMBOLS) ctdt.o
+	$(LD_PARTIAL) $(LD_PARTIAL_LAST_FLAGS) $(OPTION_OBJECT_NAME)$@ $(basename $@).o ctdt.o
+	@ $(RM) $(basename $@).o ctdt.c ctdt.o
+
+# rule for munchless C++ compiles
+.cpp.o :
+	@ $(RM) $@
+	$(CXX) $(C++FLAGS) $(OPTION_OBJECT_ONLY) $<
+
+.cxx.o :
+	@ $(RM) $@
+	$(CXX) $(C++FLAGS) $(OPTION_OBJECT_ONLY) $<
+
+# C++ compile and munch
+.cpp.out :
+	@ $(RM) $@
+	$(CXX) $(C++FLAGS) $(OPTION_OBJECT_ONLY) $<
+	@ $(RM) $@ ctdt.c
+	$(NM) $*.o | $(MUNCH) > ctdt.c
+	$(MAKE) CC_COMPILER=$(OPTION_DOLLAR_SYMBOLS) ctdt.o
+	$(LD_PARTIAL) $(LD_PARTIAL_LAST_FLAGS) $(OPTION_OBJECT_NAME)$@ $*.o ctdt.o
+	@ $(RM) ctdt.c ctdt.o
+
+.cxx.out :
+	@ $(RM) $@
+	$(CXX) $(C++FLAGS) $(OPTION_OBJECT_ONLY) $<
+	@ $(RM) $@ ctdt.c
+	$(NM) $*.o | $(MUNCH) > ctdt.c
+	$(MAKE) CC_COMPILER=$(OPTION_DOLLAR_SYMBOLS) ctdt.o
+	$(LD_PARTIAL) $(LD_PARTIAL_LAST_FLAGS) $(OPTION_OBJECT_NAME)$@ $*.o ctdt.o
+	@ $(RM) ctdt.c ctdt.o
+
+## rules to construct object lists
+
+# vxWorks source distribution do not always have all of the
+# sources to object files specified in macro OBJS macro.
+# We use GNU make functions to find what we need to build
+
+# get the list of .c, .cpp and .s files
+FILE_LIST       = $(wildcard *.[cs]) $(wildcard *.cpp) $(INDIRECT_SOURCES)
+
+# Change .c to .o in FILE_LIST and store in TMP_LIST
+TMP_LIST        = $(FILE_LIST:.c=.o)
+
+# Change .cpp to .o in TMP_LIST and store in TMP1_LIST
+TMP1_LIST        = $(TMP_LIST:.cpp=.o)
+
+# We can also build .out files from .cpp files
+TMP2_LIST        = $(subst .cpp,.out,(filter %.cpp,$(FILE_LIST)))
+
+# Change .s to .o in TMP1_LIST, concat with TMP2_LIST, and store in 
+# OBJ_PRESENT. These are the objects we can build
+OBJ_PRESENT     = $(TMP1_LIST:.s=.o) $(TMP2_LIST)
+
+# Find the intersection of the objects we can build and the objects we'd
+# like to build
+
+# Normally we just build objects that can be built from source
+# files in this directory. However if BUILD_ALL_OBJS is non-empty
+# then trust the definition of $(OBJS).
+
+ifeq ($(BUILD_ALL_OBJS),)
+OBJS_TO_BUILD   = $(filter $(OBJ_PRESENT),$(OBJS))
+else
+OBJS_TO_BUILD   = $(OBJS)
+endif
+
+# Now we fix up where they will go once they are built
+LIBOBJS         = $(foreach file, $(OBJS_TO_BUILD), $(LIBDIR)/$(file))
+
+# It is safe to assume that if a subdirectory exists with a Makefile in it 
+# that we want to build it. If this is not the case one needs to over ride 
+# this definition in the Makefile for the directory in concern. 
+
+# NOTE: to over ride this definition one must define SUBDIRS before the
+# include directive for this file (rules.library) in the Makefile
+ifeq ($(SUBDIRS),)
+ALL_SUBDIRS = $(patsubst %/,%,$(dir $(wildcard */Makefile)))
+else
+ALL_SUBDIRS = $(SUBDIRS)
+endif
+SUBDIRS_TMP = $(filter-out $(EXCLUDE_SUBDIRS), $(ALL_SUBDIRS))
+override SUBDIRS := $(filter-out $(UNSUPPORTED_SUBDIRS), $(SUBDIRS_TMP))
+
+# architecturedb, and files which are generated from it
+# see the files in $(WIND_BASE)/host/src/cpuGen,
+# and the comments in architecturedb, for details
+ARCH_DB    = $(WIND_BASE)/host/resource/target/architecturedb
+ARCH_FILES = $(TGT_DIR)/src/arch/Makefile $(TGT_DIR)/h/types/vxCpu.h
+
+
+## Default rule:
+# The default rule builds directories recursively starting from the top level
+# directory. For every directory, the selected archive is also created and/or
+# populated with object files. 
+# In addition CPU variant build(s) if enabled for the current CPU/TOOL 
+# combinaison are started at the end of the top level directory build 
+# (target/src/).
+# An empty lib$(CPU)$(TOOL)vx.a is created by this rule if no
+# lib$(CPU)$(TOOL)vx.a already exists.
+
+VX_LIB  = $(wildcard $(TGT_DIR)/lib/lib$(CPU)$(TOOL)vx.a)
+
+ifneq    ($(SKIP_DIR), true)
+Default: archdeps lib subdirs
+ifneq  ($(CPU_VARIANT_MAKE_CMD),)
+	$(CPU_VARIANT_MAKE_CMD)
+endif
+ifeq  ($(VX_LIB),)
+	$(AR) cru $(TGT_DIR)/lib/lib$(CPU)$(TOOL)vx.a
+endif
+ifneq ($(MAKETAIL),)
+	($(MAKE) -f Makefile CPU=$(CPU) TOOL=$(TOOL)	\
+	 $(MAKETAIL)					\
+	 MAKETAIL='')				
+endif
+
+else
+Default: subdirs
+	@echo skipping directory
+endif
+
+
+## recursive clean rule
+
+rclean: 
+ifneq ($(SUBDIRS),)
+	$(MAKE) CPU=$(CPU) TOOL=$(TOOL) TGT_DIR=$(TGT_DIR) \
+		TARGET=rclean $(SUBDIRS)
+endif
+	$(MAKE) CPU=$(CPU) TOOL=$(TOOL) TGT_DIR=$(TGT_DIR) clean
+ifeq ($(CLEANLIBS),YES)
+	$(RM) $(wildcard $(TGT_DIR)/lib/lib$(CPU)$(TOOL)*.a)
+	$(RM) $(wildcard $(TGT_DIR)/lib/$(VX_CPU_FAMILY)/$(CPU)/$(TOOL)/lib*.a)
+	$(RMDIR) $(wildcard $(TGT_DIR)/lib/$(VX_CPU_FAMILY)/$(CPU)/$(TOOL)/obj*)
+	$(RM) $(wildcard $(TGT_DIR)/lib/$(VX_CPU_FAMILY)/$(CPU)/$(TOOL_COMMON_DIR)/lib*.a)
+	$(RMDIR) $(wildcard $(TGT_DIR)/lib/$(VX_CPU_FAMILY)/$(CPU)/$(TOOL_COMMON_DIR)/obj*)
+	$(RMDIR) $(wildcard $(TGT_DIR)/lib/obj$(CPU)$(TOOL)*)
+endif
+
+
+# Make sure the object directory exists.
+ifneq ($(LIBDIR),$(TGT_DIR)/lib/)
+MAKE_LIBDIR	= make_libdir
+make_libdir:
+	-$(MKDIR) $(subst /,$(DIRCHAR),$(LIBDIR))
+endif
+
+# recursive build of all objects. The hope is that this rule will help
+# with parallel builds. Calling lib and subdirs with parallel builds
+# has the adverse effect of trying to create libraries from multiple
+# subdirectories that tends to destroy the library.
+all-objs : archdeps objs
+ifneq ($(SUBDIRS),)
+	$(MAKE) CPU=$(CPU) TOOL=$(TOOL) TGT_DIR=$(TGT_DIR) \
+		TARGET=all-objs $(SUBDIRS)
+endif
+
+# Just in case you want to build objects and not update the archives
+
+objs:	archdeps $(MAKE_LIBDIR) $(LIBOBJS)
+
+release: archdeps
+	$(MAKE) CPU=$(CPU) TOOL=$(TOOL) TGT_DIR=$(TGT_DIR) \
+		TARGET=release
+
+# Files which are generated from the architecturedb
+archdeps:  $(ARCH_FILES)
+
+$(TGT_DIR)/h/types/vxCpu.h: $(TGT_DIR)/h/types/vxCpu.in $(ARCH_DB)
+	cpuGen -t -i $< -o $@
+
+$(TGT_DIR)/src/arch/Makefile: $(TGT_DIR)/src/arch/Makefile.in $(ARCH_DB)
+	cpuGen -m -i $< -o $@
+
+#include $(TGT_DIR)/h/make/rules-lib.$(WIND_HOST_TYPE)
+######################################################BEGIN RULES-LIB.X86-LINUX
+lib:    $(TGT_DIR)/lib/$(LIBNAME)
+
+clean:
+	$(RM) $(LIBOBJS) $(LOCAL_CLEAN)
+	$(RM) depend.$(CPU)$(TOOL)
+# This is believed to be obsolete. If it is needed we can bring it back
+# ifneq ($(CLEANTAIL),)
+# 	$(MAKE) -f Makefile CPU=$(CPU) TOOL=$(TOOL)	\
+# 	$(CLEANTAIL)					\
+# 	 CLEANTAIL='')				
+# endif
+
+$(TGT_DIR)/lib/$(LIBNAME): $(MAKE_LIBDIR) $(LIBOBJS)
+	 @ - if [ -w $@ ] ; then \
+	    (cd $(LIBDIR); \
+	    echo "$(AR) crus " $@ $?; \
+	    $(AR) crus $@ $(notdir $?)); \
+	else \
+	    (cd $(LIBDIR); \
+	    $(RM) ../$(LIBNAME); \
+	    echo "$(AR) crus " $@ $(LIBDIR)/"*.o"; \
+	    $(AR) crus $@ *.o); \
+	fi
+
+#dependency list generation
+
+depend.$(CPU)$(TOOL) : Makefile
+	@ $(RM) $@
+	@ echo "Creating depend.$(CPU)$(TOOL)"
+
+ifneq ($(wildcard *.c),)
+	@ for FILE in $(filter-out $(NODEPENDOBJS), $(wildcard *.c)); \
+	do \
+	    $(CC)  $(OPTION_DEPEND) $(CFLAGS) $$FILE  \
+	    | $(TCL) $(BIN_DIR)/depend.tcl $(TGT_DIR) >>$@; \
+	done	
+endif
+ifneq ($(wildcard *.s),)
+	@ for FILE in $(filter-out $(NODEPENDOBJS), $(wildcard *.s)); \
+	do \
+	    $(CPP) $(OPTION_DEPEND) $(CASFLAGS) $$FILE \
+	    | $(TCL) $(BIN_DIR)/depend.tcl $(TGT_DIR) >>$@; \
+	done
+endif
+ifneq ($(wildcard *.cpp),)
+	@ for FILE in $(filter-out $(NODEPENDOBJS), $(wildcard *.cpp)); \
+	do \
+	    $(CXX) $(OPTION_DEPEND) $(CFLAGS) $$FILE \
+	    | $(TCL) $(BIN_DIR)/depend.tcl $(TGT_DIR) >>$@ ;\
+	done
+endif
+
+# if SUBDIRS is not null we need to build the subdirectories before building
+# the current directory. 
+
+# if we have SUBDIRS
+ifneq ($(SUBDIRS),)
+
+subdirs :  $(SUBDIRS)
+
+$(SUBDIRS)::
+	$(MAKE) -C $@ CPU=$(CPU) TOOL=$(TOOL) $(TARGET)
+
+# No SUBDIRS
+else
+subdirs:
+
+endif
+
+########
+#
+# doc rules
+
+# re-define the DOC_DIR for the libraries as the default DOC_DIR is for BSPs
+
+DOC_DIR	= $(DOCS_ROOT)/vxworks/ref
+
+# When the desired set of directories to be documented is different from the
+# directories whose software must be built (common for component products),
+# set DOCSUBDIRS to the subdirectories to be documented.
+
+ifeq ($(DOCSUBDIRS),)
+DOCSUBDIRS = $(SUBDIRS)
+endif
+
+ifneq ($(DOCSUBDIRS),)
+
+# define the man target and the default output directory for libraries
+
+man:
+	-for DIR in $(DOCSUBDIRS) ; \
+	do ( cd $$DIR; $(MAKE) CPU=$(CPU) TOOL=$(TOOL) man ) ; \
+	done
+	-$(WIND_BASE)/host/$(WIND_HOST_TYPE)/bin/refgen $(DOC_OPTS) \
+	    -book $(DOC_BOOK) -chapter $(DOC_CHAPTER) -out $(DOC_DIR) \
+	    $(DOC_FILES)
+	-$(WIND_BASE)/host/$(WIND_HOST_TYPE)/bin/refgen $(MAN_PAGE_OPTS) \
+	    -book $(DOC_BOOK) -chapter $(DOC_CHAPTER) -out $(MAN_PAGE_DIR) \
+	    $(DOC_FILES)
+	@date
+
+link ::
+	-$(WIND_BASE)/host/$(WIND_HOST_TYPE)/bin/htmlLink -R \
+	    $(DOCS_ROOT)/vxworks/ref
+
+synopsis ::
+	-$(WIND_BASE)/host/$(WIND_HOST_TYPE)/bin/syngen \
+	    -d $(WIND_BASE)/host/resource/synopsis $(DOC_FILES)
+	for DIR in $(DOCSUBDIRS) ; \
+	do ( cd $$DIR; $(MAKE) CPU=$(CPU) TOOL=$(TOOL) synopsis ) ; \
+	done
+	@date
+
+clean_synopsis ::
+	for DIR in $(DOCSUBDIRS) ; \
+	do ( cd $$DIR; $(MAKE) CPU=$(CPU) TOOL=$(TOOL) clean_synopsis ) ; \
+	done
+ifneq ($(DOC_FILES),)
+	$(WIND_BASE)/host/$(WIND_HOST_TYPE)/bin/syngen -clean \
+	    -d $(WIND_BASE)/host/resource/synopsis
+endif
+
+# No DOCSUBDIRS
+else
+
+man:
+	-$(WIND_BASE)/host/$(WIND_HOST_TYPE)/bin/refgen $(DOC_OPTS) \
+	    -book $(DOC_BOOK) -chapter $(DOC_CHAPTER) -out $(DOC_DIR) \
+	    $(DOC_FILES)
+	-$(WIND_BASE)/host/$(WIND_HOST_TYPE)/bin/refgen $(MAN_PAGE_OPTS) \
+	    -book $(DOC_BOOK) -chapter $(DOC_CHAPTER) -out $(MAN_PAGE_DIR) \
+	    $(DOC_FILES)
+	@date
+
+synopsis ::
+ifneq ($(DOC_FILES),)
+	-$(WIND_BASE)/host/$(WIND_HOST_TYPE)/bin/syngen \
+	    -d $(WIND_BASE)/host/resource/synopsis $(DOC_FILES)
+	@date
+endif
+
+clean_synopsis ::
+ifneq ($(DOC_FILES),)
+	$(WIND_BASE)/host/$(WIND_HOST_TYPE)/bin/syngen -clean \
+	    -d $(WIND_BASE)/host/resource/synopsis
+endif
+endif
+
+# end doc rules
+#
+######
+######################################################END RULES-LIB.X86-LINUX
+
+# we don't need a dependency list if are not building objects
+ifneq ($(OBJS),)
+
+# We suppress the warning message about non existent file and setting of errno
+# by prepending - . GNU make allows this.
+#modify by wangxy
+#-include depend.$(CPU)$(TOOL)
+
+endif

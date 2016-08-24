@@ -1,0 +1,1 @@
+ccpentium -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu   -E -P -xassembler-with-cpp -c -o romInit.o romInit.s 

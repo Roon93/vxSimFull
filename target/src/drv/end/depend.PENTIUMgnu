@@ -1,0 +1,2002 @@
+$(LIBDIR)/auEnd.o: auEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/taskLib.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/qLib.h d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/sysLib.h d:/Tornado2.2/target/h/bootLib.h \
+  d:/Tornado2.2/target/h/ttyLib.h d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h d:/Tornado2.2/target/h/iv.h \
+  d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/cacheLib.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/netinet/in.h \
+  d:/Tornado2.2/target/h/netinet/in_systm.h \
+  d:/Tornado2.2/target/h/netinet/in_var.h \
+  d:/Tornado2.2/target/h/netinet/in_pcb.h \
+  d:/Tornado2.2/target/h/netinet/ip.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/net/if_subr.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/avlLib.h d:/Tornado2.2/target/h/miiLib.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/muxLib.h \
+  d:/Tornado2.2/target/h/net/if_types.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/drv/end/auEnd.h \
+  d:/Tornado2.2/target/h/drv/multi/auLib.h
+$(LIBDIR)/bcm1250MacEnd.o: bcm1250MacEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/stdio.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/logLib.h \
+  d:/Tornado2.2/target/h/semLib.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/netBufLib.h \
+  d:/Tornado2.2/target/h/etherLib.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/net/radix.h d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/drv/multi/bcm1250Lib.h \
+  d:/Tornado2.2/target/h/drv/end/bcm1250MacEnd.h
+$(LIBDIR)/dec21x40End.o: dec21x40End.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/vme.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/errnoLib.h d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/sysLib.h \
+  d:/Tornado2.2/target/h/bootLib.h d:/Tornado2.2/target/h/ttyLib.h \
+  d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/net/systm.h d:/Tornado2.2/target/h/taskLib.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/sys/times.h d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/miiLib.h \
+  d:/Tornado2.2/target/h/drv/end/dec21x40End.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/avlLib.h d:/Tornado2.2/target/h/net/if_llc.h \
+  d:/Tornado2.2/target/h/ioctl.h d:/Tornado2.2/target/h/etherMultiLib.h \
+  d:/Tornado2.2/target/h/endLib.h d:/Tornado2.2/target/h/muxLib.h \
+  d:/Tornado2.2/target/h/net/if_types.h
+$(LIBDIR)/dec21x4xEnd.o: dec21x4xEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/vme.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/vxLib.h \
+  d:/Tornado2.2/target/h/arch/i86/vxI86Lib.h \
+  d:/Tornado2.2/target/h/net/mbuf.h d:/Tornado2.2/target/h/net/unixLib.h \
+  d:/Tornado2.2/target/h/semLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h d:/Tornado2.2/target/h/fcntl.h \
+  d:/Tornado2.2/target/h/sys/fcntlcom.h d:/Tornado2.2/target/h/unistd.h \
+  d:/Tornado2.2/target/h/dllLib.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/sysLib.h \
+  d:/Tornado2.2/target/h/bootLib.h d:/Tornado2.2/target/h/ttyLib.h \
+  d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/etherLib.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/systm.h d:/Tornado2.2/target/h/taskLib.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/sys/times.h d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/drv/end/dec21x4xEnd.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/avlLib.h d:/Tornado2.2/target/h/net/if_llc.h \
+  d:/Tornado2.2/target/h/ioctl.h d:/Tornado2.2/target/h/etherMultiLib.h \
+  d:/Tornado2.2/target/h/endLib.h d:/Tornado2.2/target/h/muxLib.h \
+  d:/Tornado2.2/target/h/net/if_types.h
+$(LIBDIR)/ei82596End.o: ei82596End.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/vme.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h d:/Tornado2.2/target/h/fcntl.h \
+  d:/Tornado2.2/target/h/sys/fcntlcom.h d:/Tornado2.2/target/h/unistd.h \
+  d:/Tornado2.2/target/h/dllLib.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/sysLib.h \
+  d:/Tornado2.2/target/h/bootLib.h d:/Tornado2.2/target/h/ttyLib.h \
+  d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/net/systm.h d:/Tornado2.2/target/h/taskLib.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/sys/times.h d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h \
+  d:/Tornado2.2/target/h/drv/end/ei82596End.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h
+$(LIBDIR)/ei82596hkvEnd.o: ei82596hkvEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h ei82596End.c \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/vme.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h d:/Tornado2.2/target/h/fcntl.h \
+  d:/Tornado2.2/target/h/sys/fcntlcom.h d:/Tornado2.2/target/h/unistd.h \
+  d:/Tornado2.2/target/h/dllLib.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/sysLib.h \
+  d:/Tornado2.2/target/h/bootLib.h d:/Tornado2.2/target/h/ttyLib.h \
+  d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/net/systm.h d:/Tornado2.2/target/h/taskLib.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/sys/times.h d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h \
+  d:/Tornado2.2/target/h/drv/end/ei82596End.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h
+$(LIBDIR)/el3c90xEnd.o: el3c90xEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/taskLib.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/qLib.h d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/tickLib.h d:/Tornado2.2/target/h/logLib.h \
+  d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/sysLib.h d:/Tornado2.2/target/h/bootLib.h \
+  d:/Tornado2.2/target/h/ttyLib.h d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h d:/Tornado2.2/target/h/iv.h \
+  d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/cacheLib.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/sys/socket.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/drv/end/el3c90xEnd.h
+$(LIBDIR)/elt3c509End.o: elt3c509End.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/taskLib.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/qLib.h d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/sysLib.h d:/Tornado2.2/target/h/bootLib.h \
+  d:/Tornado2.2/target/h/ttyLib.h d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h d:/Tornado2.2/target/h/iv.h \
+  d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/cacheLib.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/sys/socket.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/drv/end/elt3c509End.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h
+$(LIBDIR)/endLib.o: endLib.c d:/Tornado2.2/target/h/vxWorks.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/sys/socket.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/net/radix.h d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/avlLib.h d:/Tornado2.2/target/h/net/if_llc.h \
+  d:/Tornado2.2/target/h/ioctl.h d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/etherMultiLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/bufLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/stdlib.h
+$(LIBDIR)/fei82557End.o: fei82557End.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/vme.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h d:/Tornado2.2/target/h/fcntl.h \
+  d:/Tornado2.2/target/h/sys/fcntlcom.h d:/Tornado2.2/target/h/unistd.h \
+  d:/Tornado2.2/target/h/dllLib.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/vxLib.h \
+  d:/Tornado2.2/target/h/arch/i86/vxI86Lib.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/sysLib.h \
+  d:/Tornado2.2/target/h/bootLib.h d:/Tornado2.2/target/h/ttyLib.h \
+  d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/net/systm.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/net/if_subr.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h \
+  d:/Tornado2.2/target/h/drv/end/fei82557End.h \
+  d:/Tornado2.2/target/h/drv/pci/pciIntLib.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h
+$(LIBDIR)/gei82543End.o: gei82543End.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/intLib.h d:/Tornado2.2/target/h/regs.h \
+  d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/iv.h \
+  d:/Tornado2.2/target/h/arch/i86/ivI86.h d:/Tornado2.2/target/h/logLib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/sysLib.h d:/Tornado2.2/target/h/bootLib.h \
+  d:/Tornado2.2/target/h/ttyLib.h d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/fcntl.h d:/Tornado2.2/target/h/sys/fcntlcom.h \
+  d:/Tornado2.2/target/h/unistd.h d:/Tornado2.2/target/h/dllLib.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/protosw.h d:/Tornado2.2/target/h/net/systm.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/drv/end/gei82543End.h \
+  d:/Tornado2.2/target/h/etherLib.h d:/Tornado2.2/target/h/miiLib.h
+$(LIBDIR)/iOlicomEnd.o: iOlicomEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/qLib.h d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/errnoLib.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/cacheLib.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/logLib.h \
+  d:/Tornado2.2/target/h/sysLib.h d:/Tornado2.2/target/h/bootLib.h \
+  d:/Tornado2.2/target/h/ttyLib.h d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/sys/socket.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h \
+  d:/Tornado2.2/target/h/drv/end/iOlicomEnd.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/avlLib.h d:/Tornado2.2/target/h/net/if_llc.h \
+  d:/Tornado2.2/target/h/ioctl.h d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h
+$(LIBDIR)/ln7990End.o: ln7990End.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/taskLib.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/qLib.h d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/sysLib.h d:/Tornado2.2/target/h/bootLib.h \
+  d:/Tornado2.2/target/h/ttyLib.h d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h d:/Tornado2.2/target/h/iv.h \
+  d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/cacheLib.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/netinet/in.h \
+  d:/Tornado2.2/target/h/netinet/in_systm.h \
+  d:/Tornado2.2/target/h/netinet/in_var.h \
+  d:/Tornado2.2/target/h/netinet/in_pcb.h \
+  d:/Tornado2.2/target/h/netinet/ip.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/net/if_subr.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/drv/end/ln7990EndCommon.h \
+  d:/Tornado2.2/target/h/drv/end/ln7990End.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/muxLib.h \
+  d:/Tornado2.2/target/h/net/if_types.h d:/Tornado2.2/target/h/endLib.h
+$(LIBDIR)/ln97xEnd.o: ln97xEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/taskLib.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/qLib.h d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/sysLib.h d:/Tornado2.2/target/h/bootLib.h \
+  d:/Tornado2.2/target/h/ttyLib.h d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h d:/Tornado2.2/target/h/iv.h \
+  d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/cacheLib.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/etherLib.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/sys/socket.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/protosw.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/netinet/in_systm.h \
+  d:/Tornado2.2/target/h/netinet/in_var.h \
+  d:/Tornado2.2/target/h/netinet/in_pcb.h \
+  d:/Tornado2.2/target/h/netinet/ip.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/net/if_subr.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/avlLib.h d:/Tornado2.2/target/h/etherMultiLib.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/net/if_llc.h \
+  d:/Tornado2.2/target/h/ioctl.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/drv/end/ln97xEnd.h
+$(LIBDIR)/loopEnd.o: loopEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/semLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/iv.h \
+  d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/etherLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/sysLib.h d:/Tornado2.2/target/h/bootLib.h \
+  d:/Tornado2.2/target/h/ttyLib.h d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h d:/Tornado2.2/target/h/fcntl.h \
+  d:/Tornado2.2/target/h/sys/fcntlcom.h d:/Tornado2.2/target/h/unistd.h \
+  d:/Tornado2.2/target/h/dllLib.h d:/Tornado2.2/target/h/etherMultiLib.h \
+  d:/Tornado2.2/target/h/net/protosw.h d:/Tornado2.2/target/h/net/systm.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/regs.h \
+  d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/sys/times.h
+$(LIBDIR)/mb86960End.o: mb86960End.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/intLib.h d:/Tornado2.2/target/h/regs.h \
+  d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/stdio.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/drv/end/mb86960End.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/netinet/in_systm.h \
+  d:/Tornado2.2/target/h/netinet/in_var.h \
+  d:/Tornado2.2/target/h/netinet/in_pcb.h \
+  d:/Tornado2.2/target/h/netinet/ip.h \
+  d:/Tornado2.2/target/h/net/if_subr.h d:/Tornado2.2/target/h/m2Lib.h
+$(LIBDIR)/mbcEnd.o: mbcEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/intLib.h d:/Tornado2.2/target/h/regs.h \
+  d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/iv.h \
+  d:/Tornado2.2/target/h/arch/i86/ivI86.h d:/Tornado2.2/target/h/logLib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/sysLib.h d:/Tornado2.2/target/h/bootLib.h \
+  d:/Tornado2.2/target/h/ttyLib.h d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/fcntl.h d:/Tornado2.2/target/h/sys/fcntlcom.h \
+  d:/Tornado2.2/target/h/unistd.h d:/Tornado2.2/target/h/dllLib.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/protosw.h d:/Tornado2.2/target/h/net/systm.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/drv/end/mbcEnd.h
+$(LIBDIR)/miiLib.o: miiLib.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/errnoLib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/stdio.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/iosLib.h \
+  d:/Tornado2.2/target/h/ioLib.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/fcntl.h \
+  d:/Tornado2.2/target/h/sys/fcntlcom.h d:/Tornado2.2/target/h/unistd.h \
+  d:/Tornado2.2/target/h/dllLib.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/string.h d:/Tornado2.2/target/h/netBufLib.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/sys/socket.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/sysLib.h \
+  d:/Tornado2.2/target/h/bootLib.h d:/Tornado2.2/target/h/ttyLib.h \
+  d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/regs.h \
+  d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/miiLib.h
+$(LIBDIR)/motCpmEnd.o: motCpmEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/qLib.h d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/socket.h d:/Tornado2.2/target/h/sys/socket.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/net/if_subr.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/fcntl.h d:/Tornado2.2/target/h/sys/fcntlcom.h \
+  d:/Tornado2.2/target/h/unistd.h d:/Tornado2.2/target/h/dllLib.h \
+  d:/Tornado2.2/target/h/drv/netif/netifDev.h \
+  d:/Tornado2.2/target/h/drv/end/motCpmEnd.h \
+  d:/Tornado2.2/target/h/drv/multi/m68360.h \
+  d:/Tornado2.2/target/h/tyLib.h d:/Tornado2.2/target/h/rngLib.h \
+  d:/Tornado2.2/target/h/netinet/in_systm.h \
+  d:/Tornado2.2/target/h/netinet/in_var.h \
+  d:/Tornado2.2/target/h/netinet/in_pcb.h \
+  d:/Tornado2.2/target/h/netinet/ip.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/endLib.h d:/Tornado2.2/target/h/muxLib.h \
+  d:/Tornado2.2/target/h/net/if_types.h
+$(LIBDIR)/motFccEnd.o: motFccEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/vme.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/errnoLib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h d:/Tornado2.2/target/h/fcntl.h \
+  d:/Tornado2.2/target/h/sys/fcntlcom.h d:/Tornado2.2/target/h/unistd.h \
+  d:/Tornado2.2/target/h/dllLib.h d:/Tornado2.2/target/h/vxLib.h \
+  d:/Tornado2.2/target/h/arch/i86/vxI86Lib.h \
+  d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/sysLib.h \
+  d:/Tornado2.2/target/h/bootLib.h d:/Tornado2.2/target/h/ttyLib.h \
+  d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/net/systm.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/net/if_subr.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/miiLib.h \
+  d:/Tornado2.2/target/h/drv/intrCtl/m8260IntrCtl.h \
+  d:/Tornado2.2/target/h/drv/sio/m8260Cp.h \
+  d:/Tornado2.2/target/h/drv/sio/m8260CpmMux.h \
+  d:/Tornado2.2/target/h/drv/end/motFccEnd.h \
+  d:/Tornado2.2/target/h/etherLib.h \
+  d:/Tornado2.2/target/h/drv/end/m8260Fcc.h \
+  d:/Tornado2.2/target/h/msgQLib.h
+$(LIBDIR)/motFecEnd.o: motFecEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/vme.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h d:/Tornado2.2/target/h/fcntl.h \
+  d:/Tornado2.2/target/h/sys/fcntlcom.h d:/Tornado2.2/target/h/unistd.h \
+  d:/Tornado2.2/target/h/dllLib.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/vxLib.h \
+  d:/Tornado2.2/target/h/arch/i86/vxI86Lib.h \
+  d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/sysLib.h \
+  d:/Tornado2.2/target/h/bootLib.h d:/Tornado2.2/target/h/ttyLib.h \
+  d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/net/systm.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/net/if_subr.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/drv/intrCtl/ppc860Intr.h \
+  d:/Tornado2.2/target/h/drv/end/motFecEnd.h
+$(LIBDIR)/ne2000End.o: ne2000End.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/endLib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/semLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/muxLib.h \
+  d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/sysLib.h \
+  d:/Tornado2.2/target/h/bootLib.h d:/Tornado2.2/target/h/ttyLib.h \
+  d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/intLib.h d:/Tornado2.2/target/h/regs.h \
+  d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/drv/end/ne2000End.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h
+$(LIBDIR)/nicEvbEnd.o: nicEvbEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/vme.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h d:/Tornado2.2/target/h/fcntl.h \
+  d:/Tornado2.2/target/h/sys/fcntlcom.h d:/Tornado2.2/target/h/unistd.h \
+  d:/Tornado2.2/target/h/dllLib.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/sysLib.h \
+  d:/Tornado2.2/target/h/bootLib.h d:/Tornado2.2/target/h/ttyLib.h \
+  d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/net/systm.h d:/Tornado2.2/target/h/taskLib.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/sys/times.h d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h \
+  d:/Tornado2.2/target/h/drv/end/nicEvbEnd.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h
+$(LIBDIR)/ns83902End.o: ns83902End.c d:/Tornado2.2/target/h/vxWorks.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/vme.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/string.h d:/Tornado2.2/target/h/netBufLib.h \
+  d:/Tornado2.2/target/h/net/protosw.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h d:/Tornado2.2/target/h/fcntl.h \
+  d:/Tornado2.2/target/h/sys/fcntlcom.h d:/Tornado2.2/target/h/unistd.h \
+  d:/Tornado2.2/target/h/dllLib.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/sysLib.h \
+  d:/Tornado2.2/target/h/bootLib.h d:/Tornado2.2/target/h/ttyLib.h \
+  d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/etherLib.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/ifLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/systm.h d:/Tornado2.2/target/h/taskLib.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/sys/times.h d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/drv/end/ns83902End.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/avlLib.h d:/Tornado2.2/target/h/net/if_llc.h \
+  d:/Tornado2.2/target/h/ioctl.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/endLib.h d:/Tornado2.2/target/h/muxLib.h \
+  d:/Tornado2.2/target/h/net/if_types.h
+$(LIBDIR)/sh7615End.o: sh7615End.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/intLib.h d:/Tornado2.2/target/h/regs.h \
+  d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/iv.h \
+  d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/etherLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/sysLib.h d:/Tornado2.2/target/h/bootLib.h \
+  d:/Tornado2.2/target/h/ttyLib.h d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/fcntl.h d:/Tornado2.2/target/h/sys/fcntlcom.h \
+  d:/Tornado2.2/target/h/unistd.h d:/Tornado2.2/target/h/dllLib.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h \
+  d:/Tornado2.2/target/h/net/protosw.h d:/Tornado2.2/target/h/net/systm.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/drv/end/sh7615End.h
+$(LIBDIR)/smEnd.o: smEnd.c d:/Tornado2.2/target/h/vxWorks.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/cacheLib.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/intLib.h d:/Tornado2.2/target/h/regs.h \
+  d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/net/if_dl.h d:/Tornado2.2/target/h/end.h \
+  d:/Tornado2.2/target/h/semLib.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/copyright_wrs.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/arpLib.h d:/Tornado2.2/target/h/netinet/in.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/wdLib.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/etherLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/logLib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/sysLib.h \
+  d:/Tornado2.2/target/h/bootLib.h d:/Tornado2.2/target/h/ttyLib.h \
+  d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/etherMultiLib.h \
+  d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/net/protosw.h d:/Tornado2.2/target/h/net/systm.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/drv/end/smEnd.h \
+  d:/Tornado2.2/target/h/smPktLib.h d:/Tornado2.2/target/h/smLib.h \
+  d:/Tornado2.2/target/h/smLib.h d:/Tornado2.2/target/h/smUtilLib.h
+$(LIBDIR)/sn83932End.o: sn83932End.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/vwModNum.h \
+  d:/Tornado2.2/target/h/classLib.h d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/qLib.h d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/regs.h d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/memLib.h \
+  d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/iv.h \
+  d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/m2Lib.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/sys/socket.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/protosw.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/cacheLib.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/intLib.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/drv/end/sn83932End.h
+$(LIBDIR)/templateEnd.o: templateEnd.c d:/Tornado2.2/target/h/vxWorks.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/intLib.h d:/Tornado2.2/target/h/regs.h \
+  d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/net/if.h d:/Tornado2.2/target/h/sys/socket.h \
+  d:/Tornado2.2/target/h/net/if_arp.h d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/iv.h d:/Tornado2.2/target/h/arch/i86/ivI86.h \
+  d:/Tornado2.2/target/h/logLib.h d:/Tornado2.2/target/h/netLib.h \
+  d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/sysLib.h d:/Tornado2.2/target/h/bootLib.h \
+  d:/Tornado2.2/target/h/ttyLib.h d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/fcntl.h d:/Tornado2.2/target/h/sys/fcntlcom.h \
+  d:/Tornado2.2/target/h/unistd.h d:/Tornado2.2/target/h/dllLib.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/protosw.h d:/Tornado2.2/target/h/net/systm.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/sys/times.h
+$(LIBDIR)/ultraEnd.o: ultraEnd.c d:/Tornado2.2/target/h/copyright_wrs.h \
+  d:/Tornado2.2/target/h/vxWorks.h d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/arch/i86/archI86.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/types/vxANSI.h \
+  d:/Tornado2.2/target/h/types/vxCpu.h \
+  d:/Tornado2.2/target/h/types/vxArch.h \
+  d:/Tornado2.2/target/h/types/vxParams.h \
+  d:/Tornado2.2/target/h/types/vxTypesBase.h \
+  d:/Tornado2.2/target/h/types/vxTypesOld.h \
+  d:/Tornado2.2/target/h/sys/types.h \
+  d:/Tornado2.2/target/h/types/vxTypes.h \
+  d:/Tornado2.2/target/h/tool/gnu/toolMacros.h \
+  d:/Tornado2.2/target/h/stdlib.h d:/Tornado2.2/target/h/cacheLib.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/limits.h \
+  d:/Tornado2.2/target/h/tool/gnu/limits.h \
+  d:/Tornado2.2/target/h/arch/i86/cacheI86Lib.h \
+  d:/Tornado2.2/target/h/intLib.h d:/Tornado2.2/target/h/regs.h \
+  d:/Tornado2.2/target/h/arch/i86/regsI86.h \
+  d:/Tornado2.2/target/h/arch/i86/intI86Lib.h \
+  d:/Tornado2.2/target/h/end.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/m2Lib.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/sys/socket.h d:/Tornado2.2/target/h/net/if_arp.h \
+  d:/Tornado2.2/target/h/net/route.h \
+  d:/Tornado2.2/target/h/net/socketvar.h d:/Tornado2.2/target/h/semLib.h \
+  d:/Tornado2.2/target/h/selectLib.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/private/selectLibP.h \
+  d:/Tornado2.2/target/h/lstLib.h \
+  d:/Tornado2.2/target/h/private/semLibP.h \
+  d:/Tornado2.2/target/h/vwModNum.h d:/Tornado2.2/target/h/qLib.h \
+  d:/Tornado2.2/target/h/qClass.h \
+  d:/Tornado2.2/target/h/private/classLibP.h \
+  d:/Tornado2.2/target/h/memLib.h d:/Tornado2.2/target/h/classLib.h \
+  d:/Tornado2.2/target/h/objLib.h d:/Tornado2.2/target/h/errno.h \
+  d:/Tornado2.2/target/h/private/objLibP.h \
+  d:/Tornado2.2/target/h/objLib.h \
+  d:/Tornado2.2/target/h/private/eventLibP.h \
+  d:/Tornado2.2/target/h/net/uio.h d:/Tornado2.2/target/h/net/mbuf.h \
+  d:/Tornado2.2/target/h/net/unixLib.h d:/Tornado2.2/target/h/string.h \
+  d:/Tornado2.2/target/h/netBufLib.h d:/Tornado2.2/target/h/net/radix.h \
+  d:/Tornado2.2/target/h/ifLib.h d:/Tornado2.2/target/h/avlLib.h \
+  d:/Tornado2.2/target/h/net/if_llc.h d:/Tornado2.2/target/h/ioctl.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/endLib.h \
+  d:/Tornado2.2/target/h/muxLib.h d:/Tornado2.2/target/h/net/if_types.h \
+  d:/Tornado2.2/target/h/wdLib.h d:/Tornado2.2/target/h/iv.h \
+  d:/Tornado2.2/target/h/arch/i86/ivI86.h d:/Tornado2.2/target/h/logLib.h \
+  d:/Tornado2.2/target/h/netLib.h d:/Tornado2.2/target/h/stdio.h \
+  d:/Tornado2.2/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  d:/Tornado2.2/target/h/sysLib.h d:/Tornado2.2/target/h/bootLib.h \
+  d:/Tornado2.2/target/h/ttyLib.h d:/Tornado2.2/target/h/sioLib.h \
+  d:/Tornado2.2/target/h/drv/timer/timerDev.h \
+  d:/Tornado2.2/target/h/errno.h d:/Tornado2.2/target/h/errnoLib.h \
+  d:/Tornado2.2/target/h/iosLib.h d:/Tornado2.2/target/h/ioLib.h \
+  d:/Tornado2.2/target/h/fcntl.h d:/Tornado2.2/target/h/sys/fcntlcom.h \
+  d:/Tornado2.2/target/h/unistd.h d:/Tornado2.2/target/h/dllLib.h \
+  d:/Tornado2.2/target/h/etherMultiLib.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/netinet/in.h d:/Tornado2.2/target/h/net/if.h \
+  d:/Tornado2.2/target/h/net/protosw.h d:/Tornado2.2/target/h/net/systm.h \
+  d:/Tornado2.2/target/h/taskLib.h d:/Tornado2.2/target/h/excLib.h \
+  d:/Tornado2.2/target/h/arch/i86/excI86Lib.h \
+  d:/Tornado2.2/target/h/private/eventP.h \
+  d:/Tornado2.2/target/h/private/funcBindP.h \
+  d:/Tornado2.2/target/h/net/if_subr.h \
+  d:/Tornado2.2/target/h/netinet/if_ether.h \
+  d:/Tornado2.2/target/h/sys/ioctl.h d:/Tornado2.2/target/h/sys/times.h \
+  d:/Tornado2.2/target/h/drv/end/ultraEnd.h

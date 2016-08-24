@@ -1,0 +1,28 @@
+ccpentium -M -MG -w -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu     mkboot.c pciCfgIntStub.c pciCfgStub.c sysDec21x40End.c sysEl3c90xEnd.c sysElt3c509End.c sysFei82557End.c sysGei82543End.c sysLib.c sysLn97xEnd.c sysNe2000End.c sysNet.c sysNetif.c sysNvRam.c sysScsi.c sysSerial.c sysTffs.c sysUltraEnd.c sysWindML.c usbPciStub.c d:\Tornado2.2\target\config\all/bootConfig.c d:\Tornado2.2\target\config\all/bootInit.c d:\Tornado2.2\target\config\all/dataSegPad.c d:\Tornado2.2\target\config\all/usrConfig.c d:\Tornado2.2\target\config\all/version.c > depend.pcPentium
+ccpentium -E -P -M -w -mcpu=pentium -march=pentium -E -xassembler-with-cpp -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu   romInit.s >> depend.pcPentium
+ccpentium -E -P -M -w -mcpu=pentium -march=pentium -E -xassembler-with-cpp -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu   sysALib.s >> depend.pcPentium
+wtxtcl d:\Tornado2.2/host/src/hutils/bspDepend.tcl depend.pcPentium
+ccpentium -c -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu      -E -o bootInit.i d:\Tornado2.2\target\config\all\bootInit.c 
+ccpentium -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu    -P -xassembler-with-cpp -c -o romInit.o romInit.s 
+ccpentium -c -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu      d:\Tornado2.2\target\config\all\bootConfig.c
+ccpentium -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu    -P -xassembler-with-cpp -c -o sysALib.o sysALib.s 
+ccpentium -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu     -c sysLib.c
+ccpentium -c -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu     -o version.o \
+    d:\Tornado2.2\target\config\all/version.c
+ldpentium -o tmp.o -X -N  -e usrInit \
+    -Ttext 00108000	 bootConfig.o version.o sysALib.o sysLib.o    \
+    --start-group  -Ld:\Tornado2.2\target/lib/pentium/PENTIUM/gnu -Ld:\Tornado2.2\target/lib/pentium/PENTIUM/common     -lcplus  -lgnucplus  -lvxcom  -lvxdcom  -larch  -lcommoncc  -ldrv  -lgcc  -lnet  -los  -lrpc  -ltffs  -lusb  -lvxfusion  -lvxmp  -lvxvmi  -lwdb  -lwind  -lwindview d:\Tornado2.2\target/lib/libPENTIUMgnuvx.a --end-group \
+     -T d:\Tornado2.2\target/h/tool/gnu/ldscripts/link.RAM
+d:\Tornado2.2\host\x86-win32\bin\objcopypentium -O binary --binary-without-bss tmp.o tmp.out
+d:\Tornado2.2\host\x86-win32\bin\deflate < tmp.out > tmp.Z
+d:\Tornado2.2\host\x86-win32\bin\binToAsm tmp.Z >bootrom.Z.s
+ccpentium -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu    -P -xassembler-with-cpp -c -o bootrom.Z.o bootrom.Z.s 
+ccpentium -c -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu     -o version.o \
+	d:\Tornado2.2\target\config\all/version.c
+ldpentium -X -N -e romInit -Ttext 00308000	 \
+	-o bootrom romInit.o bootInit.o version.o  \
+	bootrom.Z.o  \
+	--start-group  -Ld:\Tornado2.2\target/lib/pentium/PENTIUM/gnu -Ld:\Tornado2.2\target/lib/pentium/PENTIUM/common     -lcplus  -lgnucplus  -lvxcom  -lvxdcom  -larch  -lcommoncc  -ldrv  -lgcc  -lnet  -los  -lrpc  -ltffs  -lusb  -lvxfusion  -lvxmp  -lvxvmi  -lwdb  -lwind  -lwindview d:\Tornado2.2\target/lib/libPENTIUMgnuvx.a --end-group \
+	 -T d:\Tornado2.2\target/h/tool/gnu/ldscripts/link.RAM
+d:\Tornado2.2\host\x86-win32\bin\romsize pentium -b 00090000	 bootrom
+bootrom: 15536(t) + 263248(d) = 278784 (311040 unused)

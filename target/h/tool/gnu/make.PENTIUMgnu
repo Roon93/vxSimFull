@@ -1,0 +1,55 @@
+# make.PENTIUMgnu - GNU compilation tools definitions for PENTIUM
+#
+# modification history
+# --------------------
+# 01m,24apr02,pai  redefined HLL_PREFIX for GNU ELF support (SPR 73382).
+# 01l,12feb02,sn   removed obsolete refs to GCC_EXEC_PREFIX
+# 01k,21jan02,sn   removed unused C++_TEMPLATE_INST
+# 01j,06nov01,tpw  Add %.old rule to facilitate conversions to old OMFs
+# 01i,30oct01,tpw  Standardize kernel links and bootrom conversions.
+# 01h,25sep01,dat  Location of defs.gnu changed to tool/gnu
+# 01g,10jan01,sn   use pentium toolchain
+# 01f,18oct00,sn   update arch flags for new compiler:
+#                  generate code for and schedule for pentium
+# 01e,16oct00,sn   added include gnu; removed LIBS defn
+# 01d,05nov98,hdn  added -fno-defer-pop to make it faster
+# 01c,18sep98,sn   Defined C++_TEMPLATE_INST
+# 01b,04may98,hdn  replaced -m486 with -mpentium
+# 01a,17jul97,hdn  written based on make.I80486gnu
+#
+# DESCRIPTION
+# This file contains PENTIUM specific definitions and flags for the GNU
+# software generation tools (compiler, assembler, linker etc.).
+#*/
+
+include $(TGT_DIR)/h/tool/gnu/defs.gnu
+
+CPU             = PENTIUM
+TOOL            = gnu
+
+CC_OPTIM_DRIVER = -fvolatile -nostdlib -fno-builtin -fno-defer-pop
+CC_OPTIM_NORMAL = -O2 -nostdlib -fno-builtin -fno-defer-pop
+CC_OPTIM_TARGET = -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop
+# Generate code for (-mcpu=) and schedule for (-march=) pentium
+CC_ARCH_SPEC	= -mcpu=pentium -march=pentium
+
+
+
+
+AR              = arpentium
+AS              = aspentium
+CC              = ccpentium
+CF              = 
+LD              = ldpentium
+RANLIB          = ranlibpentium
+NM              = nmpentium
+
+TOOLENV         = pentium
+VX_CPU_FAMILY   = pentium
+ARCH_DIR        = i86
+
+HLL_PREFIX      =
+
+OBJCOPY_OLD_OMF	= -O a.out-i386 --gap-fill=0
+
+# end of make.PENTIUMgnu

@@ -1,0 +1,140 @@
+Document file - DO NOT EDIT
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_AR
+arsimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_ARCHIVE
+$(PRJ_DIR)/SIMNTgnu/Test.a
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_AS
+ccsimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CC
+ccsimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CC_ARCH_SPEC
+-mpentium
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CFLAGS
+-g \
+	-mpentium \
+	-ansi \
+	-fno-builtin \
+	-fno-defer-pop \
+	-I. \
+	-I$(WIND_BASE)/target/h/ \
+	-DCPU=SIMNT \
+	-DTOOL_FAMILY=gnu \
+	-DTOOL=gnu
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CFLAGS_AS
+-g \
+	-mpentium \
+	-ansi \
+	-fno-builtin \
+	-fno-defer-pop \
+	-P \
+	-xassembler-with-cpp \
+	-I. \
+	-I$(WIND_BASE)/target/h/ \
+	-DCPU=SIMNT \
+	-DTOOL_FAMILY=gnu \
+	-DTOOL=gnu
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_CPP
+ccsimpc -E -P
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_HEX_FLAGS
+
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_LD
+ldsimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_LDFLAGS
+--subsystem=windows
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_LD_PARTIAL
+ccsimpc -r -nostdlib
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_LD_PARTIAL_FLAGS
+-r
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_NM
+nmsimpc -g
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_OPTION_DEFINE_MACRO
+-D
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_OPTION_DEPEND
+-M -w
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_OPTION_GENERATE_DEPENDENCY_FILE
+-MD
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_OPTION_INCLUDE_DIR
+-I
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_OPTION_LANG_C
+-xc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_OPTION_UNDEFINE_MACRO
+-U
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_SIZE
+sizesimpc
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_MACRO_TOOL_FAMILY
+gnu
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_RO_DEPEND_PATH
+{$(WIND_BASE)/target/h/} \
+	{$(WIND_BASE)/target/src/} \
+	{$(WIND_BASE)/target/config/}
+<END>
+
+<BEGIN> BUILD_SIMNTgnu_TC
+::tc_SIMNTgnu
+<END>
+
+<BEGIN> BUILD__CURRENT
+SIMNTgnu
+<END>
+
+<BEGIN> BUILD__LIST
+SIMNTgnu
+<END>
+
+<BEGIN> CORE_INFO_TYPE
+::prj_vxApp
+<END>
+
+<BEGIN> CORE_INFO_VERSION
+2.2
+<END>
+
+<BEGIN> userComments
+<Enter description here>
+<END>
+

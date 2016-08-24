@@ -1,0 +1,81 @@
+vxrm bootInit.o
+ccpentium -c -mcpu=pentium -march=pentium -ansi -O -fvolatile -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu  d:\Tornado2.2\target\config\all\bootInit.c
+vxrm romInit.o
+ccpentium -mcpu=pentium -march=pentium -ansi -O -fvolatile -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu   -P -xassembler-with-cpp -c -o romInit.o romInit.s 
+vxrm bootConfig.o
+ccpentium -c -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu  d:\Tornado2.2\target\config\all\bootConfig.c
+vxrm sysALib.o
+ccpentium -mcpu=pentium -march=pentium -ansi -O -fvolatile -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu   -P -xassembler-with-cpp -c -o sysALib.o sysALib.s 
+vxrm sysLib.o
+ccpentium -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu  -c sysLib.c
+vxrm bootrom.Z.s 
+vxrm tmp.o 
+vxrm tmp.out
+vxrm tmp.Z
+vxrm version.o
+ccpentium -c -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu  -o version.o \
+    d:\Tornado2.2\target\config\all/version.c
+ldpentium -o tmp.o -X -N -e _usrInit \
+    -Ttext 00108000	 bootConfig.o version.o sysALib.o sysLib.o \
+    --start-group -Ld:\Tornado2.2\target/lib/pentium/PENTIUM/gnu -Ld:\Tornado2.2\target/lib/pentium/PENTIUM/common -lcplus  -lgnucplus  -lvxcom  -lvxdcom  -larch  -lcommoncc  -ldrv  -lgcc  -lnet  -los  -lrpc  -ltffs  -lusb  -lvxfusion  -lvxmp  -lvxvmi  -lwdb  -lwind  -lwindview d:\Tornado2.2\target/lib/libpentiumgnuvx.a --end-group \
+    -T d:\Tornado2.2\target\h/tool/gnu/ldscripts/link.RAM
+d:\Tornado2.2\host\x86-win32\bin\objcopypentium -O binary --binary-without-bss tmp.o tmp.out
+d:\Tornado2.2\host\x86-win32\bin\deflate < tmp.out > tmp.Z
+d:\Tornado2.2\host\x86-win32\bin\binToAsm tmp.Z >bootrom.Z.s
+vxrm tmp.o 
+vxrm tmp.out
+vxrm tmp.Z 
+vxrm bootrom.Z.o
+ccpentium -mcpu=pentium -march=pentium -ansi -O -fvolatile -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu   -P -xassembler-with-cpp -c -o bootrom.Z.o bootrom.Z.s 
+vxrm bootrom 
+vxrm version.o
+ccpentium -c -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu  -o version.o \
+	d:\Tornado2.2\target\config\all/version.c
+ldpentium -X -N -e romInit -Ttext 00308000 \
+	-o bootrom romInit.o bootInit.o version.o \
+	bootrom.Z.o  \
+	--start-group -Ld:\Tornado2.2\target/lib/pentium/PENTIUM/gnu -Ld:\Tornado2.2\target/lib/pentium/PENTIUM/common -lcplus  -lgnucplus  -lvxcom  -lvxdcom  -larch  -lcommoncc  -ldrv  -lgcc  -lnet  -los  -lrpc  -ltffs  -lusb  -lvxfusion  -lvxmp  -lvxvmi  -lwdb  -lwind  -lwindview d:\Tornado2.2\target/lib/libpentiumgnuvx.a --end-group \
+	-T d:\Tornado2.2\target/h/tool/gnu/ldscripts/link.RAM
+d:\Tornado2.2\host\x86-win32\bin\romsize pentium -b 00090000	 bootrom
+bootrom: 15536(t) + 249136(d) = 264672 (325152 unused)
+make: `bootrom' is up to date.
+vxrm bootInit.o
+ccpentium -c -mcpu=pentium -march=pentium -ansi -O -fvolatile -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu  d:\Tornado2.2\target\config\all\bootInit.c
+vxrm romInit.o
+ccpentium -mcpu=pentium -march=pentium -ansi -O -fvolatile -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu   -P -xassembler-with-cpp -c -o romInit.o romInit.s 
+vxrm bootConfig.o
+ccpentium -c -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu  d:\Tornado2.2\target\config\all\bootConfig.c
+vxrm sysALib.o
+ccpentium -mcpu=pentium -march=pentium -ansi -O -fvolatile -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu   -P -xassembler-with-cpp -c -o sysALib.o sysALib.s 
+vxrm sysLib.o
+ccpentium -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu  -c sysLib.c
+vxrm bootrom.Z.s 
+vxrm tmp.o 
+vxrm tmp.out
+vxrm tmp.Z
+vxrm version.o
+ccpentium -c -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu  -o version.o \
+    d:\Tornado2.2\target\config\all/version.c
+ldpentium -o tmp.o -X -N -e _usrInit \
+    -Ttext 00108000	 bootConfig.o version.o sysALib.o sysLib.o \
+    --start-group -Ld:\Tornado2.2\target/lib/pentium/PENTIUM/gnu -Ld:\Tornado2.2\target/lib/pentium/PENTIUM/common -lcplus  -lgnucplus  -lvxcom  -lvxdcom  -larch  -lcommoncc  -ldrv  -lgcc  -lnet  -los  -lrpc  -ltffs  -lusb  -lvxfusion  -lvxmp  -lvxvmi  -lwdb  -lwind  -lwindview d:\Tornado2.2\target/lib/libpentiumgnuvx.a --end-group \
+    -T d:\Tornado2.2\target\h/tool/gnu/ldscripts/link.RAM
+d:\Tornado2.2\host\x86-win32\bin\objcopypentium -O binary --binary-without-bss tmp.o tmp.out
+d:\Tornado2.2\host\x86-win32\bin\deflate < tmp.out > tmp.Z
+d:\Tornado2.2\host\x86-win32\bin\binToAsm tmp.Z >bootrom.Z.s
+vxrm tmp.o 
+vxrm tmp.out
+vxrm tmp.Z 
+vxrm bootrom.Z.o
+ccpentium -mcpu=pentium -march=pentium -ansi -O -fvolatile -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu   -P -xassembler-with-cpp -c -o bootrom.Z.o bootrom.Z.s 
+vxrm bootrom 
+vxrm version.o
+ccpentium -c -mcpu=pentium -march=pentium -ansi  -O2 -fvolatile -nostdlib -fno-builtin -fno-defer-pop -Wall -I/h   -I. -Id:\Tornado2.2\target\config\all -Id:\Tornado2.2\target/h  -Id:\Tornado2.2\target/src/config -Id:\Tornado2.2\target/src/drv -DCPU=PENTIUM -DTOOL_FAMILY=gnu -DTOOL=gnu  -o version.o \
+	d:\Tornado2.2\target\config\all/version.c
+ldpentium -X -N -e romInit -Ttext 00308000 \
+	-o bootrom romInit.o bootInit.o version.o \
+	bootrom.Z.o  \
+	--start-group -Ld:\Tornado2.2\target/lib/pentium/PENTIUM/gnu -Ld:\Tornado2.2\target/lib/pentium/PENTIUM/common -lcplus  -lgnucplus  -lvxcom  -lvxdcom  -larch  -lcommoncc  -ldrv  -lgcc  -lnet  -los  -lrpc  -ltffs  -lusb  -lvxfusion  -lvxmp  -lvxvmi  -lwdb  -lwind  -lwindview d:\Tornado2.2\target/lib/libpentiumgnuvx.a --end-group \
+	-T d:\Tornado2.2\target/h/tool/gnu/ldscripts/link.RAM
+d:\Tornado2.2\host\x86-win32\bin\romsize pentium -b 00090000	 bootrom
+bootrom: 15536(t) + 249136(d) = 264672 (325152 unused)

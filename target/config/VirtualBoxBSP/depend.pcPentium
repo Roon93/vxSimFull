@@ -1,0 +1,1096 @@
+mkboot.o: mkboot.c $(WIND_BASE)/target/h/copyright_wrs.h \
+  $(WIND_BASE)/target/h/vxWorks.h $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/types/vxANSI.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/target/h/types/vxTypesOld.h \
+  $(WIND_BASE)/target/h/sys/types.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h config.h \
+  $(WIND_BASE)/target/config/all/configAll.h \
+  $(WIND_BASE)/target/h/smLib.h $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/vme.h $(WIND_BASE)/target/h/iv.h \
+  $(WIND_BASE)/target/h/arch/i86/ivI86.h pc.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/i8259.h \
+  $(WIND_BASE)/target/h/drv/timer/i8253.h \
+  $(WIND_BASE)/target/h/drv/timer/mc146818.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/drv/timer/timestampDev.h \
+  $(WIND_BASE)/target/h/drv/fdisk/nec765Fd.h \
+  $(WIND_BASE)/target/h/blkIo.h \
+  $(WIND_BASE)/target/h/drv/serial/pcConsole.h \
+  $(WIND_BASE)/target/h/tyLib.h $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/limits.h \
+  $(WIND_BASE)/target/h/tool/gnu/limits.h \
+  $(WIND_BASE)/target/h/net/uio.h $(WIND_BASE)/target/h/fcntl.h \
+  $(WIND_BASE)/target/h/sys/fcntlcom.h $(WIND_BASE)/target/h/unistd.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/rngLib.h \
+  $(WIND_BASE)/target/h/selectLib.h $(WIND_BASE)/target/h/sys/times.h \
+  $(WIND_BASE)/target/h/private/selectLibP.h \
+  $(WIND_BASE)/target/h/lstLib.h \
+  $(WIND_BASE)/target/h/private/semLibP.h \
+  $(WIND_BASE)/target/h/vwModNum.h $(WIND_BASE)/target/h/semLib.h \
+  $(WIND_BASE)/target/h/qLib.h $(WIND_BASE)/target/h/qClass.h \
+  $(WIND_BASE)/target/h/private/classLibP.h \
+  $(WIND_BASE)/target/h/memLib.h $(WIND_BASE)/target/h/classLib.h \
+  $(WIND_BASE)/target/h/objLib.h $(WIND_BASE)/target/h/errno.h \
+  $(WIND_BASE)/target/h/private/objLibP.h \
+  $(WIND_BASE)/target/h/objLib.h \
+  $(WIND_BASE)/target/h/private/eventLibP.h \
+  $(WIND_BASE)/target/h/drv/parallel/lptDrv.h \
+  $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pcmciaLib.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/sysLib.h \
+  $(WIND_BASE)/target/h/bootLib.h $(WIND_BASE)/target/h/ttyLib.h \
+  $(WIND_BASE)/target/h/sioLib.h $(WIND_BASE)/target/h/dosFsLib.h \
+  $(WIND_BASE)/target/h/cbioLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pccardLib.h \
+  $(WIND_BASE)/target/h/drv/hdisk/ataDrv.h \
+  $(WIND_BASE)/target/h/wdLib.h \
+  $(WIND_BASE)/target/h/arch/i86/mmuI86Lib.h \
+  $(WIND_BASE)/target/h/arch/i86/ipiI86Lib.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/loApic.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/ioApic.h configInum.h \
+  $(WIND_BASE)/target/h/a_out.h $(WIND_BASE)/target/h/errnoLib.h \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/stdio.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  $(WIND_BASE)/target/h/string.h $(WIND_BASE)/target/h/usrLib.h \
+  $(WIND_BASE)/target/h/regs.h $(WIND_BASE)/target/h/arch/i86/regsI86.h \
+  $(WIND_BASE)/target/h/fppLib.h $(WIND_BASE)/target/h/taskLib.h \
+  $(WIND_BASE)/target/h/excLib.h \
+  $(WIND_BASE)/target/h/arch/i86/excI86Lib.h \
+  $(WIND_BASE)/target/h/private/eventP.h \
+  $(WIND_BASE)/target/h/private/funcBindP.h \
+  $(WIND_BASE)/target/h/stdlib.h \
+  $(WIND_BASE)/target/h/arch/i86/fppI86Lib.h \
+  $(WIND_BASE)/target/h/moduleLib.h $(WIND_BASE)/target/h/sllLib.h \
+  $(WIND_BASE)/target/h/sys/stat.h \
+  $(WIND_BASE)/target/h/usrFdiskPartLib.h \
+  $(WIND_BASE)/target/h/dpartCbio.h
+pciCfgIntStub.o: pciCfgIntStub.c
+pciCfgStub.o: pciCfgStub.c
+sysDec21x40End.o: sysDec21x40End.c
+sysEl3c90xEnd.o: sysEl3c90xEnd.c
+sysElt3c509End.o: sysElt3c509End.c
+sysFei82557End.o: sysFei82557End.c
+sysGei82543End.o: sysGei82543End.c
+sysLib.o: sysLib.c $(WIND_BASE)/target/h/copyright_wrs.h \
+  $(WIND_BASE)/target/h/vxWorks.h $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/types/vxANSI.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/target/h/types/vxTypesOld.h \
+  $(WIND_BASE)/target/h/sys/types.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h \
+  $(WIND_BASE)/target/h/vme.h $(WIND_BASE)/target/h/memLib.h \
+  $(WIND_BASE)/target/h/vwModNum.h $(WIND_BASE)/target/h/sysLib.h \
+  $(WIND_BASE)/target/h/bootLib.h $(WIND_BASE)/target/h/ttyLib.h \
+  $(WIND_BASE)/target/h/sioLib.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/string.h $(WIND_BASE)/target/h/intLib.h \
+  $(WIND_BASE)/target/h/regs.h $(WIND_BASE)/target/h/arch/i86/regsI86.h \
+  $(WIND_BASE)/target/h/arch/i86/intI86Lib.h config.h \
+  $(WIND_BASE)/target/config/all/configAll.h \
+  $(WIND_BASE)/target/h/smLib.h $(WIND_BASE)/target/h/iv.h \
+  $(WIND_BASE)/target/h/arch/i86/ivI86.h pc.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/i8259.h \
+  $(WIND_BASE)/target/h/drv/timer/i8253.h \
+  $(WIND_BASE)/target/h/drv/timer/mc146818.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/drv/timer/timestampDev.h \
+  $(WIND_BASE)/target/h/drv/fdisk/nec765Fd.h \
+  $(WIND_BASE)/target/h/blkIo.h \
+  $(WIND_BASE)/target/h/drv/serial/pcConsole.h \
+  $(WIND_BASE)/target/h/tyLib.h $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/limits.h \
+  $(WIND_BASE)/target/h/tool/gnu/limits.h \
+  $(WIND_BASE)/target/h/net/uio.h $(WIND_BASE)/target/h/fcntl.h \
+  $(WIND_BASE)/target/h/sys/fcntlcom.h $(WIND_BASE)/target/h/unistd.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/rngLib.h \
+  $(WIND_BASE)/target/h/selectLib.h $(WIND_BASE)/target/h/sys/times.h \
+  $(WIND_BASE)/target/h/private/selectLibP.h \
+  $(WIND_BASE)/target/h/lstLib.h \
+  $(WIND_BASE)/target/h/private/semLibP.h \
+  $(WIND_BASE)/target/h/vwModNum.h $(WIND_BASE)/target/h/semLib.h \
+  $(WIND_BASE)/target/h/qLib.h $(WIND_BASE)/target/h/qClass.h \
+  $(WIND_BASE)/target/h/private/classLibP.h \
+  $(WIND_BASE)/target/h/classLib.h $(WIND_BASE)/target/h/objLib.h \
+  $(WIND_BASE)/target/h/errno.h $(WIND_BASE)/target/h/private/objLibP.h \
+  $(WIND_BASE)/target/h/objLib.h \
+  $(WIND_BASE)/target/h/private/eventLibP.h \
+  $(WIND_BASE)/target/h/drv/parallel/lptDrv.h \
+  $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pcmciaLib.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/dosFsLib.h \
+  $(WIND_BASE)/target/h/cbioLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pccardLib.h \
+  $(WIND_BASE)/target/h/drv/hdisk/ataDrv.h \
+  $(WIND_BASE)/target/h/wdLib.h \
+  $(WIND_BASE)/target/h/arch/i86/mmuI86Lib.h \
+  $(WIND_BASE)/target/h/arch/i86/ipiI86Lib.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/loApic.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/ioApic.h configInum.h \
+  $(WIND_BASE)/target/h/logLib.h $(WIND_BASE)/target/h/taskLib.h \
+  $(WIND_BASE)/target/h/excLib.h \
+  $(WIND_BASE)/target/h/arch/i86/excI86Lib.h \
+  $(WIND_BASE)/target/h/private/eventP.h \
+  $(WIND_BASE)/target/h/private/funcBindP.h \
+  $(WIND_BASE)/target/h/stdlib.h $(WIND_BASE)/target/h/vxLib.h \
+  $(WIND_BASE)/target/h/arch/i86/vxI86Lib.h \
+  $(WIND_BASE)/target/h/errnoLib.h $(WIND_BASE)/target/h/stdio.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  $(WIND_BASE)/target/h/cacheLib.h \
+  $(WIND_BASE)/target/h/arch/i86/cacheI86Lib.h \
+  $(WIND_BASE)/target/h/private/vmLibP.h $(WIND_BASE)/target/h/vmLib.h \
+  $(WIND_BASE)/target/h/mmuLib.h $(WIND_BASE)/target/h/mmuLib.h \
+  $(WIND_BASE)/target/h/arch/i86/pentiumLib.h \
+  $(WIND_BASE)/target/h/regs.h sysNvRam.c sysSerial.c \
+  $(WIND_BASE)/target/h/drv/sio/i8250Sio.h \
+  $(WIND_BASE)/target/h/sioLib.h \
+  $(WIND_BASE)/target/src/drv/serial/pcConsole.c \
+  $(WIND_BASE)/target/h/ioLib.h config.h \
+  $(WIND_BASE)/target/src/drv/serial/m6845Vga.c \
+  $(WIND_BASE)/target/h/rngLib.h \
+  $(WIND_BASE)/target/src/drv/serial/i8042Kbd.c \
+  $(WIND_BASE)/target/src/drv/vme/nullVme.c \
+  $(WIND_BASE)/target/src/drv/intrCtl/i8259Intr.c \
+  $(WIND_BASE)/target/src/drv/timer/i8253Timer.c pciCfgStub.c \
+  $(WIND_BASE)/target/src/drv/pci/pciConfigLib.c \
+  $(WIND_BASE)/target/h/stdlib.h \
+  $(WIND_BASE)/target/h/drv/pci/pciConfigLib.h \
+  $(WIND_BASE)/target/h/pciClass.h pciCfgIntStub.c \
+  $(WIND_BASE)/target/src/drv/pci/pciIntLib.c \
+  $(WIND_BASE)/target/h/drv/pci/pciIntLib.h sysNet.c sysDec21x40End.c \
+  sysEl3c90xEnd.c sysElt3c509End.c sysFei82557End.c sysGei82543End.c \
+  sysLn97xEnd.c $(WIND_BASE)/target/h/end.h \
+  $(WIND_BASE)/target/h/m2Lib.h $(WIND_BASE)/target/h/net/if.h \
+  $(WIND_BASE)/target/h/sys/socket.h $(WIND_BASE)/target/h/net/if_arp.h \
+  $(WIND_BASE)/target/h/net/route.h \
+  $(WIND_BASE)/target/h/net/socketvar.h \
+  $(WIND_BASE)/target/h/selectLib.h $(WIND_BASE)/target/h/net/uio.h \
+  $(WIND_BASE)/target/h/net/mbuf.h $(WIND_BASE)/target/h/net/unixLib.h \
+  $(WIND_BASE)/target/h/netBufLib.h $(WIND_BASE)/target/h/net/radix.h \
+  $(WIND_BASE)/target/h/ifLib.h $(WIND_BASE)/target/h/avlLib.h \
+  $(WIND_BASE)/target/h/net/if_llc.h $(WIND_BASE)/target/h/ioctl.h \
+  $(WIND_BASE)/target/h/sys/ioctl.h \
+  $(WIND_BASE)/target/h/drv/end/ln97xEnd.h sysNe2000End.c sysUltraEnd.c
+sysLn97xEnd.o: sysLn97xEnd.c
+sysNe2000End.o: sysNe2000End.c
+sysNet.o: sysNet.c
+sysNetif.o: sysNetif.c
+sysNvRam.o: sysNvRam.c $(WIND_BASE)/target/h/copyright_wrs.h \
+  $(WIND_BASE)/target/h/vxWorks.h $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/types/vxANSI.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/target/h/types/vxTypesOld.h \
+  $(WIND_BASE)/target/h/sys/types.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h \
+  $(WIND_BASE)/target/h/logLib.h $(WIND_BASE)/target/h/string.h \
+  config.h $(WIND_BASE)/target/config/all/configAll.h \
+  $(WIND_BASE)/target/h/smLib.h $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/vme.h $(WIND_BASE)/target/h/iv.h \
+  $(WIND_BASE)/target/h/arch/i86/ivI86.h pc.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/i8259.h \
+  $(WIND_BASE)/target/h/drv/timer/i8253.h \
+  $(WIND_BASE)/target/h/drv/timer/mc146818.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/drv/timer/timestampDev.h \
+  $(WIND_BASE)/target/h/drv/fdisk/nec765Fd.h \
+  $(WIND_BASE)/target/h/blkIo.h \
+  $(WIND_BASE)/target/h/drv/serial/pcConsole.h \
+  $(WIND_BASE)/target/h/tyLib.h $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/limits.h \
+  $(WIND_BASE)/target/h/tool/gnu/limits.h \
+  $(WIND_BASE)/target/h/net/uio.h $(WIND_BASE)/target/h/fcntl.h \
+  $(WIND_BASE)/target/h/sys/fcntlcom.h $(WIND_BASE)/target/h/unistd.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/rngLib.h \
+  $(WIND_BASE)/target/h/selectLib.h $(WIND_BASE)/target/h/sys/times.h \
+  $(WIND_BASE)/target/h/private/selectLibP.h \
+  $(WIND_BASE)/target/h/lstLib.h \
+  $(WIND_BASE)/target/h/private/semLibP.h \
+  $(WIND_BASE)/target/h/vwModNum.h $(WIND_BASE)/target/h/semLib.h \
+  $(WIND_BASE)/target/h/qLib.h $(WIND_BASE)/target/h/qClass.h \
+  $(WIND_BASE)/target/h/private/classLibP.h \
+  $(WIND_BASE)/target/h/memLib.h $(WIND_BASE)/target/h/classLib.h \
+  $(WIND_BASE)/target/h/objLib.h $(WIND_BASE)/target/h/errno.h \
+  $(WIND_BASE)/target/h/private/objLibP.h \
+  $(WIND_BASE)/target/h/objLib.h \
+  $(WIND_BASE)/target/h/private/eventLibP.h \
+  $(WIND_BASE)/target/h/drv/parallel/lptDrv.h \
+  $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pcmciaLib.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/sysLib.h \
+  $(WIND_BASE)/target/h/bootLib.h $(WIND_BASE)/target/h/ttyLib.h \
+  $(WIND_BASE)/target/h/sioLib.h $(WIND_BASE)/target/h/dosFsLib.h \
+  $(WIND_BASE)/target/h/cbioLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pccardLib.h \
+  $(WIND_BASE)/target/h/drv/hdisk/ataDrv.h \
+  $(WIND_BASE)/target/h/wdLib.h \
+  $(WIND_BASE)/target/h/arch/i86/mmuI86Lib.h \
+  $(WIND_BASE)/target/h/arch/i86/ipiI86Lib.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/loApic.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/ioApic.h configInum.h
+sysScsi.o: sysScsi.c $(WIND_BASE)/target/h/copyright_wrs.h
+sysSerial.o: sysSerial.c $(WIND_BASE)/target/h/copyright_wrs.h \
+  $(WIND_BASE)/target/h/vxWorks.h $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/types/vxANSI.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/target/h/types/vxTypesOld.h \
+  $(WIND_BASE)/target/h/sys/types.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h \
+  $(WIND_BASE)/target/h/iv.h $(WIND_BASE)/target/h/arch/i86/ivI86.h \
+  $(WIND_BASE)/target/h/intLib.h $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/regs.h $(WIND_BASE)/target/h/arch/i86/regsI86.h \
+  $(WIND_BASE)/target/h/arch/i86/intI86Lib.h config.h \
+  $(WIND_BASE)/target/config/all/configAll.h \
+  $(WIND_BASE)/target/h/smLib.h $(WIND_BASE)/target/h/vme.h pc.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/i8259.h \
+  $(WIND_BASE)/target/h/drv/timer/i8253.h \
+  $(WIND_BASE)/target/h/drv/timer/mc146818.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/drv/timer/timestampDev.h \
+  $(WIND_BASE)/target/h/drv/fdisk/nec765Fd.h \
+  $(WIND_BASE)/target/h/blkIo.h \
+  $(WIND_BASE)/target/h/drv/serial/pcConsole.h \
+  $(WIND_BASE)/target/h/tyLib.h $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/limits.h \
+  $(WIND_BASE)/target/h/tool/gnu/limits.h \
+  $(WIND_BASE)/target/h/net/uio.h $(WIND_BASE)/target/h/fcntl.h \
+  $(WIND_BASE)/target/h/sys/fcntlcom.h $(WIND_BASE)/target/h/unistd.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/rngLib.h \
+  $(WIND_BASE)/target/h/selectLib.h $(WIND_BASE)/target/h/sys/times.h \
+  $(WIND_BASE)/target/h/private/selectLibP.h \
+  $(WIND_BASE)/target/h/lstLib.h \
+  $(WIND_BASE)/target/h/private/semLibP.h \
+  $(WIND_BASE)/target/h/vwModNum.h $(WIND_BASE)/target/h/semLib.h \
+  $(WIND_BASE)/target/h/qLib.h $(WIND_BASE)/target/h/qClass.h \
+  $(WIND_BASE)/target/h/private/classLibP.h \
+  $(WIND_BASE)/target/h/memLib.h $(WIND_BASE)/target/h/classLib.h \
+  $(WIND_BASE)/target/h/objLib.h $(WIND_BASE)/target/h/errno.h \
+  $(WIND_BASE)/target/h/private/objLibP.h \
+  $(WIND_BASE)/target/h/objLib.h \
+  $(WIND_BASE)/target/h/private/eventLibP.h \
+  $(WIND_BASE)/target/h/drv/parallel/lptDrv.h \
+  $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pcmciaLib.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/sysLib.h \
+  $(WIND_BASE)/target/h/bootLib.h $(WIND_BASE)/target/h/ttyLib.h \
+  $(WIND_BASE)/target/h/sioLib.h $(WIND_BASE)/target/h/dosFsLib.h \
+  $(WIND_BASE)/target/h/cbioLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pccardLib.h \
+  $(WIND_BASE)/target/h/drv/hdisk/ataDrv.h \
+  $(WIND_BASE)/target/h/wdLib.h \
+  $(WIND_BASE)/target/h/arch/i86/mmuI86Lib.h \
+  $(WIND_BASE)/target/h/arch/i86/ipiI86Lib.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/loApic.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/ioApic.h configInum.h \
+  $(WIND_BASE)/target/h/drv/sio/i8250Sio.h \
+  $(WIND_BASE)/target/h/sioLib.h \
+  $(WIND_BASE)/target/src/drv/serial/pcConsole.c \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/errnoLib.h \
+  config.h $(WIND_BASE)/target/src/drv/serial/m6845Vga.c \
+  $(WIND_BASE)/target/h/rngLib.h \
+  $(WIND_BASE)/target/h/private/funcBindP.h \
+  $(WIND_BASE)/target/h/taskLib.h $(WIND_BASE)/target/h/excLib.h \
+  $(WIND_BASE)/target/h/arch/i86/excI86Lib.h \
+  $(WIND_BASE)/target/h/private/eventP.h $(WIND_BASE)/target/h/stdlib.h \
+  $(WIND_BASE)/target/h/stdio.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  $(WIND_BASE)/target/h/string.h \
+  $(WIND_BASE)/target/src/drv/serial/i8042Kbd.c
+sysTffs.o: sysTffs.c $(WIND_BASE)/target/h/copyright_wrs.h \
+  $(WIND_BASE)/target/h/vxWorks.h $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/types/vxANSI.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/target/h/types/vxTypesOld.h \
+  $(WIND_BASE)/target/h/sys/types.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h config.h \
+  $(WIND_BASE)/target/config/all/configAll.h \
+  $(WIND_BASE)/target/h/smLib.h $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/vme.h $(WIND_BASE)/target/h/iv.h \
+  $(WIND_BASE)/target/h/arch/i86/ivI86.h pc.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/i8259.h \
+  $(WIND_BASE)/target/h/drv/timer/i8253.h \
+  $(WIND_BASE)/target/h/drv/timer/mc146818.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/drv/timer/timestampDev.h \
+  $(WIND_BASE)/target/h/drv/fdisk/nec765Fd.h \
+  $(WIND_BASE)/target/h/blkIo.h \
+  $(WIND_BASE)/target/h/drv/serial/pcConsole.h \
+  $(WIND_BASE)/target/h/tyLib.h $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/limits.h \
+  $(WIND_BASE)/target/h/tool/gnu/limits.h \
+  $(WIND_BASE)/target/h/net/uio.h $(WIND_BASE)/target/h/fcntl.h \
+  $(WIND_BASE)/target/h/sys/fcntlcom.h $(WIND_BASE)/target/h/unistd.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/rngLib.h \
+  $(WIND_BASE)/target/h/selectLib.h $(WIND_BASE)/target/h/sys/times.h \
+  $(WIND_BASE)/target/h/private/selectLibP.h \
+  $(WIND_BASE)/target/h/lstLib.h \
+  $(WIND_BASE)/target/h/private/semLibP.h \
+  $(WIND_BASE)/target/h/vwModNum.h $(WIND_BASE)/target/h/semLib.h \
+  $(WIND_BASE)/target/h/qLib.h $(WIND_BASE)/target/h/qClass.h \
+  $(WIND_BASE)/target/h/private/classLibP.h \
+  $(WIND_BASE)/target/h/memLib.h $(WIND_BASE)/target/h/classLib.h \
+  $(WIND_BASE)/target/h/objLib.h $(WIND_BASE)/target/h/errno.h \
+  $(WIND_BASE)/target/h/private/objLibP.h \
+  $(WIND_BASE)/target/h/objLib.h \
+  $(WIND_BASE)/target/h/private/eventLibP.h \
+  $(WIND_BASE)/target/h/drv/parallel/lptDrv.h \
+  $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pcmciaLib.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/sysLib.h \
+  $(WIND_BASE)/target/h/bootLib.h $(WIND_BASE)/target/h/ttyLib.h \
+  $(WIND_BASE)/target/h/sioLib.h $(WIND_BASE)/target/h/dosFsLib.h \
+  $(WIND_BASE)/target/h/cbioLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pccardLib.h \
+  $(WIND_BASE)/target/h/drv/hdisk/ataDrv.h \
+  $(WIND_BASE)/target/h/wdLib.h \
+  $(WIND_BASE)/target/h/arch/i86/mmuI86Lib.h \
+  $(WIND_BASE)/target/h/arch/i86/ipiI86Lib.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/loApic.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/ioApic.h configInum.h \
+  $(WIND_BASE)/target/h/tffs/flsocket.h \
+  $(WIND_BASE)/target/h/tffs/flbase.h \
+  $(WIND_BASE)/target/h/tffs/flsystem.h $(WIND_BASE)/target/h/stdlib.h \
+  $(WIND_BASE)/target/h/string.h $(WIND_BASE)/target/h/time.h \
+  $(WIND_BASE)/target/h/sigevent.h $(WIND_BASE)/target/h/ctype.h \
+  $(WIND_BASE)/target/h/tickLib.h $(WIND_BASE)/target/h/excLib.h \
+  $(WIND_BASE)/target/h/arch/i86/excI86Lib.h \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/errnoLib.h \
+  $(WIND_BASE)/target/h/vxLib.h \
+  $(WIND_BASE)/target/h/arch/i86/vxI86Lib.h \
+  $(WIND_BASE)/target/h/tffs/flcustom.h \
+  $(WIND_BASE)/target/h/tffs/flsysfun.h \
+  $(WIND_BASE)/target/h/tffs/flbuffer.h \
+  $(WIND_BASE)/target/h/tffs/pcic.h \
+  $(WIND_BASE)/target/src/drv/tffs/tffsConfig.c \
+  $(WIND_BASE)/target/h/tffs/stdcomp.h \
+  $(WIND_BASE)/target/h/tffs/fltl.h \
+  $(WIND_BASE)/target/h/tffs/flflash.h \
+  $(WIND_BASE)/target/h/tffs/flsocket.h \
+  $(WIND_BASE)/target/h/tffs/dosformt.h \
+  $(WIND_BASE)/target/h/tffs/tffsDrv.h \
+  $(WIND_BASE)/target/h/tffs/fatlite.h $(WIND_BASE)/target/h/stdio.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h
+sysUltraEnd.o: sysUltraEnd.c
+sysWindML.o: sysWindML.c $(WIND_BASE)/target/h/vxWorks.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/types/vxANSI.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/target/h/types/vxTypesOld.h \
+  $(WIND_BASE)/target/h/sys/types.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h \
+  $(WIND_BASE)/target/h/memPartLib.h \
+  $(WIND_BASE)/target/h/private/memPartLibP.h \
+  $(WIND_BASE)/target/h/vwModNum.h $(WIND_BASE)/target/h/memLib.h \
+  $(WIND_BASE)/target/h/classLib.h $(WIND_BASE)/target/h/objLib.h \
+  $(WIND_BASE)/target/h/errno.h $(WIND_BASE)/target/h/dllLib.h \
+  $(WIND_BASE)/target/h/private/semLibP.h \
+  $(WIND_BASE)/target/h/semLib.h $(WIND_BASE)/target/h/qLib.h \
+  $(WIND_BASE)/target/h/qClass.h \
+  $(WIND_BASE)/target/h/private/classLibP.h \
+  $(WIND_BASE)/target/h/private/objLibP.h \
+  $(WIND_BASE)/target/h/objLib.h \
+  $(WIND_BASE)/target/h/private/eventLibP.h ./ugl/sysWindML.h \
+  $(WIND_BASE)/target/h/drv/pci/pciConfigLib.h \
+  $(WIND_BASE)/target/h/pciClass.h config.h \
+  $(WIND_BASE)/target/config/all/configAll.h \
+  $(WIND_BASE)/target/h/smLib.h $(WIND_BASE)/target/h/vme.h \
+  $(WIND_BASE)/target/h/iv.h $(WIND_BASE)/target/h/arch/i86/ivI86.h \
+  pc.h $(WIND_BASE)/target/h/drv/intrCtl/i8259.h \
+  $(WIND_BASE)/target/h/drv/timer/i8253.h \
+  $(WIND_BASE)/target/h/drv/timer/mc146818.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/drv/timer/timestampDev.h \
+  $(WIND_BASE)/target/h/drv/fdisk/nec765Fd.h \
+  $(WIND_BASE)/target/h/blkIo.h \
+  $(WIND_BASE)/target/h/drv/serial/pcConsole.h \
+  $(WIND_BASE)/target/h/tyLib.h $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/limits.h \
+  $(WIND_BASE)/target/h/tool/gnu/limits.h \
+  $(WIND_BASE)/target/h/net/uio.h $(WIND_BASE)/target/h/fcntl.h \
+  $(WIND_BASE)/target/h/sys/fcntlcom.h $(WIND_BASE)/target/h/unistd.h \
+  $(WIND_BASE)/target/h/rngLib.h $(WIND_BASE)/target/h/selectLib.h \
+  $(WIND_BASE)/target/h/sys/times.h \
+  $(WIND_BASE)/target/h/private/selectLibP.h \
+  $(WIND_BASE)/target/h/lstLib.h \
+  $(WIND_BASE)/target/h/drv/parallel/lptDrv.h \
+  $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pcmciaLib.h \
+  $(WIND_BASE)/target/h/sysLib.h $(WIND_BASE)/target/h/bootLib.h \
+  $(WIND_BASE)/target/h/ttyLib.h $(WIND_BASE)/target/h/sioLib.h \
+  $(WIND_BASE)/target/h/dosFsLib.h $(WIND_BASE)/target/h/cbioLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pccardLib.h \
+  $(WIND_BASE)/target/h/drv/hdisk/ataDrv.h \
+  $(WIND_BASE)/target/h/wdLib.h \
+  $(WIND_BASE)/target/h/arch/i86/mmuI86Lib.h \
+  $(WIND_BASE)/target/h/arch/i86/ipiI86Lib.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/loApic.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/ioApic.h configInum.h \
+  $(WIND_BASE)/target/h/bufLib.h
+usbPciStub.o: usbPciStub.c $(WIND_BASE)/target/h/vxWorks.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/types/vxANSI.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/target/h/types/vxTypesOld.h \
+  $(WIND_BASE)/target/h/sys/types.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h \
+  $(WIND_BASE)/target/h/string.h $(WIND_BASE)/target/h/sysLib.h \
+  $(WIND_BASE)/target/h/bootLib.h $(WIND_BASE)/target/h/ttyLib.h \
+  $(WIND_BASE)/target/h/sioLib.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/cacheLib.h $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/limits.h \
+  $(WIND_BASE)/target/h/tool/gnu/limits.h \
+  $(WIND_BASE)/target/h/arch/i86/cacheI86Lib.h \
+  $(WIND_BASE)/target/h/iv.h $(WIND_BASE)/target/h/arch/i86/ivI86.h \
+  $(WIND_BASE)/target/h/intLib.h $(WIND_BASE)/target/h/regs.h \
+  $(WIND_BASE)/target/h/arch/i86/regsI86.h \
+  $(WIND_BASE)/target/h/arch/i86/intI86Lib.h \
+  $(WIND_BASE)/target/h/drv/pci/pciConfigLib.h \
+  $(WIND_BASE)/target/h/pciClass.h \
+  $(WIND_BASE)/target/h/drv/pci/pciIntLib.h \
+  $(WIND_BASE)/target/h/usb/usbPlatform.h \
+  $(WIND_BASE)/target/h/usb/usbPciLib.h \
+  $(WIND_BASE)/target/h/usb/pciConstants.h
+bootConfig.o: $(WIND_BASE)/target/config/all/bootConfig.c \
+  $(WIND_BASE)/target/h/vxWorks.h $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/types/vxANSI.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/target/h/types/vxTypesOld.h \
+  $(WIND_BASE)/target/h/sys/types.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h \
+  $(WIND_BASE)/target/h/bootEcoffLib.h \
+  $(WIND_BASE)/target/h/bootElfLib.h $(WIND_BASE)/target/h/bootLib.h \
+  $(WIND_BASE)/target/h/bootLoadLib.h $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/symLib.h $(WIND_BASE)/target/h/symbol.h \
+  $(WIND_BASE)/target/h/private/symbolP.h \
+  $(WIND_BASE)/target/h/sllLib.h $(WIND_BASE)/target/h/classLib.h \
+  $(WIND_BASE)/target/h/objLib.h $(WIND_BASE)/target/h/errno.h \
+  $(WIND_BASE)/target/h/memLib.h $(WIND_BASE)/target/h/hashLib.h \
+  $(WIND_BASE)/target/h/private/objLibP.h \
+  $(WIND_BASE)/target/h/objLib.h $(WIND_BASE)/target/h/classLib.h \
+  $(WIND_BASE)/target/h/private/semLibP.h \
+  $(WIND_BASE)/target/h/vwModNum.h $(WIND_BASE)/target/h/semLib.h \
+  $(WIND_BASE)/target/h/qLib.h $(WIND_BASE)/target/h/qClass.h \
+  $(WIND_BASE)/target/h/private/classLibP.h \
+  $(WIND_BASE)/target/h/memLib.h \
+  $(WIND_BASE)/target/h/private/objLibP.h \
+  $(WIND_BASE)/target/h/private/eventLibP.h \
+  $(WIND_BASE)/target/h/private/symLibP.h \
+  $(WIND_BASE)/target/h/private/symbolP.h \
+  $(WIND_BASE)/target/h/bootpLib.h $(WIND_BASE)/target/h/netinet/in.h \
+  $(WIND_BASE)/target/h/net/if.h $(WIND_BASE)/target/h/sys/socket.h \
+  $(WIND_BASE)/target/h/net/if_arp.h $(WIND_BASE)/target/h/net/route.h \
+  $(WIND_BASE)/target/h/net/socketvar.h \
+  $(WIND_BASE)/target/h/selectLib.h $(WIND_BASE)/target/h/sys/times.h \
+  $(WIND_BASE)/target/h/private/selectLibP.h \
+  $(WIND_BASE)/target/h/lstLib.h \
+  $(WIND_BASE)/target/h/private/semLibP.h \
+  $(WIND_BASE)/target/h/net/uio.h $(WIND_BASE)/target/h/net/mbuf.h \
+  $(WIND_BASE)/target/h/net/unixLib.h $(WIND_BASE)/target/h/string.h \
+  $(WIND_BASE)/target/h/netBufLib.h $(WIND_BASE)/target/h/net/radix.h \
+  $(WIND_BASE)/target/h/ifLib.h $(WIND_BASE)/target/h/bsdSockLib.h \
+  $(WIND_BASE)/target/h/sockFunc.h $(WIND_BASE)/target/h/cacheLib.h \
+  $(WIND_BASE)/target/h/limits.h \
+  $(WIND_BASE)/target/h/tool/gnu/limits.h \
+  $(WIND_BASE)/target/h/arch/i86/cacheI86Lib.h \
+  $(WIND_BASE)/target/h/cbioLib.h $(WIND_BASE)/target/h/blkIo.h \
+  $(WIND_BASE)/target/h/ctype.h $(WIND_BASE)/target/h/dosFsLib.h \
+  $(WIND_BASE)/target/h/dpartCbio.h $(WIND_BASE)/target/h/errno.h \
+  $(WIND_BASE)/target/h/errnoLib.h $(WIND_BASE)/target/h/fcntl.h \
+  $(WIND_BASE)/target/h/sys/fcntlcom.h $(WIND_BASE)/target/h/fioLib.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  $(WIND_BASE)/target/h/ftpLib.h $(WIND_BASE)/target/h/hostLib.h \
+  $(WIND_BASE)/target/h/icmpLib.h $(WIND_BASE)/target/h/netinet/ip.h \
+  $(WIND_BASE)/target/h/if_sl.h $(WIND_BASE)/target/h/inetLib.h \
+  $(WIND_BASE)/target/h/arpa/inet.h $(WIND_BASE)/target/h/intLib.h \
+  $(WIND_BASE)/target/h/regs.h $(WIND_BASE)/target/h/arch/i86/regsI86.h \
+  $(WIND_BASE)/target/h/arch/i86/intI86Lib.h \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/unistd.h \
+  $(WIND_BASE)/target/h/iosLib.h $(WIND_BASE)/target/h/dllLib.h \
+  $(WIND_BASE)/target/h/loadAoutLib.h \
+  $(WIND_BASE)/target/h/loadCoffLib.h $(WIND_BASE)/target/h/moduleLib.h \
+  $(WIND_BASE)/target/h/loadLib.h $(WIND_BASE)/target/h/logLib.h \
+  $(WIND_BASE)/target/h/msgQLib.h $(WIND_BASE)/target/h/netLib.h \
+  $(WIND_BASE)/target/h/pipeDrv.h $(WIND_BASE)/target/h/proxyLib.h \
+  $(WIND_BASE)/target/h/qPriBMapLib.h $(WIND_BASE)/target/h/qPriNode.h \
+  $(WIND_BASE)/target/h/rebootLib.h $(WIND_BASE)/target/h/remLib.h \
+  $(WIND_BASE)/target/h/rngLib.h $(WIND_BASE)/target/h/routeLib.h \
+  $(WIND_BASE)/target/h/sockLib.h $(WIND_BASE)/target/h/stdio.h \
+  $(WIND_BASE)/target/h/sysLib.h $(WIND_BASE)/target/h/ttyLib.h \
+  $(WIND_BASE)/target/h/sioLib.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/sysSymTbl.h $(WIND_BASE)/target/h/taskHookLib.h \
+  $(WIND_BASE)/target/h/taskLib.h $(WIND_BASE)/target/h/excLib.h \
+  $(WIND_BASE)/target/h/arch/i86/excI86Lib.h \
+  $(WIND_BASE)/target/h/private/eventP.h \
+  $(WIND_BASE)/target/h/private/funcBindP.h \
+  $(WIND_BASE)/target/h/stdlib.h $(WIND_BASE)/target/h/tftpLib.h \
+  $(WIND_BASE)/target/h/tickLib.h $(WIND_BASE)/target/h/trcLib.h \
+  $(WIND_BASE)/target/h/unistd.h \
+  $(WIND_BASE)/target/h/usrFdiskPartLib.h \
+  $(WIND_BASE)/target/h/version.h $(WIND_BASE)/target/h/wdLib.h \
+  $(WIND_BASE)/target/h/netinet/if_ether.h \
+  $(WIND_BASE)/target/h/netinet/in.h \
+  $(WIND_BASE)/target/h/drv/netif/smNetLib.h \
+  $(WIND_BASE)/target/h/netinet/in_var.h \
+  $(WIND_BASE)/target/h/netinet/in_pcb.h \
+  $(WIND_BASE)/target/h/netinet/ip.h \
+  $(WIND_BASE)/target/h/drv/netif/if_sm.h \
+  $(WIND_BASE)/target/h/smPktLib.h $(WIND_BASE)/target/h/smLib.h \
+  $(WIND_BASE)/target/h/sys/ioctl.h $(WIND_BASE)/target/h/etherLib.h \
+  $(WIND_BASE)/target/h/net/if_subr.h $(WIND_BASE)/target/h/ipProto.h \
+  $(WIND_BASE)/target/h/private/excLibP.h \
+  $(WIND_BASE)/target/h/private/kernelLibP.h \
+  $(WIND_BASE)/target/h/kernelLib.h \
+  $(WIND_BASE)/target/h/private/workQLibP.h config.h \
+  $(WIND_BASE)/target/config/all/configAll.h \
+  $(WIND_BASE)/target/h/smLib.h $(WIND_BASE)/target/h/vme.h \
+  $(WIND_BASE)/target/h/iv.h $(WIND_BASE)/target/h/arch/i86/ivI86.h \
+  pc.h $(WIND_BASE)/target/h/drv/intrCtl/i8259.h \
+  $(WIND_BASE)/target/h/drv/timer/i8253.h \
+  $(WIND_BASE)/target/h/drv/timer/mc146818.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/drv/timer/timestampDev.h \
+  $(WIND_BASE)/target/h/drv/fdisk/nec765Fd.h \
+  $(WIND_BASE)/target/h/blkIo.h \
+  $(WIND_BASE)/target/h/drv/serial/pcConsole.h \
+  $(WIND_BASE)/target/h/tyLib.h \
+  $(WIND_BASE)/target/h/drv/parallel/lptDrv.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pcmciaLib.h \
+  $(WIND_BASE)/target/h/dllLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pccardLib.h \
+  $(WIND_BASE)/target/h/drv/hdisk/ataDrv.h \
+  $(WIND_BASE)/target/h/arch/i86/mmuI86Lib.h \
+  $(WIND_BASE)/target/h/arch/i86/ipiI86Lib.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/loApic.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/ioApic.h configInum.h \
+  $(WIND_BASE)/target/h/scsiLib.h $(WIND_BASE)/target/h/scsi1Lib.h \
+  $(WIND_BASE)/target/h/end.h $(WIND_BASE)/target/h/m2Lib.h \
+  $(WIND_BASE)/target/h/copyright_wrs.h $(WIND_BASE)/target/h/avlLib.h \
+  $(WIND_BASE)/target/h/net/if_llc.h $(WIND_BASE)/target/h/ioctl.h \
+  $(WIND_BASE)/target/h/muxLib.h $(WIND_BASE)/target/h/net/if_types.h \
+  $(WIND_BASE)/target/h/muxTkLib.h configNet.h \
+  $(WIND_BASE)/target/h/m2Lib.h \
+  $(WIND_BASE)/target/src/config/usrKernel.c \
+  $(WIND_BASE)/target/src/config/usrFd.c \
+  $(WIND_BASE)/target/h/dcacheCbio.h \
+  $(WIND_BASE)/target/src/config/usrAta.c
+bootInit.o: $(WIND_BASE)/target/config/all/bootInit.c \
+  $(WIND_BASE)/target/h/copyright_wrs.h $(WIND_BASE)/target/h/vxWorks.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/types/vxANSI.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/target/h/types/vxTypesOld.h \
+  $(WIND_BASE)/target/h/sys/types.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h \
+  $(WIND_BASE)/target/h/sysLib.h $(WIND_BASE)/target/h/bootLib.h \
+  $(WIND_BASE)/target/h/ttyLib.h $(WIND_BASE)/target/h/sioLib.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h config.h \
+  $(WIND_BASE)/target/config/all/configAll.h \
+  $(WIND_BASE)/target/h/smLib.h $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/vme.h $(WIND_BASE)/target/h/iv.h \
+  $(WIND_BASE)/target/h/arch/i86/ivI86.h pc.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/i8259.h \
+  $(WIND_BASE)/target/h/drv/timer/i8253.h \
+  $(WIND_BASE)/target/h/drv/timer/mc146818.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/drv/timer/timestampDev.h \
+  $(WIND_BASE)/target/h/drv/fdisk/nec765Fd.h \
+  $(WIND_BASE)/target/h/blkIo.h \
+  $(WIND_BASE)/target/h/drv/serial/pcConsole.h \
+  $(WIND_BASE)/target/h/tyLib.h $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/limits.h \
+  $(WIND_BASE)/target/h/tool/gnu/limits.h \
+  $(WIND_BASE)/target/h/net/uio.h $(WIND_BASE)/target/h/fcntl.h \
+  $(WIND_BASE)/target/h/sys/fcntlcom.h $(WIND_BASE)/target/h/unistd.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/rngLib.h \
+  $(WIND_BASE)/target/h/selectLib.h $(WIND_BASE)/target/h/sys/times.h \
+  $(WIND_BASE)/target/h/private/selectLibP.h \
+  $(WIND_BASE)/target/h/lstLib.h \
+  $(WIND_BASE)/target/h/private/semLibP.h \
+  $(WIND_BASE)/target/h/vwModNum.h $(WIND_BASE)/target/h/semLib.h \
+  $(WIND_BASE)/target/h/qLib.h $(WIND_BASE)/target/h/qClass.h \
+  $(WIND_BASE)/target/h/private/classLibP.h \
+  $(WIND_BASE)/target/h/memLib.h $(WIND_BASE)/target/h/classLib.h \
+  $(WIND_BASE)/target/h/objLib.h $(WIND_BASE)/target/h/errno.h \
+  $(WIND_BASE)/target/h/private/objLibP.h \
+  $(WIND_BASE)/target/h/objLib.h \
+  $(WIND_BASE)/target/h/private/eventLibP.h \
+  $(WIND_BASE)/target/h/drv/parallel/lptDrv.h \
+  $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pcmciaLib.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/dosFsLib.h \
+  $(WIND_BASE)/target/h/cbioLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pccardLib.h \
+  $(WIND_BASE)/target/h/drv/hdisk/ataDrv.h \
+  $(WIND_BASE)/target/h/wdLib.h \
+  $(WIND_BASE)/target/h/arch/i86/mmuI86Lib.h \
+  $(WIND_BASE)/target/h/arch/i86/ipiI86Lib.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/loApic.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/ioApic.h configInum.h \
+  $(WIND_BASE)/target/h/errno.h $(WIND_BASE)/target/h/sioLib.h
+dataSegPad.o: $(WIND_BASE)/target/config/all/dataSegPad.c \
+  $(WIND_BASE)/target/h/copyright_wrs.h $(WIND_BASE)/target/h/vxWorks.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/types/vxANSI.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/target/h/types/vxTypesOld.h \
+  $(WIND_BASE)/target/h/sys/types.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h config.h \
+  $(WIND_BASE)/target/config/all/configAll.h \
+  $(WIND_BASE)/target/h/smLib.h $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/vme.h $(WIND_BASE)/target/h/iv.h \
+  $(WIND_BASE)/target/h/arch/i86/ivI86.h pc.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/i8259.h \
+  $(WIND_BASE)/target/h/drv/timer/i8253.h \
+  $(WIND_BASE)/target/h/drv/timer/mc146818.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/drv/timer/timestampDev.h \
+  $(WIND_BASE)/target/h/drv/fdisk/nec765Fd.h \
+  $(WIND_BASE)/target/h/blkIo.h \
+  $(WIND_BASE)/target/h/drv/serial/pcConsole.h \
+  $(WIND_BASE)/target/h/tyLib.h $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/limits.h \
+  $(WIND_BASE)/target/h/tool/gnu/limits.h \
+  $(WIND_BASE)/target/h/net/uio.h $(WIND_BASE)/target/h/fcntl.h \
+  $(WIND_BASE)/target/h/sys/fcntlcom.h $(WIND_BASE)/target/h/unistd.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/rngLib.h \
+  $(WIND_BASE)/target/h/selectLib.h $(WIND_BASE)/target/h/sys/times.h \
+  $(WIND_BASE)/target/h/private/selectLibP.h \
+  $(WIND_BASE)/target/h/lstLib.h \
+  $(WIND_BASE)/target/h/private/semLibP.h \
+  $(WIND_BASE)/target/h/vwModNum.h $(WIND_BASE)/target/h/semLib.h \
+  $(WIND_BASE)/target/h/qLib.h $(WIND_BASE)/target/h/qClass.h \
+  $(WIND_BASE)/target/h/private/classLibP.h \
+  $(WIND_BASE)/target/h/memLib.h $(WIND_BASE)/target/h/classLib.h \
+  $(WIND_BASE)/target/h/objLib.h $(WIND_BASE)/target/h/errno.h \
+  $(WIND_BASE)/target/h/private/objLibP.h \
+  $(WIND_BASE)/target/h/objLib.h \
+  $(WIND_BASE)/target/h/private/eventLibP.h \
+  $(WIND_BASE)/target/h/drv/parallel/lptDrv.h \
+  $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pcmciaLib.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/sysLib.h \
+  $(WIND_BASE)/target/h/bootLib.h $(WIND_BASE)/target/h/ttyLib.h \
+  $(WIND_BASE)/target/h/sioLib.h $(WIND_BASE)/target/h/dosFsLib.h \
+  $(WIND_BASE)/target/h/cbioLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pccardLib.h \
+  $(WIND_BASE)/target/h/drv/hdisk/ataDrv.h \
+  $(WIND_BASE)/target/h/wdLib.h \
+  $(WIND_BASE)/target/h/arch/i86/mmuI86Lib.h \
+  $(WIND_BASE)/target/h/arch/i86/ipiI86Lib.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/loApic.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/ioApic.h configInum.h
+usrConfig.o: $(WIND_BASE)/target/config/all/usrConfig.c \
+  $(WIND_BASE)/target/h/copyright_wrs.h $(WIND_BASE)/target/h/vxWorks.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/types/vxANSI.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/target/h/types/vxTypesOld.h \
+  $(WIND_BASE)/target/h/sys/types.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h config.h \
+  $(WIND_BASE)/target/config/all/configAll.h \
+  $(WIND_BASE)/target/h/smLib.h $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/vme.h $(WIND_BASE)/target/h/iv.h \
+  $(WIND_BASE)/target/h/arch/i86/ivI86.h pc.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/i8259.h \
+  $(WIND_BASE)/target/h/drv/timer/i8253.h \
+  $(WIND_BASE)/target/h/drv/timer/mc146818.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/drv/timer/timestampDev.h \
+  $(WIND_BASE)/target/h/drv/fdisk/nec765Fd.h \
+  $(WIND_BASE)/target/h/blkIo.h \
+  $(WIND_BASE)/target/h/drv/serial/pcConsole.h \
+  $(WIND_BASE)/target/h/tyLib.h $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/ioLib.h $(WIND_BASE)/target/h/limits.h \
+  $(WIND_BASE)/target/h/tool/gnu/limits.h \
+  $(WIND_BASE)/target/h/net/uio.h $(WIND_BASE)/target/h/fcntl.h \
+  $(WIND_BASE)/target/h/sys/fcntlcom.h $(WIND_BASE)/target/h/unistd.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/rngLib.h \
+  $(WIND_BASE)/target/h/selectLib.h $(WIND_BASE)/target/h/sys/times.h \
+  $(WIND_BASE)/target/h/private/selectLibP.h \
+  $(WIND_BASE)/target/h/lstLib.h \
+  $(WIND_BASE)/target/h/private/semLibP.h \
+  $(WIND_BASE)/target/h/vwModNum.h $(WIND_BASE)/target/h/semLib.h \
+  $(WIND_BASE)/target/h/qLib.h $(WIND_BASE)/target/h/qClass.h \
+  $(WIND_BASE)/target/h/private/classLibP.h \
+  $(WIND_BASE)/target/h/memLib.h $(WIND_BASE)/target/h/classLib.h \
+  $(WIND_BASE)/target/h/objLib.h $(WIND_BASE)/target/h/errno.h \
+  $(WIND_BASE)/target/h/private/objLibP.h \
+  $(WIND_BASE)/target/h/objLib.h \
+  $(WIND_BASE)/target/h/private/eventLibP.h \
+  $(WIND_BASE)/target/h/drv/parallel/lptDrv.h \
+  $(WIND_BASE)/target/h/iosLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pcmciaLib.h \
+  $(WIND_BASE)/target/h/dllLib.h $(WIND_BASE)/target/h/sysLib.h \
+  $(WIND_BASE)/target/h/bootLib.h $(WIND_BASE)/target/h/ttyLib.h \
+  $(WIND_BASE)/target/h/sioLib.h $(WIND_BASE)/target/h/dosFsLib.h \
+  $(WIND_BASE)/target/h/cbioLib.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pccardLib.h \
+  $(WIND_BASE)/target/h/drv/hdisk/ataDrv.h \
+  $(WIND_BASE)/target/h/wdLib.h \
+  $(WIND_BASE)/target/h/arch/i86/mmuI86Lib.h \
+  $(WIND_BASE)/target/h/arch/i86/ipiI86Lib.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/loApic.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/ioApic.h configInum.h \
+  $(WIND_BASE)/target/h/usrConfig.h $(WIND_BASE)/target/h/bsdSockLib.h \
+  $(WIND_BASE)/target/h/sockFunc.h $(WIND_BASE)/target/h/sys/socket.h \
+  $(WIND_BASE)/target/h/cacheLib.h \
+  $(WIND_BASE)/target/h/arch/i86/cacheI86Lib.h \
+  $(WIND_BASE)/target/h/cplusLib.h \
+  $(WIND_BASE)/target/h/private/cplusLibP.h \
+  $(WIND_BASE)/target/h/hashLib.h $(WIND_BASE)/target/h/sllLib.h \
+  $(WIND_BASE)/target/h/limits.h $(WIND_BASE)/target/h/moduleLib.h \
+  $(WIND_BASE)/target/h/symbol.h \
+  $(WIND_BASE)/target/h/private/symbolP.h \
+  $(WIND_BASE)/target/h/sllLib.h $(WIND_BASE)/target/h/symLib.h \
+  $(WIND_BASE)/target/h/private/symLibP.h \
+  $(WIND_BASE)/target/h/private/symbolP.h \
+  $(WIND_BASE)/target/h/sysSymTbl.h $(WIND_BASE)/target/h/ctype.h \
+  $(WIND_BASE)/target/h/dbgLib.h $(WIND_BASE)/target/h/regs.h \
+  $(WIND_BASE)/target/h/arch/i86/regsI86.h $(WIND_BASE)/target/h/esf.h \
+  $(WIND_BASE)/target/h/arch/i86/esfI86.h \
+  $(WIND_BASE)/target/h/private/eventP.h \
+  $(WIND_BASE)/target/h/private/funcBindP.h \
+  $(WIND_BASE)/target/h/wdb/wdbDbgLib.h \
+  $(WIND_BASE)/target/h/arch/i86/dbgI86Lib.h \
+  $(WIND_BASE)/target/h/wdb/dll.h $(WIND_BASE)/target/h/wdb/wdbRegs.h \
+  $(WIND_BASE)/target/h/wdb/wdb.h $(WIND_BASE)/target/h/rpc/types.h \
+  $(WIND_BASE)/target/h/rpc/rpc.h $(WIND_BASE)/target/h/rpc/rpctypes.h \
+  $(WIND_BASE)/target/h/memPartLib.h \
+  $(WIND_BASE)/target/h/private/memPartLibP.h \
+  $(WIND_BASE)/target/h/sys/times.h $(WIND_BASE)/target/h/netinet/in.h \
+  $(WIND_BASE)/target/h/net/if.h $(WIND_BASE)/target/h/sys/socket.h \
+  $(WIND_BASE)/target/h/net/if_arp.h $(WIND_BASE)/target/h/net/route.h \
+  $(WIND_BASE)/target/h/net/socketvar.h \
+  $(WIND_BASE)/target/h/selectLib.h $(WIND_BASE)/target/h/net/uio.h \
+  $(WIND_BASE)/target/h/net/mbuf.h $(WIND_BASE)/target/h/net/unixLib.h \
+  $(WIND_BASE)/target/h/string.h $(WIND_BASE)/target/h/netBufLib.h \
+  $(WIND_BASE)/target/h/net/radix.h $(WIND_BASE)/target/h/ifLib.h \
+  $(WIND_BASE)/target/h/rpc/xdr.h $(WIND_BASE)/target/h/rpc/rpctypes.h \
+  $(WIND_BASE)/target/h/rpc/auth.h $(WIND_BASE)/target/h/rpc/clnt.h \
+  $(WIND_BASE)/target/h/rpc/rpc_msg.h \
+  $(WIND_BASE)/target/h/rpc/auth_unix.h $(WIND_BASE)/target/h/rpc/svc.h \
+  $(WIND_BASE)/target/h/rpc/svc_auth.h $(WIND_BASE)/target/h/regs.h \
+  $(WIND_BASE)/target/h/fppLib.h $(WIND_BASE)/target/h/taskLib.h \
+  $(WIND_BASE)/target/h/excLib.h \
+  $(WIND_BASE)/target/h/arch/i86/excI86Lib.h \
+  $(WIND_BASE)/target/h/stdlib.h \
+  $(WIND_BASE)/target/h/arch/i86/fppI86Lib.h \
+  $(WIND_BASE)/target/h/dspLib.h $(WIND_BASE)/target/h/esf.h \
+  $(WIND_BASE)/target/h/private/vmLibP.h $(WIND_BASE)/target/h/vmLib.h \
+  $(WIND_BASE)/target/h/mmuLib.h $(WIND_BASE)/target/h/mmuLib.h \
+  $(WIND_BASE)/target/h/tarLib.h $(WIND_BASE)/target/h/dcacheCbio.h \
+  $(WIND_BASE)/target/h/dpartCbio.h \
+  $(WIND_BASE)/target/h/usrFdiskPartLib.h \
+  $(WIND_BASE)/target/h/ramDiskCbio.h $(WIND_BASE)/target/h/envLib.h \
+  $(WIND_BASE)/target/h/fioLib.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stdarg.h \
+  $(WIND_BASE)/target/h/ftpLib.h $(WIND_BASE)/target/h/ftpdLib.h \
+  $(WIND_BASE)/target/h/hostLib.h $(WIND_BASE)/target/h/if_bp.h \
+  $(WIND_BASE)/target/h/if_sl.h $(WIND_BASE)/target/h/inetLib.h \
+  $(WIND_BASE)/target/h/arpa/inet.h $(WIND_BASE)/target/h/intLib.h \
+  $(WIND_BASE)/target/h/arch/i86/intI86Lib.h \
+  $(WIND_BASE)/target/h/kernelLib.h $(WIND_BASE)/target/h/loadLib.h \
+  $(WIND_BASE)/target/h/logLib.h $(WIND_BASE)/target/h/loginLib.h \
+  $(WIND_BASE)/target/h/math.h $(WIND_BASE)/target/h/msgQLib.h \
+  $(WIND_BASE)/target/h/netDrv.h $(WIND_BASE)/target/h/netLib.h \
+  $(WIND_BASE)/target/h/netShow.h $(WIND_BASE)/target/h/xdr_nfs.h \
+  $(WIND_BASE)/target/h/nfsDrv.h $(WIND_BASE)/target/h/nfsLib.h \
+  $(WIND_BASE)/target/h/dirent.h $(WIND_BASE)/target/h/sys/stat.h \
+  $(WIND_BASE)/target/h/xdr_nfsserv.h $(WIND_BASE)/target/h/pipeDrv.h \
+  $(WIND_BASE)/target/h/proxyArpLib.h \
+  $(WIND_BASE)/target/h/netinet/if_ether.h \
+  $(WIND_BASE)/target/h/qPriBMapLib.h $(WIND_BASE)/target/h/qPriNode.h \
+  $(WIND_BASE)/target/h/ramDrv.h $(WIND_BASE)/target/h/rawFsLib.h \
+  $(WIND_BASE)/target/h/rebootLib.h $(WIND_BASE)/target/h/remLib.h \
+  $(WIND_BASE)/target/h/rlogLib.h $(WIND_BASE)/target/h/routeLib.h \
+  $(WIND_BASE)/target/h/rpcLib.h $(WIND_BASE)/target/h/rt11FsLib.h \
+  $(WIND_BASE)/target/h/scsiLib.h $(WIND_BASE)/target/h/scsi1Lib.h \
+  $(WIND_BASE)/target/h/shellLib.h $(WIND_BASE)/target/h/sockLib.h \
+  $(WIND_BASE)/target/h/spyLib.h $(WIND_BASE)/target/h/stdio.h \
+  $(WIND_BASE)/target/h/symSyncLib.h $(WIND_BASE)/target/h/wtx.h \
+  $(WIND_BASE)/target/h/setjmp.h $(WIND_BASE)/target/h/wtxtypes.h \
+  $(WIND_BASE)/target/h/wtxerr.h $(WIND_BASE)/target/h/wtxmsg.h \
+  $(WIND_BASE)/target/h/taskHookLib.h \
+  $(WIND_BASE)/target/h/taskVarLib.h $(WIND_BASE)/target/h/telnetLib.h \
+  $(WIND_BASE)/target/h/tftpLib.h $(WIND_BASE)/target/h/tftpdLib.h \
+  $(WIND_BASE)/target/h/tickLib.h $(WIND_BASE)/target/h/time.h \
+  $(WIND_BASE)/target/h/sigevent.h $(WIND_BASE)/target/h/timers.h \
+  $(WIND_BASE)/target/h/timexLib.h $(WIND_BASE)/target/h/unldLib.h \
+  $(WIND_BASE)/target/h/usrLib.h $(WIND_BASE)/target/h/version.h \
+  $(WIND_BASE)/target/h/vxLib.h \
+  $(WIND_BASE)/target/h/arch/i86/vxI86Lib.h \
+  $(WIND_BASE)/target/h/rpc/rpcGbl.h $(WIND_BASE)/target/h/taskLib.h \
+  $(WIND_BASE)/target/h/private/excLibP.h \
+  $(WIND_BASE)/target/h/private/ftpLibP.h \
+  $(WIND_BASE)/target/h/ftpLib.h \
+  $(WIND_BASE)/target/h/private/kernelLibP.h \
+  $(WIND_BASE)/target/h/kernelLib.h \
+  $(WIND_BASE)/target/h/private/sigLibP.h \
+  $(WIND_BASE)/target/h/signal.h $(WIND_BASE)/target/h/excLib.h \
+  $(WIND_BASE)/target/h/private/workQLibP.h \
+  $(WIND_BASE)/target/h/smUtilLib.h $(WIND_BASE)/target/h/smObjLib.h \
+  $(WIND_BASE)/target/h/smDllLib.h \
+  $(WIND_BASE)/target/h/private/smFixBlkLibP.h \
+  $(WIND_BASE)/target/h/smDllLib.h \
+  $(WIND_BASE)/target/h/private/smMemLibP.h \
+  $(WIND_BASE)/target/h/smMemLib.h \
+  $(WIND_BASE)/target/h/private/semSmLibP.h \
+  $(WIND_BASE)/target/h/semSmLib.h \
+  $(WIND_BASE)/target/h/private/smNameLibP.h \
+  $(WIND_BASE)/target/h/smNameLib.h $(WIND_BASE)/target/h/smPktLib.h \
+  $(WIND_BASE)/target/h/drv/netif/smNetLib.h \
+  $(WIND_BASE)/target/h/netinet/in_var.h \
+  $(WIND_BASE)/target/h/netinet/in_pcb.h \
+  $(WIND_BASE)/target/h/netinet/ip.h \
+  $(WIND_BASE)/target/h/netinet/if_ether.h \
+  $(WIND_BASE)/target/h/drv/netif/if_sm.h \
+  $(WIND_BASE)/target/h/smPktLib.h $(WIND_BASE)/target/h/errno.h \
+  $(WIND_BASE)/target/h/sys/ioctl.h $(WIND_BASE)/target/h/etherLib.h \
+  $(WIND_BASE)/target/h/net/if_subr.h $(WIND_BASE)/target/h/inetLib.h \
+  $(WIND_BASE)/target/h/stdio.h $(WIND_BASE)/target/h/loadElfLib.h \
+  $(WIND_BASE)/target/h/elf.h $(WIND_BASE)/target/h/elftypes.h \
+  $(WIND_BASE)/target/h/private/loadElfLibP.h \
+  $(WIND_BASE)/target/h/private/loadLibP.h \
+  $(WIND_BASE)/target/h/loadLib.h \
+  $(WIND_BASE)/target/src/config/usrDepend.c \
+  $(WIND_BASE)/target/src/config/usrKernel.c \
+  $(WIND_BASE)/target/src/config/usrExtra.c \
+  $(WIND_BASE)/target/src/config/assertInit.c \
+  $(WIND_BASE)/target/h/assert.h \
+  $(WIND_BASE)/target/src/config/ctypeInit.c \
+  $(WIND_BASE)/target/h/ctype.h \
+  $(WIND_BASE)/target/src/config/localeInit.c \
+  $(WIND_BASE)/target/h/locale.h \
+  $(WIND_BASE)/target/src/config/mathInit.c \
+  $(WIND_BASE)/target/h/math.h \
+  $(WIND_BASE)/target/src/config/stdioInit.c \
+  $(WIND_BASE)/target/src/config/stdlibInit.c \
+  $(WIND_BASE)/target/h/stdlib.h \
+  $(WIND_BASE)/target/src/config/stringInit.c \
+  $(WIND_BASE)/target/src/config/timeInit.c \
+  $(WIND_BASE)/target/h/time.h $(WIND_BASE)/target/src/config/usrFd.c \
+  $(WIND_BASE)/target/h/dpartCbio.h $(WIND_BASE)/target/h/dcacheCbio.h \
+  $(WIND_BASE)/target/h/usrFdiskPartLib.h \
+  $(WIND_BASE)/target/src/config/usrAta.c \
+  $(WIND_BASE)/target/src/config/usrMmuInit.c \
+  $(WIND_BASE)/target/src/config/usrNetwork.c \
+  $(WIND_BASE)/target/h/zbufSockLib.h $(WIND_BASE)/target/h/zbufLib.h \
+  $(WIND_BASE)/target/h/pingLib.h $(WIND_BASE)/target/h/ipProto.h \
+  $(WIND_BASE)/target/h/ifIndexLib.h $(WIND_BASE)/target/h/m2Lib.h \
+  $(WIND_BASE)/target/h/avlLib.h $(WIND_BASE)/target/h/end.h \
+  $(WIND_BASE)/target/h/net/if_llc.h $(WIND_BASE)/target/h/ioctl.h \
+  $(WIND_BASE)/target/h/muxLib.h $(WIND_BASE)/target/h/net/if_types.h \
+  $(WIND_BASE)/target/h/muxTkLib.h configNet.h \
+  $(WIND_BASE)/target/src/config/usrWdb.c $(WIND_BASE)/target/h/vxLib.h \
+  $(WIND_BASE)/target/h/taskHookLib.h $(WIND_BASE)/target/h/intLib.h \
+  $(WIND_BASE)/target/h/rebootLib.h $(WIND_BASE)/target/h/bootLib.h \
+  $(WIND_BASE)/target/h/version.h $(WIND_BASE)/target/h/cacheLib.h \
+  $(WIND_BASE)/target/h/bufLib.h $(WIND_BASE)/target/h/sioLib.h \
+  $(WIND_BASE)/target/h/private/taskLibP.h \
+  $(WIND_BASE)/target/h/private/kernelLibP.h \
+  $(WIND_BASE)/target/h/wdb/wdbLib.h \
+  $(WIND_BASE)/target/h/wdb/wdbBpLib.h \
+  $(WIND_BASE)/target/h/wdb/wdbDbgLib.h \
+  $(WIND_BASE)/target/h/wdb/wdbRtIfLib.h \
+  $(WIND_BASE)/target/h/netinet/in_systm.h \
+  $(WIND_BASE)/target/h/wdb/wdbCommIfLib.h \
+  $(WIND_BASE)/target/h/wdb/wdbRpcLib.h \
+  $(WIND_BASE)/target/h/wdb/wdbLibP.h \
+  $(WIND_BASE)/target/h/wdb/wdbSvcLib.h \
+  $(WIND_BASE)/target/h/wdb/wdbUdpLib.h \
+  $(WIND_BASE)/target/h/wdb/wdbMbufLib.h \
+  $(WIND_BASE)/target/h/wdb/wdbUdpSockLib.h \
+  $(WIND_BASE)/target/h/wdb/wdbTyCoDrv.h \
+  $(WIND_BASE)/target/h/wdb/wdbVioLib.h \
+  $(WIND_BASE)/target/h/drv/wdb/wdbVioDrv.h \
+  $(WIND_BASE)/target/h/drv/wdb/wdbSlipPktDrv.h \
+  $(WIND_BASE)/target/h/drv/wdb/wdbUlipPktDrv.h \
+  $(WIND_BASE)/target/h/drv/wdb/wdbNetromPktDrv.h \
+  $(WIND_BASE)/target/h/drv/wdb/wdbEndPktDrv.h \
+  $(WIND_BASE)/target/h/drv/wdb/wdbPipePktDrv.h \
+  $(WIND_BASE)/target/src/config/intrinsics.c \
+  $(WIND_BASE)/target/h/tool/gnu/intrinsics.h \
+  $(WIND_BASE)/target/src/config/usrBreakpoint.c
+version.o: $(WIND_BASE)/target/config/all/version.c \
+  $(WIND_BASE)/target/h/vxWorks.h $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/host/x86-win32/lib/gcc-lib/i586-wrs-vxworks/2.9-PentiumIII-010221/include/stddef.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/types/vxANSI.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/types/vxParams.h \
+  $(WIND_BASE)/target/h/types/vxTypesBase.h \
+  $(WIND_BASE)/target/h/types/vxTypesOld.h \
+  $(WIND_BASE)/target/h/sys/types.h \
+  $(WIND_BASE)/target/h/types/vxTypes.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h \
+  $(WIND_BASE)/target/h/version.h
+romInit.o: romInit.s $(WIND_BASE)/target/h/vxWorks.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h \
+  $(WIND_BASE)/target/h/sysLib.h $(WIND_BASE)/target/h/asm.h \
+  $(WIND_BASE)/target/h/arch/i86/asmI86.h config.h \
+  $(WIND_BASE)/target/config/all/configAll.h \
+  $(WIND_BASE)/target/h/smLib.h $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/vme.h $(WIND_BASE)/target/h/iv.h \
+  $(WIND_BASE)/target/h/arch/i86/ivI86.h pc.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/i8259.h \
+  $(WIND_BASE)/target/h/drv/timer/i8253.h \
+  $(WIND_BASE)/target/h/drv/timer/mc146818.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/drv/timer/timestampDev.h \
+  $(WIND_BASE)/target/h/drv/fdisk/nec765Fd.h \
+  $(WIND_BASE)/target/h/drv/serial/pcConsole.h \
+  $(WIND_BASE)/target/h/drv/parallel/lptDrv.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pcmciaLib.h \
+  $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/drv/hdisk/ataDrv.h \
+  $(WIND_BASE)/target/h/arch/i86/mmuI86Lib.h \
+  $(WIND_BASE)/target/h/arch/i86/ipiI86Lib.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/loApic.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/ioApic.h configInum.h
+sysALib.o: sysALib.s $(WIND_BASE)/target/h/vxWorks.h \
+  $(WIND_BASE)/target/h/types/vxCpu.h \
+  $(WIND_BASE)/target/h/types/vxArch.h \
+  $(WIND_BASE)/target/h/arch/i86/archI86.h \
+  $(WIND_BASE)/target/h/tool/gnu/toolMacros.h \
+  $(WIND_BASE)/target/h/asm.h $(WIND_BASE)/target/h/arch/i86/asmI86.h \
+  $(WIND_BASE)/target/h/regs.h $(WIND_BASE)/target/h/arch/i86/regsI86.h \
+  $(WIND_BASE)/target/h/sysLib.h config.h \
+  $(WIND_BASE)/target/config/all/configAll.h \
+  $(WIND_BASE)/target/h/smLib.h $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/vme.h $(WIND_BASE)/target/h/iv.h \
+  $(WIND_BASE)/target/h/arch/i86/ivI86.h pc.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/i8259.h \
+  $(WIND_BASE)/target/h/drv/timer/i8253.h \
+  $(WIND_BASE)/target/h/drv/timer/mc146818.h \
+  $(WIND_BASE)/target/h/drv/timer/timerDev.h \
+  $(WIND_BASE)/target/h/drv/timer/timestampDev.h \
+  $(WIND_BASE)/target/h/drv/fdisk/nec765Fd.h \
+  $(WIND_BASE)/target/h/drv/serial/pcConsole.h \
+  $(WIND_BASE)/target/h/drv/parallel/lptDrv.h \
+  $(WIND_BASE)/target/h/drv/pcmcia/pcmciaLib.h \
+  $(WIND_BASE)/target/h/vwModNum.h \
+  $(WIND_BASE)/target/h/drv/hdisk/ataDrv.h \
+  $(WIND_BASE)/target/h/arch/i86/mmuI86Lib.h \
+  $(WIND_BASE)/target/h/arch/i86/ipiI86Lib.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/loApic.h \
+  $(WIND_BASE)/target/h/drv/intrCtl/ioApic.h configInum.h
+

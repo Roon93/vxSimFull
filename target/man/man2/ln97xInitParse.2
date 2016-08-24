@@ -1,0 +1,50 @@
+.\"
+.so wrs.an
+.TH ln97xInitParse 2 "" "Rev: 11 Dec 98" "TORNADO REFERENCE: VXWORKS" R 13
+.SH NAME
+ln97xInitParse() - parse the initialization string
+.SH SYNOPSIS
+.CS
+STATUS ln97xInitParse
+    (                              
+    LN_97X_DRV_CTRL *  pDrvCtrl,   /* pointer to the control structure */
+    char *             initString  /* initialization string            */
+    )                              
+.CE
+.SH DESCRIPTION
+Parse the input string. This routine is called from ln97xEndLoad() which
+intializes some values in the driver control structure with the values
+passed in the intialization string.
+
+The initialization string format is:
+<unit>:<devMemAddr>:<devIoAddr>:<pciMemBase:<vecNum>:<intLvl>:<memAdrs>
+:<memSize>:<memWidth>:<csr3b>:<offset>:<flags>
+
+.IP <unit>
+Device unit number, a small integer.
+.IP <devMemAddr>
+Device register base memory address
+.IP <devIoAddr>
+Device register base IO address
+.IP <pciMemBase>
+Base address of PCI memory space
+.IP <vecNum>
+Interrupt vector number.
+.IP <intLvl>
+Interrupt level.
+.IP <memAdrs>
+Memory pool address or NONE.
+.IP <memSize>
+Memory pool size or zero.
+.IP <memWidth>
+Memory system size, 1, 2, or 4 bytes (optional).
+.IP <CSR3>
+Value of CSR3 (for endian-ness mainly)
+.IP <offset>
+Offset of starting of data in the device buffers.
+.IP <flags>
+Device specific flags, for future use.
+.SH "RETURNS"
+OK, or ERROR if any arguments are invalid.
+.SH "SEE ALSO"
+ln97xEnd

@@ -1,0 +1,396 @@
+
+
+
+ln97xEnd(1)        TORNADO REFERENCE: VXWORKS         ln97xEnd(1)
+
+
+
+NAME
+     ln97xEnd - END style AMD Am79C97X PCnet-PCI Ethernet driver
+
+SYNOPSIS
+     ln97xEndLoad() - initialize the driver and device
+     ln97xInitParse() - parse the initialization string
+
+     END_OBJ * ln97xEndLoad
+         (char * initString)
+     STATUS ln97xInitParse
+         (LN_97X_DRV_CTRL * pDrvCtrl, char * initString)
+
+
+DESCRIPTION
+     This module implements the Advanced Micro  Devices  Am79C971
+     Am79C972  and  Am79C973  PCnet-PCI  Ethernet  32 bit network
+     interface driver.
+
+     The  PCnet-PCI  ethernet  controller  is  inherently  little
+     endian  because the chip is designed to operate on a PCI bus
+     which is a little endian bus. The software interface to  the
+     driver  is  divided into three parts.  The first part is the
+     PCI configuration registers and their set up. This  part  is
+     done  at  the  BSP  level in the various BSPs which use this
+     driver. The second and third part are dealt in  the  driver.
+     The  second  part of the interface comprises of the I/O con-
+     trol registers and their programming. The third part of  the
+     interface comprises of the descriptors and the buffers.
+
+     This driver is designed to be moderately generic,  operating
+     unmodified  across  the  range  of architectures and targets
+     supported by VxWorks.  To achieve this, the driver  must  be
+     given  several target-specific parameters, and some external
+     support routines must  be  provided.  These  target-specific
+     values  and  the  external  support  routines  are described
+     below.
+
+     This driver supports multiple units per CPU.  The driver can
+     be  configured to support big-endian or little-endian archi-
+     tectures.  It contains error recovery code to  handle  known
+     device errata related to DMA activity.
+
+     Big endian processors  can  be  connected  to  the  PCI  bus
+     through  some  controllers  which take care of hardware byte
+     swapping. In such cases all the registers which the chip DMA
+     s  to  have  to  be swapped and written to, so that when the
+     hardware  swaps  the  accesses,  the  chip  would  see  them
+     correctly.  The  chip still has to be programmed to operated
+     in little endian mode as it is on the PCI bus.  If  the  cpu
+     board  hardware  automatically swaps all the accesses to and
+     from the PCI bus, then input and output byte stream need not
+     be swapped.
+
+
+
+Rev: 11 Dec 98                                                  1
+
+
+
+
+
+
+ln97xEnd(1)        TORNADO REFERENCE: VXWORKS         ln97xEnd(1)
+
+
+
+BOARD LAYOUT
+     This device is on-board.  No jumpering diagram is necessary.
+
+EXTERNAL INTERFACE
+     The only external interface is the  ln97xEndLoad()  routine,
+     which  expects  the  <initString>  parameter as input.  This
+     parameter passes in a colon-delimited string of the format:
+
+     <unit>:<devMemAddr>:<devIoAddr>:<pciMemBase:<vecNum>:<intLvl>:<memAdrs>:
+     <memSize>:<memWidth>:<csr3b>:<offset>:<flags>
+
+     The ln97xEndLoad()  function  uses  strtok()  to  parse  the
+     string.
+
+TARGET-SPECIFIC PARAMETERS
+     <unit>
+          A convenient holdover  from  the  former  model.   This
+          parameter  is  used  only  in  the  string name for the
+          driver.
+
+
+     <devMemAddr>
+          This parameter in the memory base address of the device
+          registers in the memory map of the CPU. It indicates to
+          the driver where to find the RDP register.   The  LANCE
+          presents  two  registers to the external interface, the
+          RDP (register data  port)  and  RAP  (register  address
+          port)  registers.   This  driver assumes that these two
+          registers occupy two unique addresses in a memory space
+          that  is  directly accessible by the CPU executing this
+          driver.  The driver assumes that the  RDP  register  is
+          mapped  at  a  lower address than the RAP register; the
+          RDP  register  is  therefore  derived  from  the  "base
+          address."   This  parameter  should be equal to NONE if
+          memory map is not used.
+
+
+     <devIoAddr>
+          This parameter in the IO base  address  of  the  device
+          registers  in  the IO map of some CPUs. It indicates to
+          the driver where to find  the  RDP  register.  If  both
+          <devIoAddr>  and <devMemAddr> are given then the device
+          chooses <devMemAddr> which is a memory mapped  register
+          base  address.   This parameter should be equal to NONE
+          if IO map is not used.
+
+
+     <pciMemBase>
+          This parameter is the base address of the CPU memory as
+          seen  from the PCI bus. This parameter is zero for most
+          intel architectures.
+
+
+
+
+Rev: 11 Dec 98                                                  2
+
+
+
+
+
+
+ln97xEnd(1)        TORNADO REFERENCE: VXWORKS         ln97xEnd(1)
+
+
+
+     <vecNum>
+          This parameter is the vector associated with the device
+          interrupt.   This driver configures the LANCE device to
+          generate hardware interrupts for various events  within
+          the  device; thus it contains an interrupt handler rou-
+          tine.  The driver calls  intConnect()  to  connect  its
+          interrupt  handler to the interrupt vector generated as
+          a result of the LANCE interrupt.
+
+
+     <intLvl>
+          Some targets use additional interrupt  controller  dev-
+          ices to help organize and service the various interrupt
+          sources.   This  driver   avoids   all   board-specific
+          knowledge  of  such  devices.  During the driver's ini-
+          tialization, the external routine  sysLan97xIntEnable()
+          is  called  to  perform  any  board-specific operations
+          required to allow the servicing of a  LANCE  interrupt.
+          For  a description of sysLan97xIntEnable(), see "Exter-
+          nal Support Requirements" below.
+
+
+     <memAdrs>
+          This parameter gives the driver the memory  address  to
+          carve  out  its  buffers  and  data structures. If this
+          parameter is specified to be NONE then the driver allo-
+          cates cache coherent memory for buffers and descriptors
+          from the system pool.  The LANCE device is a  DMA  type
+          of device and typically shares access to some region of
+          memory with the CPU.  This driver is designed for  sys-
+          tems that directly share memory between the CPU and the
+          LANCE.  It assumes that this shared memory is  directly
+          available  to it without any arbitration or timing con-
+          cerns.
+
+
+     <memSize>
+          This parameter can be  used  to  explicitly  limit  the
+          amount  of  shared memory (bytes) this driver will use.
+          The constant NONE can be used to indicate  no  specific
+          size  limitation.   This  parameter  is  used only if a
+          specific memory region is provided to the driver.
+
+
+     <memWidth>
+          Some target hardware that restricts the  shared  memory
+          region to a specific location also restricts the access
+          width to this region by the  CPU.   On  these  targets,
+          performing  an  access of an invalid width will cause a
+          bus error.
+
+          This parameter can be used to  specify  the  number  of
+
+
+
+Rev: 11 Dec 98                                                  3
+
+
+
+
+
+
+ln97xEnd(1)        TORNADO REFERENCE: VXWORKS         ln97xEnd(1)
+
+
+
+          bytes  of  access width to be used by the driver during
+          access to the shared memory.  The constant NONE can  be
+          used to indicate no restrictions.
+
+          Current internal support  for  this  mechanism  is  not
+          robust;  implementation  may  not  work  on all targets
+          requiring these restrictions.
+
+
+     <csr3b>
+          The LANCE control register #3 determines the  bus  mode
+          of  the  device, allowing the support of big-endian and
+          little-endian architectures.  This  parameter,  defined
+          as  "UINT32 lnCSR_3B", is the value that will be placed
+          into LANCE control register #3.  The default value sup-
+          ports   Motorola-type  buses.   For  information  about
+          changing this parameter, see the manual.  Normally  for
+          devices  on  the  PCI  bus this should always be little
+          endian. This value is zero normally
+
+
+     <offset>
+          This parameter specifies  the  offset  from  which  the
+          packet has to be loaded from the begining of the device
+          buffer. Normally this  parameter  is  zero  except  for
+          architectures  which  access long words only on aligned
+          addresses. For these architectures the  value  of  this
+          offset should be 2.
+
+
+     <flags>
+          This is parameter is used for future use, currently its
+          value should be zero.
+
+EXTERNAL SUPPORT REQUIREMENTS
+     This driver requires  several  external  support  functions,
+     defined as macros:
+
+         SYS_INT_CONNECT(pDrvCtrl, routine, arg)
+         SYS_INT_DISCONNECT (pDrvCtrl, routine, arg)
+         SYS_INT_ENABLE(pDrvCtrl)
+         SYS_INT_DISABLE(pDrvCtrl)
+         SYS_OUT_BYTE(pDrvCtrl, reg, data)
+         SYS_IN_BYTE(pDrvCtrl, reg, data)
+         SYS_OUT_WORD(pDrvCtrl, reg, data)
+         SYS_IN_WORD(pDrvCtrl, reg, data)
+         SYS_OUT_LONG(pDrvCtrl, reg, data)
+         SYS_IN_LONG(pDrvCtrl, reg, data)
+         SYS_ENET_ADDR_GET(pDrvCtrl, pAddress)
+         sysLan97xIntEnable(pDrvCtrl->intLevel)
+         sysLan97xIntDisable(pDrvCtrl->intLevel)
+         sysLan97xEnetAddrGet(pDrvCtrl, enetAdrs)
+
+
+
+Rev: 11 Dec 98                                                  4
+
+
+
+
+
+
+ln97xEnd(1)        TORNADO REFERENCE: VXWORKS         ln97xEnd(1)
+
+
+
+     There are default values in the source code for  these  mac-
+     ros.   They  presume  memory  mapped  accesses to the device
+     registers and the normal intConnect(), and  intEnable()  BSP
+     functions.   The  first  argument to each is the device con-
+     troller structure. Thus, each has access  back  to  all  the
+     device-specific  information.   Having  the  pointer  in the
+     macro facilitates the  addition  of  new  features  to  this
+     driver.
+
+     The     macros     SYS_INT_CONNECT,      SYS_INT_DISCONNECT,
+     SYS_INT_ENABLE  and  SYS_INT_DISABLE  allow the driver to be
+     customized for BSPs that use special versions of these  rou-
+     tines.
+
+     The macro SYS_INT_CONNECT is used to connect  the  interrupt
+     handler  to  the  appropriate  vector.  By default it is the
+     routine intConnect().
+
+     The macro  SYS_INT_DISCONNECT  is  used  to  disconnect  the
+     interrupt handler prior to unloading the module.  By default
+     this is a dummy routine that returns OK.
+
+     The macro SYS_INT_ENABLE is used  to  enable  the  interrupt
+     level for the end device.  It is called once during initial-
+     ization.   It  calls  an  external   board   level   routine
+     sysLan97xIntEnable().
+
+     The macro SYS_INT_DISABLE is used to disable  the  interrupt
+     level  for  the  end  device.  It is called during stop.  It
+     calls an external board level routine sysLan97xIntDisable().
+
+     The  macro  SYS_ENET_ADDR_GET  is  used  get  the   ethernet
+     hardware  of  the  chip.  This macro calls an external board
+     level routine namely sysLan97xEnetAddrGet() to get the  eth-
+     ernet address.
+
+SYSTEM RESOURCE USAGE
+     When implemented, this driver requires the following  system
+     resources:
+
+         - one mutual exclusion semaphore
+         - one interrupt vector
+         - 13288 bytes in text for a I80486 target
+         - 64 bytes in the initialized data section (data)
+         - 0 bytes in the uninitialized data section (BSS)
+
+     The driver allocates clusters of size 1520 bytes for receive
+     frames and and transmit frames.
+
+INCLUDES
+     end.h endLib.h etherMultiLib.h ln97xEnd.h
+
+
+
+
+Rev: 11 Dec 98                                                  5
+
+
+
+
+
+
+ln97xEnd(1)        TORNADO REFERENCE: VXWORKS         ln97xEnd(1)
+
+
+
+SEE ALSO
+     muxLib,  endLib,  netBufLib  _W_r_i_t_i_n_g  _a_n_d  _E_n_h_a_n_c_e_d  _N_e_t_w_o_r_k
+     _D_r_i_v_e_r  _A_d_v_a_n_c_e_d _M_i_c_r_o _D_e_v_i_c_e_s _P_C_n_e_t-_P_C_I _E_t_h_e_r_n_e_t _C_o_n_t_r_o_l_l_e_r
+     _f_o_r _P_C_I.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rev: 11 Dec 98                                                  6
+
+
+

@@ -1,0 +1,24 @@
+# make.PENTIUM4diab - Diab compilation tools definitions for Pentium-III
+#
+# modification history
+# --------------------
+# maxim		Initial
+#
+# DESCRIPTION
+# This file contains Pentium-III specific definitions and flags for the
+# diab tools (compiler, assembler, linker etc.)
+#*/
+
+include $(TGT_DIR)/h/tool/diab/defs.diab
+CPU		= PENTIUM3
+TOOL		= diab
+
+TGT_FLAG	= -tX86LH:vxworks55
+
+TOOLENV		= pentium
+VX_CPU_FAMILY	= pentium
+ARCH_DIR        = x86
+
+CFLAGS_AS	+= -Wa,-Xmnem-mit
+
+# end of make.PENTIUM3diab

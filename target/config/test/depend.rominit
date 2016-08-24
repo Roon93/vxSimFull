@@ -1,0 +1,26 @@
+romInit.o: romInit.s /root/vxworks/target/h/vxWorks.h \
+ /root/vxworks/target/h/types/vxCpu.h \
+ /root/vxworks/target/h/types/vxArch.h \
+ /root/vxworks/target/h/arch/i86/archI86.h \
+ /root/vxworks/target/h/tool/gnu/toolMacros.h \
+ /root/vxworks/target/h/sysLib.h /root/vxworks/target/h/asm.h \
+ /root/vxworks/target/h/arch/i86/asmI86.h config.h \
+ /root/vxworks/target/config/all/configAll.h \
+ /root/vxworks/target/h/smLib.h /root/vxworks/target/h/vwModNum.h \
+ /root/vxworks/target/h/vme.h /root/vxworks/target/h/iv.h \
+ /root/vxworks/target/h/arch/i86/ivI86.h pc.h \
+ /root/vxworks/target/h/drv/intrCtl/i8259.h \
+ /root/vxworks/target/h/drv/timer/i8253.h \
+ /root/vxworks/target/h/drv/timer/mc146818.h \
+ /root/vxworks/target/h/drv/timer/timerDev.h \
+ /root/vxworks/target/h/drv/timer/timestampDev.h \
+ /root/vxworks/target/h/drv/fdisk/nec765Fd.h \
+ /root/vxworks/target/h/drv/serial/pcConsole.h \
+ /root/vxworks/target/h/drv/parallel/lptDrv.h \
+ /root/vxworks/target/h/drv/pcmcia/pcmciaLib.h \
+ /root/vxworks/target/h/vwModNum.h \
+ /root/vxworks/target/h/drv/hdisk/ataDrv.h \
+ /root/vxworks/target/h/arch/i86/mmuI86Lib.h \
+ /root/vxworks/target/h/arch/i86/ipiI86Lib.h \
+ /root/vxworks/target/h/drv/intrCtl/loApic.h \
+ /root/vxworks/target/h/drv/intrCtl/ioApic.h configInum.h

@@ -1,0 +1,32 @@
+.\"
+.so wrs.an
+.TH ln97xEndLoad 2 "" "Rev: 11 Dec 98" "TORNADO REFERENCE: VXWORKS" R 12
+.SH NAME
+ln97xEndLoad() - initialize the driver and device
+.SH SYNOPSIS
+.CS
+END_OBJ * ln97xEndLoad
+    (                   
+    char *  initString  /* string to be parse by the driver */
+    )                   
+.CE
+.SH DESCRIPTION
+This routine initializes the driver and the device to the operational state.
+All of the device-specific parameters are passed in <initString>, which
+expects a string of the following format:
+
+<unit>:<devMemAddr>:<devIoAddr>:<pciMemBase:<vecnum>:<intLvl>:<memAdrs>
+:<memSize>:<memWidth>:<csr3b>:<offset>:<flags>
+
+This routine can be called in two modes. If it is called with an empty but
+allocated string, it places the name of this device (that is, "lnPci") into 
+the <initString> and returns 0.
+
+If the string is allocated and not empty, the routine attempts to load
+the driver using the values specified in the string.
+.SH "RETURNS"
+An END object pointer, or NULL on error, or 0 and the name of the
+device if the <initString> was NULL.
+.SH "SEE ALSO"
+ln97xEnd
+.\"

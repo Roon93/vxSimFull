@@ -1,0 +1,141 @@
+.\"
+.so wrs.an
+.TH ln7990End 1 "" "Rev: 04 Feb 98" "TORNADO REFERENCE: VXWORKS"
+.SH NAME
+ln7990End - END style AMD 7990 LANCE Ethernet network interface driver 
+.SH SYNOPSIS
+.iT "ln7990EndLoad() - initialize the driver and device"
+.iT "ln7990InitParse() - parse the initialization string"
+.iT "ln7990InitMem() - initialize memory for Lance chip"
+.CS "" F
+.iT "END_OBJ*\ ln7990EndLoad" "(char*\ initString)"
+.iT "STATUS\ ln7990InitParse" "(LN7990END_DEVICE\ *\ pDrvCtrl, char\ *\ initString)"
+.iT "STATUS\ ln7990InitMem" "(LN7990END_DEVICE\ *\ pDrvCtrl)"
+.CE
+.SH DESCRIPTION
+This module implements the Advanced Micro Devices Am7990 LANCE Ethernet network
+interface driver.  The driver can be configured to support big-endian or
+little-endian architectures, and it contains error recovery code to handle 
+known device errata related to DMA activity.
+
+This driver is designed to be moderately generic.  Thus, it operates 
+unmodified across the range of architectures and targets supported by 
+VxWorks.  To achieve this, the driver load routine requires an input 
+string consisting of several target-specific values.  The driver also 
+requires some external support routines.  These target-specific values 
+and the external support routines are described below.  If any of the 
+assumptions stated below are not true for your particular hardware, this 
+driver might not function correctly with that hardware.
+.SH "BOARD LAYOUT"
+This device is on-board.  No jumpering diagram is necessary.
+.SH "EXTERNAL INTERFACE"
+The only external interface is the ln7990EndLoad() routine, which expects
+the <initString> parameter as input.  This parameter passes in a 
+colon-delimited string of the format:
+
+<unit>:<CSR_reg_addr>:<RAP_reg_addr>:<int_vector>:<int_level>:<shmem_addr>:<shmem_size>:<shmem_width>:<offset>:<csr3B>
+
+The ln7990EndLoad() function uses strtok() to parse the string.
+.SH "TARGET-SPECIFIC PARAMETERS"
+.IP <unit>
+A convenient holdover from the former model.  This parameter is used only
+in the string name for the driver.
+.IP <CSR_register_addr>
+Tells the driver where to find the CSR register.
+.IP <RAP_register_addr>
+Tells the driver where to find the RAP register.
+.IP <int_vector>
+Configures the LANCE device to generate hardware interrupts
+for various events within the device. Thus, it contains
+an interrupt handler routine.  The driver calls sysIntConnect() to connect
+its interrupt handler to the interrupt vector generated as a result of
+the LANCE interrupt.
+.IP <int_level>
+This parameter is passed to an external support routine, sysLanIntEnable(),
+which is described below in "External Support Requirements." This routine 
+is called during as part of driver's initialization.  It handles any 
+board-specific operations required to allow the servicing of a LANCE 
+interrupt on targets that use additional interrupt controller devices to 
+help organize and service the various interrupt sources.  This parameter 
+makes it possible for this driver to avoid all board-specific knowledge of 
+such devices.  
+.IP <shmem_addr>
+The LANCE device is a DMA type of device and typically shares access to
+some region of memory with the CPU.  This driver is designed for systems
+that directly share memory between the CPU and the LANCE.  It
+assumes that this shared memory is directly available to it
+without any arbitration or timing concerns.
+
+This parameter can be used to specify an explicit memory region for use
+by the LANCE.  This should be done on hardware that restricts the LANCE
+to a particular memory region.  The constant NONE can be used to indicate
+that there are no memory limitations, in which case, the driver
+attempts to allocate the shared memory from the system space.
+.IP <shmem_size>
+Use this parameter to explicitly limit the amount of shared memory (bytes) 
+that this driver uses.  Use "NONE" to indicate that there is no specific 
+size limitation.  This parameter is used only if a specific memory region 
+is provided to the driver.
+.IP <shmem_width>
+Some target hardware that restricts the shared memory region to a
+specific location also restricts the access width to this region by
+the CPU.  On such targets, performing an access of an invalid width
+causes a bus error.  Use this parameter to specify the number of bytes 
+on which data must be aligned if it is to be used by the driver during 
+access to the shared memory.  Use "NONE" to indicate that there are no 
+restrictions.  The support for this mechanism is not robust. Thus, its 
+current implementation might not work on all targets requiring these 
+restrictions.
+.IP <offset>
+Specifies the memory alignment offset.
+.IP <csr3B>
+Specifies the value that is placed into LANCE control register #3. This
+value determines the bus mode of the device and thus allows the support of
+big-endian and little-endian architectures.  The default value supports
+Motorola-type buses.  Normally this value is 0x4.  For SPARC CPUs, it is
+normally set to 0x7 to add the ACON and BCON control bits.  For more
+information on this register and the bus mode of the LANCE controller, see
+.I "Advanced Micro Devices Local Area Network Controller Am7990 (LANCE)."
+.LP
+.SH "EXTERNAL SUPPORT REQUIREMENTS"
+This driver requires several external support functions, defined as macros:
+.CS
+    SYS_INT_CONNECT(pDrvCtrl, routine, arg)
+    SYS_INT_DISCONNECT (pDrvCtrl, routine, arg)
+    SYS_INT_ENABLE(pDrvCtrl)
+    SYS_OUT_SHORT(pDrvCtrl, reg, data)
+    SYS_IN_SHORT(pDrvCtrl, reg, pData)
+.CE
+
+There are default values in the source code for these macros.  They presume
+memory-mapped accesses to the device registers and the normal intConnect(),
+and intEnable() BSP functions.  The first argument to each is the device
+controller structure. Thus, each has access back to all the device-specific
+information.  Having the pointer in the macro facilitates the addition 
+of new features to this driver.
+.SH "SYSTEM RESOURCE USAGE"
+When implemented, this driver requires the following system resources:
+
+    - one interrupt vector
+    - 68 bytes in the initialized data section (data) /*HELP*/
+    - 0 bytes of bss /*HELP*/
+
+The above data and BSS requirements are for the MC68020 architecture
+and can vary for other architectures.  Code size (text) varies greatly 
+between architectures and is therefore not quoted here.
+
+If the driver is not given a specific region of memory using the ln7990EndLoad()
+routine, then it calls cacheDmaMalloc() to allocate the memory to be shared
+with the LANCE.  The size requested is 80,542 bytes.  If a memory region
+is provided to the driver, the size of this region is adjustable to suit
+user needs.
+
+The LANCE can only be operated if the shared memory region is write-coherent
+with the data cache.  The driver cannot maintain cache coherency for data 
+that is written by the driver. That is because members within the shared 
+structures are asynchronously modified by both the driver and the device, 
+and these members might share the same cache line.
+.SH "SEE ALSO"
+muxLib,
+.I "Advanced Micro Devices Local Area Network Controller Am7990 (LANCE)"
+.\"

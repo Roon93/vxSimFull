@@ -1,0 +1,132 @@
+
+
+
+ln97xInitParse(2)  TORNADO REFERENCE: VXWORKS   ln97xInitParse(2)
+
+
+
+NAME
+     ln97xInitParse() - parse the initialization string
+
+SYNOPSIS
+     STATUS ln97xInitParse
+         (
+         LN_97X_DRV_CTRL *  pDrvCtrl,   /* pointer to the control structure */
+         char *             initString  /* initialization string            */
+         )
+
+
+DESCRIPTION
+     Parse  the  input  string.  This  routine  is  called   from
+     ln97xEndLoad()  which  intializes  some values in the driver
+     control structure with the values passed in  the  intializa-
+     tion string.
+
+     The       initialization       string       format       is:
+     <unit>:<devMemAddr>:<devIoAddr>:<pciMemBase:<vecNum>:<intLvl>:<memAdrs>
+     :<memSize>:<memWidth>:<csr3b>:<offset>:<flags>
+
+
+     <unit>
+          Device unit number, a small integer.
+
+     <devMemAddr>
+          Device register base memory address
+
+     <devIoAddr>
+          Device register base IO address
+
+     <pciMemBase>
+          Base address of PCI memory space
+
+     <vecNum>
+          Interrupt vector number.
+
+     <intLvl>
+          Interrupt level.
+
+     <memAdrs>
+          Memory pool address or NONE.
+
+     <memSize>
+          Memory pool size or zero.
+
+     <memWidth>
+          Memory system size, 1, 2, or 4 bytes (optional).
+
+     <CSR3>
+          Value of CSR3 (for endian-ness mainly)
+
+
+
+
+Rev: 11 Dec 98                                                  1
+
+
+
+
+
+
+ln97xInitParse(2)  TORNADO REFERENCE: VXWORKS   ln97xInitParse(2)
+
+
+
+     <offset>
+          Offset of starting of data in the device buffers.
+
+     <flags>
+          Device specific flags, for future use.
+
+RETURNS
+     OK, or ERROR if any arguments are invalid.
+
+SEE ALSO
+     ln97xEnd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rev: 11 Dec 98                                                  2
+
+
+
