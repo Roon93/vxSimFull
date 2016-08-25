@@ -1,0 +1,76 @@
+
+locTime.o:
+00000020 d __ctime
+00000000 D __loctime
+
+asctime.o:
+00000000 T asctime
+00000000 b asctimeBuf.1162
+00000030 T asctime_r
+         U strftime
+
+clock.o:
+00000000 T clock
+
+ctime.o:
+00000000 b asctimeBuf.1162
+         U asctime_r
+00000000 T ctime
+00000040 T ctime_r
+         U localtime
+
+difftime.o:
+00000000 T difftime
+
+gmtime.o:
+00000000 T __daysSinceEpoch
+00000040 T __getTime
+00000220 T gmtime
+00000210 T gmtime_r
+00000000 r jdays.1295
+00000250 T __julday
+         U ldiv_r
+00000000 b timeBuffer.1266
+
+localtime.o:
+         U atoi
+         U __getDstInfo
+         U __getTime
+         U __getZoneInfo
+000000b0 T localtime
+00000000 T localtime_r
+         U __loctime
+00000000 b timeBuffer.1267
+
+mktime.o:
+         U atoi
+         U __daysSinceEpoch
+         U __getDstInfo
+         U __getZoneInfo
+         U __julday
+         U __loctime
+00000150 T mktime
+00000000 t __tmNormalize
+00000040 t __tmValidate
+
+strftime.o:
+         U abs
+         U atoi
+         U bzero
+00000000 T __getDstInfo
+         U getenv
+00000340 T __getZoneInfo
+         U __loctime
+         U memcpy
+         U strcmp
+         U strcpy
+00000a70 T strftime
+00000460 t strftime_r
+         U strlen
+         U strncpy
+         U strpbrk
+         U strtok_r
+
+time.o:
+         U clock_gettime
+00000000 T time

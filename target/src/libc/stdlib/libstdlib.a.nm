@@ -1,0 +1,77 @@
+
+abort.o:
+00000000 T abort
+         U exit
+         U raise
+
+abs.o:
+00000000 T abs
+
+atexit.o:
+00000000 T atexit
+
+atof.o:
+00000000 T atof
+         U strtod
+
+atoi.o:
+00000000 T atoi
+         U strtol
+
+atol.o:
+00000000 T atol
+         U strtol
+
+bsearch.o:
+00000000 T bsearch
+
+div.o:
+00000000 T div
+00000070 T div_r
+00000000 b divStruct.1142
+
+labs.o:
+00000000 T labs
+
+ldiv.o:
+00000000 b divStruct.1142
+00000000 T ldiv
+00000070 T ldiv_r
+
+multibyte.o:
+00000000 T mblen
+000000b0 T mbstowcs
+00000040 T mbtowc
+         U strcmp
+000000f0 T wcstombs
+00000080 T wctomb
+
+qsort.o:
+00000000 t insertion_sort
+000004a0 T qsort
+000000d0 t quick_sort
+
+rand.o:
+00000000 T rand
+00000000 D _Randseed
+00000040 T srand
+
+strtod.o:
+         U abs
+         U __errno
+00000000 T __exp10
+00000000 r powtab
+00000060 T strtod
+
+strtol.o:
+         U __ctype
+         U __errno
+00000000 T strtol
+
+strtoul.o:
+         U __ctype
+         U __errno
+00000000 T strtoul
+
+system.o:
+00000000 T system

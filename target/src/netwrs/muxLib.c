@@ -2794,7 +2794,8 @@ LOCAL void muxEndFlagsNotify
 
     endErr.errCode = END_ERR_FLAGS;
     endErr.pMesg = msgBuffer;
-    (UINT32)(endErr.pSpare) = endFlags;
+	/*kernal:(UINT32)(endErr.pSpare) = endFlags;*/
+    endErr.pSpare = (void *)endFlags;
 
     /*
      * notify all protocols that are bound to this END, except the one that

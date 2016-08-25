@@ -28,7 +28,7 @@ LIBS		=  -lcplus  -lgnucplus  -lvxcom  -lvxdcom  -larch  -lcommoncc  -ldrv  -lgc
 	
 #LD_LINK_PATH	= -L$(VXWORKS_BASE_DIR)/lib/pentium/PENTIUM/gnu -L$(VXWORKS_BASE_DIR)/lib/pentium/PENTIUM/common
 
-LD_LINK_PATH	= -L$(VXWORKS_BASE_DIR)/src/os -L$(VXWORKS_BASE_DIR)/src/wind -L$(VXWORKS_BASE_DIR)/src/util -L$(VXWORKS_BASE_DIR)/src/arch/i86 -L$(VXWORKS_BASE_DIR)/src/libc/string -L$(VXWORKS_BASE_DIR)/src/libc/ctype
+LD_LINK_PATH	= -L$(VXWORKS_BASE_DIR)/src/os -L$(VXWORKS_BASE_DIR)/src/wind -L$(VXWORKS_BASE_DIR)/src/util -L$(VXWORKS_BASE_DIR)/src/arch/i86 -L$(VXWORKS_BASE_DIR)/src/libc/string -L$(VXWORKS_BASE_DIR)/src/libc/ctype -L$(VXWORKS_BASE_DIR)/src/fs -L$(VXWORKS_BASE_DIR)/src/drv -L$(VXWORKS_BASE_DIR)/src/usr -L$(VXWORKS_BASE_DIR)/src/libc/time -L$(VXWORKS_BASE_DIR)/src/libc/stdlib -L$(VXWORKS_BASE_DIR)/src/netwrs
 
 #vpath定义了.a库文件的搜索路径，如果没有定义则会去生成.a库文件
 vpath %.a $(subst -L,,$(LD_LINK_PATH))
@@ -115,9 +115,9 @@ bootrom_uncmp.elf : depend.VirtualBoxBSP bootInit_uncmp.o romInit.o \
 	$(CC) -c $(CFLAGS) -o version.o $(VXWORKS_BASE_DIR)/config/all/version.c
 	$(LD) -X -N -e romInit \
 	    -Ttext 0x8000 -o $@ romInit.o bootInit_uncmp.o version.o \
-	    bootConfig.o sysALib.o sysLib.o --start-group $(LD_LINK_PATH) -los  -lwind -lutil -larch  -lstring -lctype --end-group\
+	    bootConfig.o sysALib.o sysLib.o --start-group $(LD_LINK_PATH) -los  -lwind -lutil -larch  -lstring -lctype -lfs -ldrv -lusr -ltime -lstdlib -lnetwrs --end-group\
 	    -T $(VXWORKS_BASE_DIR)/h/tool/gnu/ldscripts/link.RAM
-	nm $@ > $@.nm
+	nm $@ > $@.nm 
 	objdump -D -j .text $@ > $@.dump
 
 bootrom_uncmp.iso :  bootrom_uncmp.elf

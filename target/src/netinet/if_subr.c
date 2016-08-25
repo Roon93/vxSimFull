@@ -979,7 +979,8 @@ void do_protocol_with_type
 #ifdef VIRTUAL_STACK
         netJobAdd (pInputFunc, pArpcom->ac_if.vsNum, 0, 0, 0, 0);
 #else
-	arpintr();
+	/*kernal: arpintr();*/
+	arpintr(NULL);
 #endif /* VIRTUAL_STACK */
         }
     }

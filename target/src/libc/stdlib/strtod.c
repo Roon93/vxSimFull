@@ -50,9 +50,11 @@ static double powtab[] = {1.0,
 #define DECP    0x04
 
 /* locals */
+/*kernal: add LOCAL*/
 
-int             __ten_mul (double *acc, int digit);
-double          __adjust (double *acc, int dexp, int sign);
+LOCAL int             __ten_mul (double *acc, int digit);
+/*kernal: add LOCAL*/
+LOCAL double          __adjust (double *acc, int dexp, int sign);
 double          __exp10 (uint_t x);
 
 /*****************************************************************************
