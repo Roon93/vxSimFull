@@ -152,26 +152,26 @@ int bcmp
     FAST int nbytes             /* number of bytes to compare */
     )
     {
-    const unsigned char *p1;
-    const unsigned char *p2;
+	    const unsigned char *p1;
+	    const unsigned char *p2;
 
-    /* size of memory is zero */
+	    /* size of memory is zero */
 
-    if (nbytes == 0)
-	return (0);
+	    if (nbytes == 0)
+		return (0);
 
-    /* compare array 2 into array 1 */
+	    /* compare array 2 into array 1 */
 
-    p1 = (const unsigned char *)buf1;
-    p2 = (const unsigned char *)buf2;
+	    p1 = (const unsigned char *)buf1;
+	    p2 = (const unsigned char *)buf2;
 
-    while (*p1++ == *p2++)
-	{
-	if (--nbytes == 0)
-	    return (0);
-        }
+	    while (*p1++ == *p2++)
+		{
+		if (--nbytes == 0)
+		    return (0);
+	    }
 
-    return ((*--p1) - (*--p2));
+	    return ((*--p1) - (*--p2));
     }
 /*******************************************************************************
 *

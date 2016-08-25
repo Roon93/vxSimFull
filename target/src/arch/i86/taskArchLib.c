@@ -83,7 +83,7 @@ void taskRegsInit
     {
 
     pTcb->regs.eflags = EFLAGS_BRANDNEW | taskATenable; /* set status reg */
-    pTcb->regs.pc = (INSTR *)vxTaskEntry;	/* set entry point */
+    pTcb->regs.pc = (INSTR *)vxTaskEntry;	/*kernal:在windALib.s中实现*//* set entry point */
 
     pTcb->regs.edi = 0;				/* initialize 7 regs */
     pTcb->regs.esi = 0;
@@ -100,7 +100,7 @@ void taskRegsInit
     /* perform the arch initialization. XXX there should be better place */
 
     if (taskArchInitDone)
-	return;
+		return;
 
     taskArchInit ();
     }
@@ -224,7 +224,7 @@ LOCAL void taskArchInit (void)
     {
 
     if (taskArchInitDone)
-	return;
+		return;
 
     taskCreateHookAdd ((FUNCPTR) taskArchCreateHook);
     taskArchInitDone = TRUE;
@@ -248,11 +248,11 @@ LOCAL void taskArchCreateHook
     /* allocate the X86 TCB extension if it is not yet allocated */
 
     if (pTcb->reserved2 != 0)
-	return;
+		return;
 
     pTcb->reserved2 = (int) taskStackAllot ((int) pTcb, sizeof (X86_EXT));
     if (pTcb->reserved2 == 0)
-	return;
+		return;
     
     bzero ((char *) pTcb->reserved2, sizeof (X86_EXT));
     }

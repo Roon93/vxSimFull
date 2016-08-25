@@ -1,3 +1,5 @@
+####目前采用这个Makefile进行实验
+
 VXWORKS_BASE_DIR = /mnt/vxSimFull/target
 CC_INCLUDE = -I/h   -I. -I$(VXWORKS_BASE_DIR)/config/all -I$(VXWORKS_BASE_DIR)/h  -I$(VXWORKS_BASE_DIR)/src/config -I$(VXWORKS_BASE_DIR)/src/drv
 

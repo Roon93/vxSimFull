@@ -128,13 +128,13 @@ STATUS cacheArchLibInit
         if (sysCpuId.featuresEdx & CPUID_CLFLUSH)	/* cacheFlush() */
 	    {
             cacheLib.flushRtn	   = (FUNCPTR)cachePen4Flush;	/* w CLFLUSH */
-	    cacheLib.clearRtn	   = (FUNCPTR)cachePen4Clear;	/* w CLFLUSH */
+	    	cacheLib.clearRtn	   = (FUNCPTR)cachePen4Clear;	/* w CLFLUSH */
             cacheLib.invalidateRtn = (FUNCPTR)cachePen4Clear;	/* w CLFLUSH */
 	    }
-	else
+		else
 	    {
             cacheLib.flushRtn	   = (FUNCPTR)cacheI86Flush;	/* w WBINVD */
-	    cacheLib.clearRtn	   = (FUNCPTR)cacheI86Clear;	/* w WBINVD */
+	    	cacheLib.clearRtn	   = (FUNCPTR)cacheI86Clear;	/* w WBINVD */
             cacheLib.invalidateRtn = (FUNCPTR)cacheI86Clear;	/* w WBINVD */
 	    }
 

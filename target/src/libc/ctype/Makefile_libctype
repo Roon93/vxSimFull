@@ -1,0 +1,26 @@
+OBJS=	__ctype_tab.o isalnum.o isalpha.o iscntrl.o isdigit.o isgraph.o \
+      	islower.o isprint.o ispunct.o isspace.o isupper.o isxdigit.o \
+	tolower.o toupper.o
+
+CC_INCLUDE =  -I.  -I../../h  -I..
+
+CC_DEFINES	= -DCPU=PENTIUM \
+		  -DTOOL_FAMILY=gnu \
+		  -DTOOL=gnu 
+
+CFLAGS		= -march=pentium -ansi -g -gdwarf-2 -gstrict-dwarf -O2 -nostdlib -fno-builtin -fno-defer-pop -Wall $(CC_INCLUDE) $(CC_DEFINES)
+
+LIB_NAME =  ctype
+
+.c.o :
+	$(RM) $@
+	cc $(CFLAGS) -c $<
+###############################################################################build targets###############################################
+
+lib$(LIB_NAME).a : $(OBJS)
+	$(RM) $@ 
+	$(RM) *.dump
+	$(RM) $@.nm
+	ar -r $@ $(OBJS)
+	nm $@ > $@.nm 
+

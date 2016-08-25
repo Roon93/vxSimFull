@@ -1,0 +1,54 @@
+
+__ctype_tab.o:
+00000000 D __ctype
+00000000 r __ctype_tab
+
+isalnum.o:
+         U __ctype
+00000000 T isalnum
+
+isalpha.o:
+         U __ctype
+00000000 T isalpha
+
+iscntrl.o:
+         U __ctype
+00000000 T iscntrl
+
+isdigit.o:
+         U __ctype
+00000000 T isdigit
+
+isgraph.o:
+         U __ctype
+00000000 T isgraph
+
+islower.o:
+         U __ctype
+00000000 T islower
+
+isprint.o:
+         U __ctype
+00000000 T isprint
+
+ispunct.o:
+         U __ctype
+00000000 T ispunct
+
+isspace.o:
+         U __ctype
+00000000 T isspace
+
+isupper.o:
+         U __ctype
+00000000 T isupper
+
+isxdigit.o:
+         U __ctype
+00000000 T isxdigit
+
+tolower.o:
+00000000 T tolower
+
+toupper.o:
+00000000 T toupper

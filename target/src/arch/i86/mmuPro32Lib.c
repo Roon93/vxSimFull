@@ -968,7 +968,7 @@ LOCAL STATUS mmuPageMap
 
     MMU_UNLOCK (wasEnabled, oldIntLev);
     if (mmuPageSize == PAGE_SIZE_4MB)
-        (int)physPage &= ADDR_TO_PAGEBASE;
+        physPage = (int)physPage & ADDR_TO_PAGEBASE;
     pPte->field.page = (UINT)physPage >> ADDR_TO_PAGE; 
     MMU_LOCK (wasEnabled, oldIntLev);
 
@@ -1024,7 +1024,7 @@ LOCAL STATUS mmuGlobalPageMap
 
     MMU_UNLOCK (wasEnabled, oldIntLev);
     if (mmuPageSize == PAGE_SIZE_4MB)
-        (int)physPage &= ADDR_TO_PAGEBASE;
+        physPage = (int)physPage & ADDR_TO_PAGEBASE;
     pPte->field.page = (UINT)physPage >> ADDR_TO_PAGE; 
     MMU_LOCK (wasEnabled, oldIntLev);
 

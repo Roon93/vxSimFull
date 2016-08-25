@@ -502,7 +502,7 @@ void intLockLevelSet
     int newLevel		/* new interrupt level */
     )
     {
-    intLockMask    = newLevel;
+    	intLockMask    = newLevel;
     }
 
 /*******************************************************************************

@@ -1,0 +1,94 @@
+
+memchr.o:
+00000000 T memchr
+
+memcmp.o:
+00000000 T memcmp
+
+memcpy.o:
+         U bcopy
+00000000 T memcpy
+
+memmove.o:
+00000000 T memmove
+
+memset.o:
+         U bfill
+00000000 T memset
+
+strcat.o:
+00000000 T strcat
+
+strchr.o:
+00000000 T strchr
+
+strcmp.o:
+00000000 T strcmp
+
+strcoll.o:
+00000000 t getxfrm
+         U memcmp
+00000070 T strcoll
+         U __strxfrm
+
+strcpy.o:
+00000000 T strcpy
+
+strcspn.o:
+00000000 T strcspn
+
+strerror.o:
+00000000 b buffer.2126
+         U _func_symFindSymbol
+         U _func_symNameGet
+         U _func_symValueGet
+         U sprintf
+         U statSymTbl
+         U strcpy
+000000f0 T strerror
+00000000 t strerrorIf
+000000e0 T strerror_r
+         U strncpy
+
+strlen.o:
+00000000 T strlen
+
+strncat.o:
+00000000 T strncat
+
+strncmp.o:
+00000000 T strncmp
+
+strncpy.o:
+00000000 T strncpy
+
+strpbrk.o:
+00000000 T strpbrk
+
+strrchr.o:
+00000000 T strrchr
+
+strspn.o:
+00000000 T strspn
+
+strstr.o:
+00000000 T strstr
+
+strtok.o:
+00000000 b last.1169
+00000000 T strtok
+         U strtok_r
+
+strtok_r.o:
+         U strpbrk
+         U strspn
+00000000 T strtok_r
+
+strxfrm.o:
+         U __costate
+00000130 T strxfrm
+00000000 T __strxfrm
+
+xstate.o:
+00000000 D __costate
+00000000 r __table
