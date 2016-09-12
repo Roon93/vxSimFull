@@ -1,0 +1,9 @@
+
+longjmp.o:
+         U _func_sigprocmask
+00000040 T longjmp
+00000000 T _setjmpSetup
+         U _sigCtxLoad
+         U _sigCtxRtnValSet
+         U taskIdCurrent
+         U taskSuspend

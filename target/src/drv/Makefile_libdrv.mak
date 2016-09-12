@@ -1,6 +1,6 @@
 LIB_NAME=drv
 
-OBJS= nec765Fd.o  l64853Dma.o i8237Dma.o i8250Sio.o ln97xEnd.o
+OBJS= nec765Fd.o  l64853Dma.o i8237Dma.o i8250Sio.o ln97xEnd.o endLib.o
 
 CC_INCLUDE =  -I.  -I../../h  -I..
 
@@ -34,6 +34,10 @@ i8250Sio.o:
 ln97xEnd.o:
 	$(RM) $@
 	cc $(CFLAGS) -c ./end/ln97xEnd.c
+	
+endLib.o:
+	$(RM) $@
+	cc $(CFLAGS) -c ./end/endLib.c
 	
 
 ###############################################################################build targets###############################################	

@@ -58,7 +58,7 @@ modification history
 #include "tickLib.h"
 #include "wdLib.h"
 #include "sockLib.h"
-#include "wrn/IGMPv2/igmpRouterLib.h"
+/*#include "wrn/IGMPv2/igmpRouterLib.h" kernal */
 #include "timers.h"
 #include "net/mbuf.h"
 #include "wdLib.h"

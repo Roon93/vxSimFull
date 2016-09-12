@@ -1,0 +1,345 @@
+
+clearerr.o:
+00000000 T clearerr
+         U __errno
+         U fpClassId
+
+fclose.o:
+         U __errno
+00000000 T fclose
+         U fpClassId
+         U free
+         U __sclose
+         U __sflush
+         U stdioFpDestroy
+
+fdopen.o:
+00000000 T fdopen
+         U iosFdValue
+         U __sflags
+         U stdioFpCreate
+
+feof.o:
+         U __errno
+00000000 T feof
+         U fpClassId
+
+ferror.o:
+         U __errno
+00000000 T ferror
+         U fpClassId
+
+fflush.o:
+         U __errno
+000000b0 T fflush
+         U fpClassId
+00000000 T __sflush
+         U __swrite
+
+fgetc.o:
+         U __errno
+00000000 T fgetc
+         U fpClassId
+         U __srget
+
+fgetpos.o:
+         U __errno
+00000000 T fgetpos
+         U fpClassId
+         U ftell
+
+fgets.o:
+         U bcopy
+         U __errno
+00000000 T fgets
+         U fpClassId
+         U memchr
+         U __srefill
+
+fileno.o:
+         U __errno
+00000000 T fileno
+         U fpClassId
+
+flags.o:
+         U __errno
+00000000 T __sflags
+
+fopen.o:
+00000000 T fopen
+         U open
+         U __sflags
+         U __sseek
+         U stdioFpCreate
+         U stdioFpDestroy
+
+fprintf.o:
+         U __errno
+         U fpClassId
+00000000 T fprintf
+         U vfprintf
+
+fputc.o:
+         U __errno
+         U fpClassId
+00000000 T fputc
+         U __swbuf
+
+fputs.o:
+         U __errno
+         U fpClassId
+00000000 T fputs
+         U __sfvwrite
+         U strlen
+
+fread.o:
+         U bcopy
+         U __errno
+         U fpClassId
+00000000 T fread
+         U __srefill
+
+freopen.o:
+         U __errno
+         U fclose
+         U fpClassId
+         U free
+00000000 T freopen
+         U open
+         U __sclose
+         U __sflags
+         U __sflush
+         U stdioFpDestroy
+
+fscanf.o:
+         U __errno
+         U fgetc
+         U fioScanV
+         U fpClassId
+00000000 T fscanf
+         U ungetc
+
+fseek.o:
+         U __errno
+         U fpClassId
+         U free
+00000000 T fseek
+         U ioctl
+         U __sflush
+         U __smakebuf
+         U __srefill
+         U __sseek
+
+fsetpos.o:
+         U fseek
+00000000 T fsetpos
+
+ftell.o:
+         U __errno
+         U fpClassId
+00000000 T ftell
+         U __sseek
+
+fvwrite.o:
+         U bcopy
+         U fflush
+         U memchr
+00000000 T __sfvwrite
+         U __swrite
+         U __swsetup
+
+fwrite.o:
+         U __errno
+         U fpClassId
+00000000 T fwrite
+         U __sfvwrite
+
+getc.o:
+         U __errno
+         U fpClassId
+00000000 T getc
+         U __srget
+
+getchar.o:
+         U __errno
+         U fpClassId
+00000000 T getchar
+         U __srget
+         U __stdin
+
+gets.o:
+         U __errno
+         U fpClassId
+00000000 T gets
+         U __srget
+         U __stdin
+
+getw.o:
+         U fread
+00000000 T getw
+
+makebuf.o:
+         U ioctl
+         U isatty
+         U malloc
+00000000 T __smakebuf
+
+perror.o:
+         U __errno
+         U fprintf
+00000000 T perror
+         U __stderr
+         U strerror
+
+putc.o:
+         U __errno
+         U fpClassId
+00000000 T putc
+         U __swbuf
+
+putchar.o:
+         U __errno
+         U fpClassId
+00000000 T putchar
+         U __stdout
+         U __swbuf
+
+putw.o:
+         U fwrite
+00000000 T putw
+
+puts.o:
+00000000 T puts
+         U __sfvwrite
+         U __stdout
+         U strlen
+
+refill.o:
+         U __errno
+         U free
+         U __sflush
+         U __smakebuf
+         U __sread
+00000000 T __srefill
+
+rewind.o:
+         U __errno
+         U fpClassId
+         U fseek
+00000000 T rewind
+
+rget.o:
+         U __srefill
+00000000 T __srget
+
+scanf.o:
+         U fgetc
+         U fioScanV
+00000000 T scanf
+         U __stdin
+         U ungetc
+
+setbuf.o:
+         U __errno
+         U fpClassId
+00000000 T setbuf
+         U setvbuf
+
+setbuffer.o:
+         U __errno
+         U fpClassId
+00000000 T setbuffer
+00000060 T setlinebuf
+         U setvbuf
+
+setvbuf.o:
+         U __errno
+         U fpClassId
+         U free
+00000000 T setvbuf
+         U __sflush
+
+stdio.o:
+         U close
+         U lseek
+         U read
+00000100 T __sclose
+00000000 T __sread
+000000b0 T __sseek
+00000050 T __swrite
+         U write
+
+stdioLib.o:
+         U classInit
+         U fclose
+00000020 b fpClass
+00000000 D fpClassId
+         U _func_fclose
+         U _func_taskDeleteHookAdd
+         U objAlloc
+         U objCoreInit
+         U objCoreTerminate
+         U objFree
+00000310 T __stderr
+000002e0 T __stdin
+000002a0 T stdioFp
+00000000 b stdioFpCleanupHookDone
+000000a0 T stdioFpCreate
+00000160 T stdioFpDestroy
+00000030 T stdioInit
+00000004 b stdioInitialized
+000001d0 t stdioInitStd
+00000000 t stdioStdfpCleanup
+00000190 T __stdout
+         U taskDeleteHookAdd
+         U taskHookInit
+         U taskIdCurrent
+
+stdioShow.o:
+         U classShowConnect
+         U __errno
+         U fpClassId
+         U printf
+00000000 T stdioShow
+000001c0 T stdioShowInit
+
+tmpnam.o:
+00000020 b buf.1517
+00000000 b seed.1518
+         U strcpy
+         U strlen
+00000000 T tmpnam
+
+tmpfile.o:
+00000000 T tmpfile
+
+ungetc.o:
+         U bcopy
+         U __errno
+         U fpClassId
+         U malloc
+         U realloc
+         U __sflush
+00000000 T ungetc
+
+wbuf.o:
+         U fflush
+00000000 T __swbuf
+         U __swsetup
+
+wsetup.o:
+         U free
+         U __smakebuf
+00000000 T __swsetup
+
+vfprintf.o:
+         U __errno
+         U fflush
+         U fioFormatV
+         U fpClassId
+         U objCoreInit
+         U objCoreTerminate
+00000000 t putbuf
+         U __swbuf
+         U __swsetup
+000000c0 T vfprintf

@@ -85,7 +85,7 @@ modification history
 #include "netinet/igmp_var.h"
 #include "net/systm.h"
 /* #include "ppp/random.h" */   /*  XXX -- illegal cross-product reference */
-#include "wrn/IGMPv2/igmpRouterLib.h"
+/*#include "wrn/IGMPv2/igmpRouterLib.h" kernal */
 
 #ifdef VIRTUAL_STACK
 #include "netinet/vsLib.h"

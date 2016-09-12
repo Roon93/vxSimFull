@@ -1,0 +1,5 @@
+
+assert.o:
+         U abort
+00000000 T __assert
+         U fdprintf

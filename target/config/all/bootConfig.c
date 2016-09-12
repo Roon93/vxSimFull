@@ -1268,7 +1268,7 @@ void usrRoot
     bootCoffInit ();				/* use coff format */
 #else   /* coff */
 #if	defined(INCLUDE_ELF)
-_    bootElfInit ();				/* use elf format */
+	bootElfInit ();				/* use elf format */
 #endif
 #endif 						/* mips cpp no elif */
 #endif

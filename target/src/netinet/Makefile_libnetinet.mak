@@ -20,7 +20,7 @@ CFLAGS		= -march=pentium -ansi -g -gdwarf-2 -gstrict-dwarf -O2 -nostdlib -fno-bu
 	cc $(CFLAGS) -c $<
 ###############################################################################build targets###############################################	
 
-lib$(LIB_NAME).a : $(OBJS)
+libnetinet.a : $(OBJS)
 	$(RM) $@ 
 	$(RM) *.dump
 	$(RM) $@.nm

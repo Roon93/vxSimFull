@@ -1,0 +1,18 @@
+
+random.o:
+00000014 r degrees
+00000000 d end_ptr
+         U fprintf
+00000018 d fptr
+00000240 T initstate
+00000008 d rand_deg
+000000f0 T random
+00000004 d rand_sep
+00000020 d randtbl
+0000000c d rand_type
+00000014 d rptr
+00000000 r seps
+00000000 T setstate
+00000190 T srandom
+00000010 d state
+         U __stderr

@@ -15,9 +15,24 @@ OBJS=	bootAoutLib.o bootElfLib.o \
 	loadAoutLib.o \
 	loadElfLib.o loadLib.o loadPecoffLib.o\
 	loginLib.o moduleLib.o periodHost.o repeatHost.o \
-	remShellLib.o shell.o shellLib.o spyLib.o \
+	remShellLib.o  shellLib.o spyLib.o \
 	timexLib.o ttHostLib.o \
 	unldLib.o 
+
+	
+shell.c : shell.yacc
+	$(RM) $@ $(YACCOUT)
+	yacc shell.yacc
+	sed "1s/^extern char \*malloc().*//" < $(YACCOUT) > shell.c
+	$(RM) $(YACCOUT)
+
+#shell_slex_c : shell.slex
+#	$(RM) $@
+#	sh slex shell.slex > shell_slex_c
+
+#shell.o : shell.c shell_slex_c	
+#	$(RM) $@
+#	cc $(CFLAGS) -c $<
 
 LIB_NAME = ostool	
 
@@ -27,14 +42,14 @@ CC_DEFINES	= -DCPU=PENTIUM \
 		  -DTOOL_FAMILY=gnu \
 		  -DTOOL=gnu 
 
-CFLAGS		= -march=pentium -ansi -g -gdwarf-2 -gstrict-dwarf -O2 -nostdlib -fno-builtin -fno-defer-pop -Wall $(CC_INCLUDE) $(CC_DEFINES)
+CFLAGS		= -march=pentium -ansi -g -gdwarf-2 -gstrict-dwarf -O2 -nostdlib -fno-builtin -fno-defer-pop -w $(CC_INCLUDE) $(CC_DEFINES)
 
 .c.o :
 	$(RM) $@
 	cc $(CFLAGS) -c $<
 ###############################################################################build targets###############################################	
 
-lib$(LIB_NAME).a : $(OBJS)
+libostool.a : $(OBJS)
 	$(RM) $@ 
 	$(RM) *.dump
 	$(RM) $@.nm

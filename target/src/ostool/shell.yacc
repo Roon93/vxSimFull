@@ -113,7 +113,7 @@ SEE ALSO: "Shell"
 #include "stdio.h"
 #include "private/cplusLibP.h"
 
-#define YYSTYPE VALUE		/* type of parse stack */
+#undef YYSTYPE VALUE		/* type of parse stack */
 
 #define	MAX_SHELL_LINE	128	/* max chars on line typed to shell */
 
@@ -176,14 +176,14 @@ typedef struct		/* VALUE */
 IMPORT int redirInFd;
 IMPORT int redirOutFd;
 
-LOCAL BOOL semError;	/* TRUE = semantic error found */
-LOCAL VALUE tmpVal1;	/* used by BIN_OP above for expression evaluation */
-LOCAL VALUE tmpVal2;	/* used by BIN_OP above for expression evaluation */
-LOCAL int argStack [MAX_SHELL_ARGS];	/* arguments to functions */
-LOCAL int nArgs;	/* number of args currently on argStack */
-LOCAL BOOL usymFlag;	/* TRUE = U_SYMBOL has been seen */
-LOCAL VALUE usymVal;	/* value of U_SYMBOL which has been seen */
-LOCAL BOOL spawnFlag;	/* TRUE if spawn is first parameter in argStack[] */
+ BOOL semError;	/* TRUE = semantic error found */
+ VALUE tmpVal1;	/* used by BIN_OP above for expression evaluation */
+ VALUE tmpVal2;	/* used by BIN_OP above for expression evaluation */
+ int argStack [MAX_SHELL_ARGS];	/* arguments to functions */
+ int nArgs;	/* number of args currently on argStack */
+ BOOL usymFlag;	/* TRUE = U_SYMBOL has been seen */
+ VALUE usymVal;	/* value of U_SYMBOL which has been seen */
+ BOOL spawnFlag;	/* TRUE if spawn is first parameter in argStack[] */
 
 %}
 
@@ -344,21 +344,21 @@ typecast:	'(' TYPECAST ')'		{ $2.side = RHS; $$ = $2; }
 
 /* forward declarations */
 
-LOCAL int newString ();
-LOCAL VALUE *getRv ();
-LOCAL int *getLv ();
-LOCAL VALUE evalExp ();
+ int newString ();
+ VALUE *getRv ();
+ int *getLv ();
+ VALUE evalExp ();
 #ifndef	_WRS_NO_TGT_SHELL_FP
-LOCAL void doubleToInts ();
+ void doubleToInts ();
 #endif	/* _WRS_NO_TGT_SHELL_FP */
-LOCAL void setRv ();
-LOCAL void typeConvert ();
-LOCAL BOOL checkLv ();
-LOCAL BOOL checkRv ();
+ void setRv ();
+ void typeConvert ();
+ BOOL checkLv ();
+ BOOL checkRv ();
 
 /*******************************************************************************
 *
-* yystart - initialize local variables
+* yystart - initialize  variables
 *
 * NOMANUAL
 */
@@ -380,7 +380,7 @@ void yystart (line)
 * This routine is called by yacc when an error is detected.
 */
 
-LOCAL void yyerror (string)
+ void yyerror (string)
     char *string;
 
     {
@@ -411,7 +411,7 @@ LOCAL void yyerror (string)
 * rvOp - sets rhs of yyval to evaluated expression
 */
 
-LOCAL void rvOp (pY1, op, pY2)
+ void rvOp (pY1, op, pY2)
     VALUE *pY1;
     int op;
     VALUE *pY2;
@@ -428,7 +428,7 @@ LOCAL void rvOp (pY1, op, pY2)
 * assign - make assignment of new value to a cell
 */
 
-LOCAL void assign (pLv, pRv)
+ void assign (pLv, pRv)
     FAST VALUE *pLv;	/* lhs to be assigned into */
     FAST VALUE *pRv;	/* rhs value */
 
@@ -487,7 +487,7 @@ LOCAL void assign (pLv, pRv)
 * newString - allocate and copy a string
 */
 
-LOCAL int newString (string)
+ int newString (string)
     char *string;
 
     {
@@ -509,7 +509,7 @@ LOCAL int newString (string)
 * newSym - allocate a new symbol and add to symbol table
 */
 
-LOCAL VALUE newSym (name, type)
+ VALUE newSym (name, type)
     char *name;
     TYPE type;
 
@@ -547,7 +547,7 @@ LOCAL VALUE newSym (name, type)
 * printSym - print symbolic value
 */
 
-LOCAL void printSym (val, prefix, suffix)
+ void printSym (val, prefix, suffix)
     FAST int val;
     char *prefix;
     char *suffix;
@@ -586,7 +586,7 @@ LOCAL void printSym (val, prefix, suffix)
 * newArgList - start a new argument list
 */
 
-LOCAL VALUE newArgList ()
+ VALUE newArgList ()
     {
     VALUE value;
 
@@ -601,7 +601,7 @@ LOCAL VALUE newArgList ()
 * addArg - add an argument to an argument list
 */
 
-LOCAL void addArg (pArgList, pNewArg)
+ void addArg (pArgList, pNewArg)
     VALUE *pArgList;
     FAST VALUE *pNewArg;
 
@@ -726,7 +726,7 @@ LOCAL void addArg (pArgList, pNewArg)
 * doubleToInts - separate double into two integer parts
 */
 
-LOCAL void doubleToInts (d, partA, partB)
+ void doubleToInts (d, partA, partB)
     double d;
     int *partA;
     int *partB;
@@ -753,7 +753,7 @@ LOCAL void doubleToInts (d, partA, partB)
 * funcCall - call a function
 */
 
-LOCAL VALUE funcCall (pV, pArgList)
+ VALUE funcCall (pV, pArgList)
     VALUE *pV;
     VALUE *pArgList;
 
@@ -864,7 +864,7 @@ LOCAL VALUE funcCall (pV, pArgList)
 * checkLv - check that a value can be used as left value
 */
 
-LOCAL BOOL checkLv (pValue)
+ BOOL checkLv (pValue)
     VALUE *pValue;
 
     {
@@ -882,7 +882,7 @@ LOCAL BOOL checkLv (pValue)
 * checkRv - check that a value can be used as right value
 */
 
-LOCAL BOOL checkRv (pValue)
+ BOOL checkRv (pValue)
     VALUE *pValue;
 
     {
@@ -896,7 +896,7 @@ LOCAL BOOL checkRv (pValue)
 * getRv - get a value's right value 
 */
 
-LOCAL VALUE *getRv (pValue, pRv)
+ VALUE *getRv (pValue, pRv)
     FAST VALUE *pValue;
     FAST VALUE *pRv;			/* where to put value */
 
@@ -945,7 +945,7 @@ LOCAL VALUE *getRv (pValue, pRv)
 * getLv - get a value's left value (address)
 */
 
-LOCAL int *getLv (pValue)
+ int *getLv (pValue)
     VALUE *pValue;
 
     {
@@ -956,7 +956,7 @@ LOCAL int *getLv (pValue)
 * setLv - set a lv
 */
 
-LOCAL void setLv (pVal1, pVal2)
+ void setLv (pVal1, pVal2)
     FAST VALUE *pVal1;
     FAST VALUE *pVal2;
 
@@ -982,7 +982,7 @@ LOCAL void setLv (pVal1, pVal2)
 * setRv - set the rv
 */
 
-LOCAL void setRv (pVal1, pVal2)
+ void setRv (pVal1, pVal2)
     FAST VALUE *pVal1;
     FAST VALUE *pVal2;
 
@@ -1028,7 +1028,7 @@ LOCAL void setRv (pVal1, pVal2)
 * "ssss + xxx = xxxx"
 */
 
-LOCAL void printLv (pValue)
+ void printLv (pValue)
     VALUE *pValue;
 
     {
@@ -1049,7 +1049,7 @@ LOCAL void printLv (pValue)
 *                 ^ only if value is printable
 */
 
-LOCAL void printRv (pValue)
+ void printRv (pValue)
     VALUE *pValue;
 
     {
@@ -1100,7 +1100,7 @@ LOCAL void printRv (pValue)
 * printValue - print out value
 */
 
-LOCAL void printValue (pValue)
+ void printValue (pValue)
     FAST VALUE *pValue;
 
     {
@@ -1136,19 +1136,19 @@ LOCAL void printValue (pValue)
 
 /* TYPE SUPPORT */
 
-LOCAL VALUE evalUnknown ();
-LOCAL VALUE evalByte ();
-LOCAL VALUE evalWord ();
-LOCAL VALUE evalInt ();
-LOCAL VALUE evalFloat ();
-LOCAL VALUE evalDouble ();
+ VALUE evalUnknown ();
+ VALUE evalByte ();
+ VALUE evalWord ();
+ VALUE evalInt ();
+ VALUE evalFloat ();
+ VALUE evalDouble ();
 
 typedef struct		/* EVAL_TYPE */
     {
     VALUE (*eval) ();
     } EVAL_TYPE;
 
-LOCAL EVAL_TYPE evalType [] =
+ EVAL_TYPE evalType [] =
     {
     /*	eval		type		*/
     /*	---------------	--------------	*/
@@ -1167,7 +1167,7 @@ LOCAL EVAL_TYPE evalType [] =
 * evalExp - evaluate expression
 */
 
-LOCAL VALUE evalExp (pValue1, op, pValue2)
+ VALUE evalExp (pValue1, op, pValue2)
     VALUE *pValue1;
     int op;
     VALUE *pValue2;
@@ -1195,7 +1195,7 @@ LOCAL VALUE evalExp (pValue1, op, pValue2)
 * ARGSUSED
 */
 
-LOCAL VALUE evalUnknown (pValue1, op, pValue2)
+ VALUE evalUnknown (pValue1, op, pValue2)
     VALUE *pValue1;
     int op;
     VALUE *pValue2;
@@ -1212,7 +1212,7 @@ LOCAL VALUE evalUnknown (pValue1, op, pValue2)
 * evalByte - evaluate for byte result
 */
 
-LOCAL VALUE evalByte (pValue1, op, pValue2)
+ VALUE evalByte (pValue1, op, pValue2)
     VALUE *pValue1;
     int op;
     VALUE *pValue2;
@@ -1238,7 +1238,7 @@ LOCAL VALUE evalByte (pValue1, op, pValue2)
 * evalWord - evaluate for word result
 */
 
-LOCAL VALUE evalWord (pValue1, op, pValue2)
+ VALUE evalWord (pValue1, op, pValue2)
     VALUE *pValue1;
     int op;
     VALUE *pValue2;
@@ -1264,7 +1264,7 @@ LOCAL VALUE evalWord (pValue1, op, pValue2)
 * evalInt - evaluate for integer result
 */
 
-LOCAL VALUE evalInt (pValue1, op, pValue2)
+ VALUE evalInt (pValue1, op, pValue2)
     VALUE *pValue1;
     int op;
     VALUE *pValue2;
@@ -1354,7 +1354,7 @@ LOCAL VALUE evalInt (pValue1, op, pValue2)
 * evalFloat - evaluate for float result
 */
 
-LOCAL VALUE evalFloat (pValue1, op, pValue2)
+ VALUE evalFloat (pValue1, op, pValue2)
     VALUE *pValue1;
     int op;
     VALUE *pValue2;
@@ -1380,7 +1380,7 @@ LOCAL VALUE evalFloat (pValue1, op, pValue2)
 * evalDouble - evaluate for double result
 */
 
-LOCAL VALUE evalDouble (pValue1, op, pValue2)
+ VALUE evalDouble (pValue1, op, pValue2)
     VALUE *pValue1;
     int op;
     VALUE *pValue2;
@@ -1451,18 +1451,18 @@ LOCAL VALUE evalDouble (pValue1, op, pValue2)
 
 /* TYPE CONVERSION */
 
-LOCAL void convUnknown ();
-LOCAL void convByte ();
-LOCAL void convWord ();
-LOCAL void convInt ();
+ void convUnknown ();
+ void convByte ();
+ void convWord ();
+ void convInt ();
 #ifndef	_WRS_NO_TGT_SHELL_FP
-LOCAL void convFloat ();
-LOCAL void convDouble ();
+ void convFloat ();
+ void convDouble ();
 #endif	/* _WRS_NO_TGT_SHELL_FP */
 
 typedef void (*VOID_FUNCPTR) ();	/* ptr to a function returning void */
 
-LOCAL VOID_FUNCPTR convType [] =
+ VOID_FUNCPTR convType [] =
     {
     /*  conversion	type	    */
     /*  ----------	----------- */
@@ -1481,7 +1481,7 @@ LOCAL VOID_FUNCPTR convType [] =
 * typeConvert - change value to specified type
 */
 
-LOCAL void typeConvert (pValue, type, side)
+ void typeConvert (pValue, type, side)
     FAST VALUE *pValue;
     TYPE type;
     SIDE side;
@@ -1514,7 +1514,7 @@ LOCAL void typeConvert (pValue, type, side)
 * ARGSUSED
 */
 
-LOCAL void convUnknown (pValue)
+ void convUnknown (pValue)
     VALUE *pValue;
 
     {
@@ -1526,7 +1526,7 @@ LOCAL void convUnknown (pValue)
 * convByte - convert value to byte
 */
 
-LOCAL void convByte (pValue)
+ void convByte (pValue)
     FAST VALUE *pValue;
 
     {
@@ -1545,7 +1545,7 @@ LOCAL void convByte (pValue)
 * convWord - convert value to word
 */
 
-LOCAL void convWord (pValue)
+ void convWord (pValue)
     FAST VALUE *pValue;
 
     {
@@ -1570,7 +1570,7 @@ LOCAL void convWord (pValue)
 * convInt - convert value to integer
 */
 
-LOCAL void convInt (pValue)
+ void convInt (pValue)
     FAST VALUE *pValue;
 
     {
@@ -1599,7 +1599,7 @@ LOCAL void convInt (pValue)
 * convFloat - convert value to float
 */
 
-LOCAL void convFloat (pValue)
+ void convFloat (pValue)
     FAST VALUE *pValue;
 
     {
@@ -1625,7 +1625,7 @@ LOCAL void convFloat (pValue)
 * convDouble - convert value to double
 */
 
-LOCAL void convDouble (pValue)
+ void convDouble (pValue)
     FAST VALUE *pValue;
 
     {
