@@ -174,7 +174,8 @@ ether_output(ifp, m0, dst, rt0)
 	ifp->if_lastchange = tickGet();
 	if ((rt = rt0)) {
 		if ((rt->rt_flags & RTF_UP) == 0) {
-			if ((rt0 = rt = rtalloc1(dst, 1)))
+			/*kernal:if ((rt0 = rt = rtalloc1(dst, 1)))*/
+			if ((rt0 = rt = rtalloc1(dst, 1, 0)))
 				rt->rt_refcnt--;
 			else {
 #ifdef WV_INSTRUMENTATION
@@ -194,7 +195,8 @@ ether_output(ifp, m0, dst, rt0)
 				goto lookup;
 			if (((rt = rt->rt_gwroute)->rt_flags & RTF_UP) == 0) {
 				rtfree(rt); rt = rt0;
-			lookup: rt->rt_gwroute = rtalloc1(rt->rt_gateway, 1);
+				/*kernal:lookup: rt->rt_gwroute = rtalloc1(rt->rt_gateway, 1);*/
+			lookup: rt->rt_gwroute = rtalloc1(rt->rt_gateway, 1, 0);
 				if ((rt = rt->rt_gwroute) == 0) {
 #ifdef WV_INSTRUMENTATION
 #ifdef INCLUDE_WVNET    /* WV_NET_CRITICAL event */

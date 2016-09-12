@@ -566,7 +566,7 @@ struct rtentry *
 rtalloc1(dst, report, skipFlag)
 	register struct sockaddr *dst;
 	int report;
-        BOOL skipFlag;     /* ignore routes if interface is down? */
+    BOOL skipFlag;     /* ignore routes if interface is down? */
 {
 	register struct radix_node_head *rnh = rt_tables[dst->sa_family];
 	register struct rtentry *rt;
@@ -577,7 +577,7 @@ rtalloc1(dst, report, skipFlag)
 	u_long newRtMask;	/* TOS 0 route mask */
 	int  s = splnet(), err = 0, msgtype = RTM_MISS;
 	struct rtentry *   tosRt = NULL;
-        u_char     savedTos;
+    u_char     savedTos;
 
       /* 
        * save original tos since we overwrite it temporarily in the 

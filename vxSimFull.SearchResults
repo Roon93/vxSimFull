@@ -1,0 +1,25 @@
+---- rtalloc1 Matches (24 in 10 files) ----
+arpLib.c (target\src\netwrs):    pRt = rtalloc1 ( (struct sockaddr *)&sockInetAddr, 1, 0);
+If.c (target\src\netinet):		struct rtentry *rt = rtalloc1(dst, 0, 0);
+If_ether.c (target\src\netinet):	rt = rtalloc1((struct sockaddr *)&sin, create, 0);
+If_ether.c (target\src\netinet):	rt = rtalloc1((struct sockaddr *)&arpSin, create, 0);
+If_ether.c (target\src\netinet):            rt = rtalloc1 ((struct sockaddr *)&ipaddr, 0, 0);
+If_subr.c (target\src\netinet):			if ((rt0 = rt = rtalloc1(dst, 1)))
+If_subr.c (target\src\netinet):			lookup: rt->rt_gwroute = rtalloc1(rt->rt_gateway, 1);
+ipProto.c (target\src\netwrs):            if ((rt0 = rt = rtalloc1(dst, 1, 1)))
+ipProto.c (target\src\netwrs):                lookup: rt->rt_gwroute = rtalloc1(rt->rt_gateway, 1, 0);
+Ip_icmp.c (target\src\netinet):    pDestRoute = rtalloc1 (pDstAddr, 0, 0);
+Ip_input.c (target\src\netinet):		ipforward_rt.ro_rt = rtalloc1 (&ipforward_rt.ro_dst, 2, 1);
+Ip_input.c (target\src\netinet):		ipforward_rt.ro_rt = rtalloc1 (&ipforward_rt.ro_dst, 2, 1);
+Ppp_vxworks.c (target\src\netinet\ppp):01j,01nov02,vvv  updated call to rtalloc1 for new prototype
+Ppp_vxworks.c (target\src\netinet\ppp):            rt = rtalloc1((struct sockaddr *)&sin, create, 0);
+Ppp_vxworks.c (target\src\netinet\ppp):            rt = rtalloc1((struct sockaddr *)&sin, create, 0);
+Route.c (target\src\netinet):01n,20feb01,ijm  corrected additional bug in rtalloc1.  Precedence bits
+Route.c (target\src\netinet):01m,02nov00,ijm  fixed rtalloc1 TOS bug, SPR# 30195
+Route.c (target\src\netinet):	ro->ro_rt = rtalloc1(&ro->ro_dst, 1, 1);
+Route.c (target\src\netinet):rtalloc1(dst, report, skipFlag)
+Route.c (target\src\netinet):	rt = rtalloc1(dst, 0, 0);
+Route.c (target\src\netinet):     * on the rtalloc1() routine.
+Route.c (target\src\netinet):		rt->rt_gwroute = rtalloc1(gate, 1, 0);
+Route.c (target\src\netinet):		if ((rt = rtalloc1(dst, 0, 0))) {
+Route.h (target\h\net):	 rtalloc1 (struct sockaddr *, int, int);
