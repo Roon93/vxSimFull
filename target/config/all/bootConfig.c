@@ -1033,6 +1033,11 @@ void usrInit
      * cacheLibInit() is called and/or BSS is cleared.
      */
 
+	/*
+	*获取CPU相关信息，保存在sysProcessor和sysCpuId中
+	*
+	*
+	*/
     SYS_HW_INIT_0 ();
 #endif /* INCLUDE_SYS_HW_INIT_0 */
 
@@ -1046,6 +1051,7 @@ void usrInit
 # if (!defined(USER_D_CACHE_ENABLE) && !defined(USER_D_CACHE_MODE))
 #  define USER_D_CACHE_MODE CACHE_DISABLED
 # endif	/* !USER_D_CACHE_ENABLE && !USER_D_CACHE_MODE */
+
 # if (!defined(USER_I_CACHE_ENABLE) && !defined(USER_I_CACHE_MODE))
 #  define USER_I_CACHE_MODE CACHE_DISABLED
 # endif	/* !USER_I_CACHE_ENABLE && !USER_I_CACHE_MODE */

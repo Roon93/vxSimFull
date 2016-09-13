@@ -765,7 +765,7 @@ STATUS pciConfigLibInit
     {
 
     if (pciLibInitStatus != NONE)
-	return (pciLibInitStatus);
+		return (pciLibInitStatus);
 
     switch (mechanism)
 	{
@@ -773,13 +773,13 @@ STATUS pciConfigLibInit
             if (addr0 == 0 || addr1 == 0)
 	        {
                 pciLibInitStatus = ERROR;
-		}
+			}
             else
-                {
+            {
                 pciConfigRead = (FUNCPTR) addr0;
                 pciConfigWrite = (FUNCPTR) addr1;
                 pciConfigSpcl = (FUNCPTR) addr2;
-                }
+            }
 	    pciConfigMech	= mechanism;
 	    pciLibInitStatus	= OK;
             break;

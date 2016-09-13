@@ -707,7 +707,7 @@ void intVecSet2
 	}
 
     if (intVecSetExit != NULL)				/* exit hook */
-	(* intVecSetExit) (vector, function);
+		(* intVecSetExit) (vector, function);
 
     CACHE_TEXT_UPDATE ((void *)newVector, 8);
     }

@@ -164,7 +164,7 @@ STATUS cacheArchLibInit
 	(dataMode & CACHE_BURST_ENABLE)		||
         (instMode & CACHE_BURST_DISABLE)	|| 
 	(dataMode & CACHE_BURST_DISABLE))
-	return (ERROR);
+		return (ERROR);
 
     /* reset to the known state(disabled), since the current mode is unknown */
 

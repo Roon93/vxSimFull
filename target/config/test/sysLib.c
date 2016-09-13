@@ -1041,7 +1041,7 @@ void sysHwInit0 (void)
 */
 
 void sysHwInit (void)
-    {
+{
     PHYS_MEM_DESC *pMmu;
     int ix = 0;
 
@@ -1052,37 +1052,37 @@ void sysHwInit (void)
     
     pentiumMsrInit ();
 
-#   if	(CPU != PENTIUM)
+#if	(CPU != PENTIUM)
 
     /* enable the MTRR (Memory Type Range Registers) */
 
     if ((sysCpuId.featuresEdx & CPUID_MTRR) == CPUID_MTRR)
 	{
         pentiumMtrrDisable ();		/* disable MTRR */
-#   ifdef INCLUDE_MTRR_GET
+#ifdef INCLUDE_MTRR_GET
         (void) pentiumMtrrGet (&sysMtrr); /* get MTRR initialized by BIOS */
-#   else
+#else
         (void) pentiumMtrrSet (&sysMtrr); /* set your own MTRR */
-#   endif /* INCLUDE_MTRR_GET */
+#endif /* INCLUDE_MTRR_GET */
         pentiumMtrrEnable ();		/* enable MTRR */
 	}
 
-#   endif /* (CPU != PENTIUM) */
+#endif /* (CPU != PENTIUM) */
 
-#   ifdef INCLUDE_PMC
+#ifdef INCLUDE_PMC
 
     /* enable PMC (Performance Monitoring Counters) */
 
     pentiumPmcStop ();			/* stop PMC0 and PMC1 */
     pentiumPmcReset ();			/* reset PMC0 and PMC1 */
 
-#   endif /* INCLUDE_PMC */
+#endif /* INCLUDE_PMC */
 
     /* enable the MCA (Machine Check Architecture) */
 
     pentiumMcaEnable (TRUE);
 
-#   ifdef INCLUDE_SHOW_ROUTINES
+#ifdef INCLUDE_SHOW_ROUTINES
 
     /* 
      * if excMcaInfoShow is not NULL, it is called in the default
@@ -1096,7 +1096,7 @@ void sysHwInit (void)
 
     vxShowInit ();
 
-#   endif /* INCLUDE_SHOW_ROUTINES */
+#endif /* INCLUDE_SHOW_ROUTINES */
 
 #endif	/* (CPU == PENTIUM) || (CPU == PENTIUM[234]) */
 
@@ -1439,7 +1439,7 @@ __inline__ static void RESTORE_MEMORY_TEST_ADDRS
 * RETURNS:  The address of the top of physical memory.
 */
 char * sysPhysMemTop (void)
-    {
+{
     PHYS_MEM_DESC * pMmu;       /* points to memory desc. table entries */
     char            gdtr[6];    /* stores a copy of the GDT */
 
@@ -1611,7 +1611,7 @@ char * sysPhysMemTop (void)
 #endif	/* (VM_PAGE_SIZE == PAGE_SIZE_4KB) */
 
     return (memTopPhys);
-    }
+}
 
 /*******************************************************************************
 *
@@ -1628,21 +1628,21 @@ char * sysPhysMemTop (void)
 */
 
 char * sysMemTop (void)
-    {
+{
     static char * memTop = NULL;
 
     if (memTop == NULL)
-        {
+    {
         memTop = sysPhysMemTop () - USER_RESERVED_MEM;
 
         if ((UINT32)(&end) < 0x100000)		/* this is for bootrom */
             memTop = (char *)EBDA_START;	/* preserve the MP table */
         else if ((UINT32)(&end) < RAM_LOW_ADRS)	/* bootrom in upper mem */
             memTop = (char *)(RAM_LOW_ADRS & 0xfff00000);
-        }
+     }
 
     return (memTop);
-    }
+}
 
 /*******************************************************************************
 *
@@ -1946,21 +1946,21 @@ LOCAL void sysIntInitPIC (void)
 
 #if	defined(VIRTUAL_WIRE_MODE)
     {
-    UINT32 addrLo;	/* page aligned Local APIC Base Address */
-    UINT32 lengthLo;	/* length of Local APIC registers */
+	    UINT32 addrLo;	/* page aligned Local APIC Base Address */
+	    UINT32 lengthLo;	/* length of Local APIC registers */
 
-    loApicInit ();
-    i8259Init ();
+	    loApicInit ();
+	    i8259Init ();
 
-    /* add an entry to the sysMmuPhysDesc[] for Local APIC */
+	    /* add an entry to the sysMmuPhysDesc[] for Local APIC */
 
-    addrLo   = ((UINT32)loApicBase / VM_PAGE_SIZE) * VM_PAGE_SIZE;
-    lengthLo = (UINT32)loApicBase - addrLo + LOAPIC_LENGTH;
-    if ((lengthLo % VM_PAGE_SIZE) != 0)
-	lengthLo = (lengthLo / VM_PAGE_SIZE + 1) * VM_PAGE_SIZE;
-    
-    sysMmuMapAdd ((void *)addrLo, lengthLo, 
-		  VM_STATE_MASK_FOR_ALL, VM_STATE_FOR_IO);
+	    addrLo   = ((UINT32)loApicBase / VM_PAGE_SIZE) * VM_PAGE_SIZE;
+	    lengthLo = (UINT32)loApicBase - addrLo + LOAPIC_LENGTH;
+	    if ((lengthLo % VM_PAGE_SIZE) != 0)
+		lengthLo = (lengthLo / VM_PAGE_SIZE + 1) * VM_PAGE_SIZE;
+	    
+	    sysMmuMapAdd ((void *)addrLo, lengthLo, 
+			  VM_STATE_MASK_FOR_ALL, VM_STATE_FOR_IO);
     }
 #elif	defined(SYMMETRIC_IO_MODE)
     {

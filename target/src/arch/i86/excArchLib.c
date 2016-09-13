@@ -106,22 +106,22 @@ STATUS excVecInit (void)
 
     for (vecNum = LOW_VEC; vecNum <= HIGH_VEC; ++vecNum)
 	{
-	intVecSet2 ((FUNCPTR *)INUM_TO_IVEC (vecNum),
-		    (FUNCPTR) &excCallTbl[vecNum * 5],
-		    programError (vecNum) ? IDT_TRAP_GATE : sysIntIdtType,
-		    programError (vecNum) ? sysCsExc : sysCsInt);
+		intVecSet2 ((FUNCPTR *)INUM_TO_IVEC (vecNum),
+			    (FUNCPTR) &excCallTbl[vecNum * 5],
+			    programError (vecNum) ? IDT_TRAP_GATE : sysIntIdtType,
+			    programError (vecNum) ? sysCsExc : sysCsInt);
 	}
 
     /* enable the Machine Check exception if it is supported */
 
     if (sysCpuId.featuresEdx & CPUID_MCE)
-	vxCr4Set (vxCr4Get () | CR4_MCE);
+		vxCr4Set (vxCr4Get () | CR4_MCE);
 
     /* enable the SSE or SSE+SSE2 if it is supported */
 
     if ((sysCpuId.featuresEdx & CPUID_SSE) ||
         (sysCpuId.featuresEdx & CPUID_SSE2))
-	vxCr4Set (vxCr4Get () | CR4_OSXMMEXCEPT);
+		vxCr4Set (vxCr4Get () | CR4_OSXMMEXCEPT);
 
     return (OK);
     }

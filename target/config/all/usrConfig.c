@@ -287,6 +287,10 @@ void usrInit
 #  define USER_I_CACHE_MODE CACHE_DISABLED
 # endif	/* !USER_I_CACHE_ENABLE && !USER_I_CACHE_MODE */
 
+	/*
+	*初始化cacheLib结构，并reset CPU cache
+	*
+	*/
     cacheLibInit (USER_I_CACHE_MODE, USER_D_CACHE_MODE);
 #endif  /* INCLUDE_CACHE_SUPPORT */
 
@@ -310,6 +314,10 @@ void usrInit
 
     sysStartType = startType;			/* save type of system start */
 
+	/*
+	*VEC_BASE_ADRS == LOCAL_MEM_LOCAL_ADRS
+	*设置中断向量表，并更新CACHE
+	*/
     intVecBaseSet ((FUNCPTR *) VEC_BASE_ADRS);	/* set vector base table */
 
 #if (CPU_FAMILY == AM29XXX)
@@ -325,6 +333,9 @@ void usrInit
      */
     excShowInit ();
 # endif  /* CPU_FAMILY == PPC && defined(INCLUDE_EXC_SHOW) */
+	/*
+	*初始化异常向量
+	*/
     excVecInit ();				/* install exception vectors */
 #endif  /* INCLUDE_EXC_HANDLING */
 

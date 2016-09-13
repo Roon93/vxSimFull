@@ -453,9 +453,9 @@ FUNC_LABEL(sysReboot)
 
         .balign 16,0x90
 FUNC_LABEL(sysCpuProbe)
-	cmpl	$ NONE, FUNC(sysProcessor) /* is it executed already? */
+	cmpl	$ NONE, FUNC(sysProcessor) /* is it executed already? sysProcessor为初始化完成标志位*/
 	je	sysCpuProbeStart	/*   no: start the CPU probing */
-	movl	FUNC(sysProcessor), %eax /* return the sysProcessor */
+	movl	FUNC(sysProcessor), %eax /* return the sysProcessor %eax为返回值*/
 	ret
 
 sysCpuProbeStart:
@@ -467,13 +467,13 @@ sysCpuProbeStart:
 	pushfl				/* push EFLAGS */
 	popl	%edx			/* pop EFLAGS on EDX */
 	movl	%edx, %ecx		/* save original EFLAGS to ECX */
-	xorl	$ EFLAGS_AC, %edx	/* toggle AC bit */
+	xorl	$ EFLAGS_AC, %edx	/* toggle AC bit 定义在regsI86.h中,将AC位取反*/
 	pushl	%edx			/* push new EFLAGS */
 	popfl				/* set new EFLAGS */
 	pushfl				/* push EFLAGS */
 	popl	%edx			/* pop EFLAGS on EDX */
-	xorl	%edx, %ecx		/* if AC bit is toggled ? */
-        jz	sysCpuProbe386		/*   no: it is 386 */
+	xorl	%edx, %ecx		/* if AC bit is toggled ? 是不是这句话要写成xorl	%ecx, %edx  否则ecx值将被改变*/
+        jz	sysCpuProbe386		/*   no: it is 386 如果不能被取反*/
 	pushl	%ecx			/* push original EFLAGS */
 	popfl				/* restore original EFLAGS */
 
@@ -493,7 +493,7 @@ sysCpuProbeStart:
 	/* execute CPUID to get vendor, family, model, stepping, features */
 
 	pushl	%ebx			/* save EBX */
-	movl	$ CPUID_486, FUNC(sysCpuId)+CPUID_SIGNATURE /* set it 486 */
+	movl	$ CPUID_486, FUNC(sysCpuId)+CPUID_SIGNATURE /* set it 486 sysCpuId定义在sysLib.c中*/
 
 	/* EAX=0, get the highest value and the vendor ID */
 
@@ -595,7 +595,7 @@ sysCpuProbeExtended:
 	movl	FUNC(sysCpuId)+CPUID_SIGNATURE, %eax	/* get the signature */
 	andl	$ CPUID_EXT_FAMILY, %eax /* mask it with EXTENDED FAMILY */
 	cmpl	$ CPUID_PENTIUM4, %eax	/* is the CPU FAMILY 486 ? */
-	je	sysCpuProbePentium4	/*   yes: jump to ..Pentium4 */
+	je	sysCpuProbePentium4	/*   yes: jump to ..Pentium4 如果是Pentium4则跳转到Pentium4，否则认为是486，CPU后续的扩展实现可以写在这里*/
 
 	jmp	sysCpuProbe486		/* unknown CPU. assume it 486 */
 
@@ -604,11 +604,11 @@ sysCpuProbePentium4:
 	jmp	sysCpuProbeExit
 
 sysCpuProbe386:
-        movl    $ X86CPU_386, %eax	/* set 0 for 386 */
+        movl    $ X86CPU_386, %eax	/* set 0 for 386 定义在regsI86.h中*/
 
 sysCpuProbeExit:
 	popfl				/* restore EFLAGS */
-	movl	%eax, FUNC(sysProcessor) /* set the CPU FAMILY */
+	movl	%eax, FUNC(sysProcessor) /* set the CPU FAMILY 最终结果保存在sysProcessor中*/
 	ret
 
 /*******************************************************************************
