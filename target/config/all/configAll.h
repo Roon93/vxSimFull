@@ -332,7 +332,7 @@ configuration for VxWorks.
 /*                                                                            */
 /******************************************************************************/
 
-#if FALSE
+#if 0
 
 #define INCLUDE_CODETEST        /* CodeTEST target utilities library */
 #define INCLUDE_CPLUS		/* include C++ support */

@@ -82,7 +82,7 @@ extern "C" {
 
 /* PCI Configuration mechanisms */
 
-#define PCI_MECHANISM_0         0       /* non-std user-supplied interface */
+#define PCI_MECHANISM_0     0   /* non-std user-supplied interface */
 #define	PCI_MECHANISM_1		1	/* current PC-AT hardware mechanism */
 #define	PCI_MECHANISM_2		2	/* deprecated */
 

@@ -1161,74 +1161,73 @@ void usrRoot
     /* install driver for on-board serial ports and make devices */
 
 #ifdef  INCLUDE_TYCODRV_5_2
-#ifdef  INCLUDE_TTY_DEV
-    if (NUM_TTY > 0)
-        {
-        tyCoDrv ();                             /* install console driver */
+	#ifdef  INCLUDE_TTY_DEV
+	 if (NUM_TTY > 0)
+	 {
+	        tyCoDrv ();                             /* install console driver */
 
-        for (ix = 0; ix < NUM_TTY; ix++)        /* create serial devices */
-            {
-            sprintf (tyName, "%s%d", "/tyCo/", ix);
+	        for (ix = 0; ix < NUM_TTY; ix++)        /* create serial devices */
+	            {
+	            sprintf (tyName, "%s%d", "/tyCo/", ix);
 
-            (void) tyCoDevCreate (tyName, ix, 512, 512);
+	            (void) tyCoDevCreate (tyName, ix, 512, 512);
 
-            if (ix == CONSOLE_TTY)
-                strcpy (consoleName, tyName);   /* store console name */
-            }
+	            if (ix == CONSOLE_TTY)
+	                strcpy (consoleName, tyName);   /* store console name */
+	            }
 
-        consoleFd = open (consoleName, O_RDWR, 0);
+	        consoleFd = open (consoleName, O_RDWR, 0);
 
-        /* set baud rate */
+	        /* set baud rate */
 
-        (void) ioctl (consoleFd, FIOBAUDRATE, CONSOLE_BAUD_RATE);
-        (void) ioctl (consoleFd, FIOSETOPTIONS,
-			OPT_ECHO | OPT_CRMOD | OPT_TANDEM | OPT_7_BIT);
-        }
-#endif  /* INCLUDE_TTY_DEV */
+	        (void) ioctl (consoleFd, FIOBAUDRATE, CONSOLE_BAUD_RATE);
+	        (void) ioctl (consoleFd, FIOSETOPTIONS,
+				OPT_ECHO | OPT_CRMOD | OPT_TANDEM | OPT_7_BIT);
+	        }
+	#endif  /* INCLUDE_TTY_DEV */
 
 #else   /* !INCLUDE_TYCODRV_5_2 */
-#ifdef  INCLUDE_TTY_DEV
-    if (NUM_TTY > 0)
-        {
-        ttyDrv();                               /* install console driver */
+	#ifdef  INCLUDE_TTY_DEV
+	    if (NUM_TTY > 0)
+	    {
+	        ttyDrv();                               /* install console driver */
 
-        for (ix = 0; ix < NUM_TTY; ix++)        /* create serial devices */
-            {
-#if (defined(INCLUDE_WDB) && (WDB_COMM_TYPE == WDB_COMM_SERIAL))
-	    if (ix == WDB_TTY_CHANNEL)          /* don't use WDBs channel */
-	    	continue;
-#endif
+	        for (ix = 0; ix < NUM_TTY; ix++)        /* create serial devices */
+	            {
+	#if (defined(INCLUDE_WDB) && (WDB_COMM_TYPE == WDB_COMM_SERIAL))
+		    if (ix == WDB_TTY_CHANNEL)          /* don't use WDBs channel */
+		    	continue;
+	#endif
             sprintf (tyName, "%s%d", "/tyCo/", ix);
             (void) ttyDevCreate (tyName, sysSerialChanGet(ix), 512, 512);
 
             if (ix == CONSOLE_TTY)              /* init the tty console */
-                {
+            {
                 strcpy (consoleName, tyName);
                 consoleFd = open (consoleName, O_RDWR, 0);
                 (void) ioctl (consoleFd, FIOBAUDRATE, CONSOLE_BAUD_RATE);
-                (void) ioctl (consoleFd, FIOSETOPTIONS,
-			OPT_ECHO | OPT_CRMOD | OPT_TANDEM | OPT_7_BIT);
-                }
+                (void) ioctl (consoleFd, FIOSETOPTIONS, OPT_ECHO | OPT_CRMOD | OPT_TANDEM | OPT_7_BIT);
             }
-        }
+         }
+       }
 #endif  /* INCLUDE_TTY_DEV */
 
 
 #ifdef INCLUDE_PC_CONSOLE
     pcConDrv ();
     for (ix = 0; ix < N_VIRTUAL_CONSOLES; ix++)
+    {
+	    sprintf (tyName, "%s%d", "/pcConsole/", ix);
+	    (void) pcConDevCreate (tyName,ix, 512, 512);
+	    if (ix == PC_CONSOLE)           /* init the console device */
         {
-        sprintf (tyName, "%s%d", "/pcConsole/", ix);
-        (void) pcConDevCreate (tyName,ix, 512, 512);
-        if (ix == PC_CONSOLE)           /* init the console device */
-            {
-            strcpy (consoleName, tyName);
-            consoleFd = open (consoleName, O_RDWR, 0);
-            (void) ioctl (consoleFd, FIOBAUDRATE, CONSOLE_BAUD_RATE);
-            (void) ioctl (consoleFd, FIOSETOPTIONS,
+	        strcpy (consoleName, tyName);
+	        consoleFd = open (consoleName, O_RDWR, 0);
+	        (void) ioctl (consoleFd, FIOBAUDRATE, CONSOLE_BAUD_RATE);
+	        (void) ioctl (consoleFd, FIOSETOPTIONS,
 			OPT_ECHO | OPT_CRMOD | OPT_TANDEM | OPT_7_BIT);
-            }
         }
+    }
 #endif  /* INCLUDE_PC_CONSOLE */
 
 #endif  /* !INCLUDE_TYCODRV_5_2 */
@@ -1291,7 +1290,7 @@ void usrRoot
 
     muxMaxBinds = MUX_MAX_BINDS;
     if (muxLibInit() == ERROR)
-	return;                              /* can't return ERROR */
+		return;                              /* can't return ERROR */
 
     /* Initialize all the available devices. */
     for (count = 0, pDevTbl = endDevTbl; pDevTbl->endLoadFunc != END_TBL_END;
@@ -1362,7 +1361,7 @@ LOCAL void bootCmdLoop (void)
     (void) ioctl (STD_IN, FIOFLUSH, 0 /*XXX*/);
 
     if (sysStartType & BOOT_CLEAR)
-	printBootLogo ();
+			printBootLogo ();
 
     usrBootLineInit (sysStartType);
 
@@ -1400,15 +1399,15 @@ LOCAL void bootCmdLoop (void)
     if (!(sysStartType & BOOT_NO_AUTOBOOT) &&
 	!(sysFlags & SYSFLG_NO_AUTOBOOT))
 	{
-	int timeout = TIMEOUT;
+		int timeout = TIMEOUT;
 
-	if ((sysStartType & BOOT_QUICK_AUTOBOOT) ||
-	    (sysFlags & SYSFLG_QUICK_AUTOBOOT))
-	    {
-	    timeout = 1;
-	    }
+		if ((sysStartType & BOOT_QUICK_AUTOBOOT) ||
+		    (sysFlags & SYSFLG_QUICK_AUTOBOOT))
+		    {
+		    timeout = 1;
+		    }
 
-	key = autoboot (timeout);	/* doesn't return if successful */
+		key = autoboot (timeout);	/* doesn't return if successful */
 	}
 
 

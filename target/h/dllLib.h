@@ -38,10 +38,10 @@ typedef struct dlnode		/* Node of a linked list. */
 /* HIDDEN */
 
 typedef struct			/* Header for a linked list. */
-    {
+ {
     DL_NODE *head;	/* header of list */
     DL_NODE *tail;	/* tail of list */
-    } DL_LIST;
+ } DL_LIST;
 
 /* END_HIDDEN */
 
