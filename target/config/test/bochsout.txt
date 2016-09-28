@@ -23,12 +23,12 @@
 00000000000i[     ]   Icache support: no
 00000000000i[     ]   Host Asm support: yes
 00000000000i[     ]   Fast function calls: no
-00000000000i[MEM0 ] allocated memory at 0xb5f98008. after alignment, vector=0xb5f99000
+00000000000i[MEM0 ] allocated memory at 0xb5ee0008. after alignment, vector=0xb5ee1000
 00000000000i[MEM0 ] 16.00MB
 00000000000i[MEM0 ] rom at 0xf0000/65536 ('/usr/local/share/bochs/BIOS-bochs-latest')
 00000000000i[MEM0 ] rom at 0xc0000/32768 ('/usr/local/share/bochs/VGABIOS-lgpl-latest')
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Wed Sep 14 17:19:43 2016 (time0=1473844783)
+00000000000i[CMOS ] Setting initial clock to: Wed Sep 28 09:28:28 2016 (time0=1475026108)
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[DMA  ] channel 2 used by Floppy Drive
 00000000000i[XGUI ] test_alloc_colors: 16 colors available out of 16 colors tried
@@ -45,7 +45,7 @@
 00000000000i[CD   ] load cdrom with path=bootrom_uncmp.iso
 00000000000i[CD   ] Opening image file bootrom_uncmp.iso as a cd.
 00000000000i[HD   ] Media present in CD-ROM drive
-00000000000i[CD   ] cdrom size is 7315456 bytes
+00000000000i[CD   ] cdrom size is 5818368 bytes
 00000000000i[HD   ] Using boot sequence cdrom, none, none
 00000000000i[HD   ] Floppy boot signature check is enabled
 00000000000i[     ] init_dev of 'keyboard' plugin device by virtual method
@@ -71,6 +71,7 @@
 00000000000i[     ] addr 8310 len 0
 00000000000i[     ] addr 8310 len 0
 00000000000i[     ] setting breakpoint at 8310
+00000000000i[     ] setting breakpoint at 8313
 00000004163i[BIOS ]  rombios.c,v 1.138 2005/05/07 15:55:26 vruppert Exp $
 00000318442i[KBD  ] reset-disable command received
 00000421763i[VBIOS] VGABios $Id: vgabios.c,v 1.61 2005/05/24 16:50:50 vruppert Exp $
@@ -80,1179 +81,483 @@
 00008169824i[PIT81] Changing GATE 2 to: 0
 00008169833i[PIT81] Changing GATE 2 to: 1
 00008389538i[PIT81] Changing GATE 2 to: 0
-00419488981i[CPU  ] MOV_RdCd: read of CR4
-00419923357i[     ] found breakpoint at 8310
-00419923357i[     ] stopped with ac1
-00419923357i[     ] reg 8 set to 8310
-00419923357i[     ] reg 41 set to ffffffff
-00419923357i[     ] Removing breakpoint at 8310
-00419923357i[     ] addr 9ce1c len 0
-00419923357i[     ] addr 9b2a8 len 0
-00419923357i[     ] addr 9b2b0 len 0
-00419923357i[     ] addr 9b2b8 len 0
-00419923357i[     ] addr 9b2c0 len 0
-00419923357i[     ] addr 9b2c8 len 0
-00419923357i[     ] addr 9b2d0 len 0
-00419923357i[     ] addr 9b2d8 len 0
-00419923357i[     ] addr 9b2e0 len 0
-00419923357i[     ] addr 9b2e8 len 0
-00419923357i[     ] addr 9b2f0 len 0
-00419923357i[     ] addr 9b2f8 len 0
-00419923357i[     ] addr 9b300 len 0
-00419923357i[     ] addr 9b308 len 0
-00419923357i[     ] addr 9b310 len 0
-00419923357i[     ] addr 9b318 len 0
-00419923357i[     ] addr 9b320 len 0
-00419923357i[     ] addr 9b328 len 0
-00419923357i[     ] addr 9b330 len 0
-00419923357i[     ] addr 9b338 len 0
-00419923357i[     ] addr 9b340 len 0
-00419923357i[     ] addr 9b348 len 0
-00419923357i[     ] addr 9b350 len 0
-00419923357i[     ] addr 9b358 len 0
-00419923357i[     ] addr 9b360 len 0
-00419923357i[     ] addr 9b368 len 0
-00419923357i[     ] addr 9b370 len 0
-00419923357i[     ] addr 9ce20 len 0
-00419923357i[     ] stepping
-00419923358i[     ] stopped with ac2
-00419923358i[     ] setting breakpoint at 76280
-00419923358i[     ] setting breakpoint at 8310
-00419923358i[     ] stepping
-00419923359i[     ] stopped with ac2
-00419923359i[     ] stepping
-00419923360i[     ] stopped with ac2
-00419923360i[     ] Removing breakpoint at 76280
-00419923360i[     ] Removing breakpoint at 8310
-00419923360i[     ] addr 9ce1c len 0
-00419923360i[     ] addr 9b2a8 len 0
-00419923360i[     ] addr 9b2b0 len 0
-00419923360i[     ] addr 9b2b8 len 0
-00419923360i[     ] addr 9b2c0 len 0
-00419923360i[     ] addr 9b2c8 len 0
-00419923360i[     ] addr 9b2d0 len 0
-00419923360i[     ] addr 9b2d8 len 0
-00419923360i[     ] addr 9b2e0 len 0
-00419923360i[     ] addr 9b2e8 len 0
-00419923360i[     ] addr 9b2f0 len 0
-00419923360i[     ] addr 9b2f8 len 0
-00419923360i[     ] addr 9b300 len 0
-00419923360i[     ] addr 9b308 len 0
-00419923360i[     ] addr 9b310 len 0
-00419923360i[     ] addr 9b318 len 0
-00419923360i[     ] addr 9b320 len 0
-00419923360i[     ] addr 9b328 len 0
-00419923360i[     ] addr 9b330 len 0
-00419923360i[     ] addr 9b338 len 0
-00419923360i[     ] addr 9b340 len 0
-00419923360i[     ] addr 9b348 len 0
-00419923360i[     ] addr 9b350 len 0
-00419923360i[     ] addr 9b358 len 0
-00419923360i[     ] addr 9b360 len 0
-00419923360i[     ] addr 9b368 len 0
-00419923360i[     ] addr 9b370 len 0
-00419923360i[     ] addr 9ce20 len 0
-00419923360i[     ] setting breakpoint at 76280
-00419923360i[     ] setting breakpoint at 8310
-00419923360i[     ] stepping
-00419923361i[     ] stopped with ac2
-00419923361i[     ] Removing breakpoint at 76280
-00419923361i[     ] Removing breakpoint at 8310
-00419923361i[     ] addr 9ce1c len 0
-00419923361i[     ] addr 9b2a8 len 0
-00419923361i[     ] addr 9b2b0 len 0
-00419923361i[     ] addr 9b2b8 len 0
-00419923361i[     ] addr 9b2c0 len 0
-00419923361i[     ] addr 9b2c8 len 0
-00419923361i[     ] addr 9b2d0 len 0
-00419923361i[     ] addr 9b2d8 len 0
-00419923361i[     ] addr 9b2e0 len 0
-00419923361i[     ] addr 9b2e8 len 0
-00419923361i[     ] addr 9b2f0 len 0
-00419923361i[     ] addr 9b2f8 len 0
-00419923361i[     ] addr 9b300 len 0
-00419923361i[     ] addr 9b308 len 0
-00419923361i[     ] addr 9b310 len 0
-00419923361i[     ] addr 9b318 len 0
-00419923361i[     ] addr 9b320 len 0
-00419923361i[     ] addr 9b328 len 0
-00419923361i[     ] addr 9b330 len 0
-00419923361i[     ] addr 9b338 len 0
-00419923361i[     ] addr 9b340 len 0
-00419923361i[     ] addr 9b348 len 0
-00419923361i[     ] addr 9b350 len 0
-00419923361i[     ] addr 9b358 len 0
-00419923361i[     ] addr 9b360 len 0
-00419923361i[     ] addr 9b368 len 0
-00419923361i[     ] addr 9b370 len 0
-00419923361i[     ] addr 9ce20 len 0
-00419923361i[     ] setting breakpoint at 76280
-00419923361i[     ] setting breakpoint at 8310
-00419923361i[     ] stepping
-00419923362i[     ] stopped with ac2
-00419923362i[     ] Removing breakpoint at 76280
-00419923362i[     ] Removing breakpoint at 8310
-00419923362i[     ] addr 9ce1c len 0
-00419923362i[     ] addr 9b2a8 len 0
-00419923362i[     ] addr 9b2b0 len 0
-00419923362i[     ] addr 9b2b8 len 0
-00419923362i[     ] addr 9b2c0 len 0
-00419923362i[     ] addr 9b2c8 len 0
-00419923362i[     ] addr 9b2d0 len 0
-00419923362i[     ] addr 9b2d8 len 0
-00419923362i[     ] addr 9b2e0 len 0
-00419923362i[     ] addr 9b2e8 len 0
-00419923362i[     ] addr 9b2f0 len 0
-00419923362i[     ] addr 9b2f8 len 0
-00419923362i[     ] addr 9b300 len 0
-00419923362i[     ] addr 9b308 len 0
-00419923362i[     ] addr 9b310 len 0
-00419923362i[     ] addr 9b318 len 0
-00419923362i[     ] addr 9b320 len 0
-00419923362i[     ] addr 9b328 len 0
-00419923362i[     ] addr 9b330 len 0
-00419923362i[     ] addr 9b338 len 0
-00419923362i[     ] addr 9b340 len 0
-00419923362i[     ] addr 9b348 len 0
-00419923362i[     ] addr 9b350 len 0
-00419923362i[     ] addr 9b358 len 0
-00419923362i[     ] addr 9b360 len 0
-00419923362i[     ] addr 9b368 len 0
-00419923362i[     ] addr 9b370 len 0
-00419923362i[     ] addr 9ce20 len 0
-00419923362i[     ] setting breakpoint at 76280
-00419923362i[     ] setting breakpoint at 8310
-00419923362i[     ] stepping
-00419923363i[     ] stopped with ac2
-00419923363i[     ] stepping
-00419923364i[     ] stopped with ac2
-00419923364i[     ] stepping
-00419923365i[     ] stopped with ac2
-00419923365i[     ] stepping
-00419923366i[     ] stopped with ac2
-00419923366i[     ] stepping
-00419923367i[     ] stopped with ac2
-00419923367i[     ] stepping
-00419923368i[     ] stopped with ac2
-00419923368i[     ] Removing breakpoint at 76280
-00419923368i[     ] Removing breakpoint at 8310
-00419923368i[     ] addr 9cdac len 0
-00419923368i[     ] addr 9b2a8 len 0
-00419923368i[     ] addr 9b2b0 len 0
-00419923368i[     ] addr 9b2b8 len 0
-00419923368i[     ] addr 9b2c0 len 0
-00419923368i[     ] addr 9b2c8 len 0
-00419923368i[     ] addr 9b2d0 len 0
-00419923368i[     ] addr 9b2d8 len 0
-00419923368i[     ] addr 9b2e0 len 0
-00419923368i[     ] addr 9b2e8 len 0
-00419923368i[     ] addr 9b2f0 len 0
-00419923368i[     ] addr 9b2f8 len 0
-00419923368i[     ] addr 9b300 len 0
-00419923368i[     ] addr 9b308 len 0
-00419923368i[     ] addr 9b310 len 0
-00419923368i[     ] addr 9b318 len 0
-00419923368i[     ] addr 9b320 len 0
-00419923368i[     ] addr 9b328 len 0
-00419923368i[     ] addr 9b330 len 0
-00419923368i[     ] addr 9b338 len 0
-00419923368i[     ] addr 9b340 len 0
-00419923368i[     ] addr 9b348 len 0
-00419923368i[     ] addr 9b350 len 0
-00419923368i[     ] addr 9b358 len 0
-00419923368i[     ] addr 9b360 len 0
-00419923368i[     ] addr 9b368 len 0
-00419923368i[     ] addr 9b370 len 0
-00419923368i[     ] addr 9cdb0 len 0
-00419923368i[     ] setting breakpoint at 76280
-00419923368i[     ] setting breakpoint at 8310
-00419923368i[     ] stepping
-00419923369i[     ] stopped with ac2
-00419923369i[     ] stepping
-00419923370i[     ] stopped with ac2
-00419923370i[     ] stepping
-00419923371i[     ] stopped with ac2
-00419923371i[     ] stepping
-00419923372i[     ] stopped with ac2
-00419923372i[     ] stepping
-00419923373i[     ] stopped with ac2
-00419923373i[     ] Removing breakpoint at 76280
-00419923373i[     ] Removing breakpoint at 8310
-00419923373i[     ] addr 9cdac len 0
-00419923373i[     ] addr 9b2a8 len 0
-00419923373i[     ] addr 9b2b0 len 0
-00419923373i[     ] addr 9b2b8 len 0
-00419923373i[     ] addr 9b2c0 len 0
-00419923373i[     ] addr 9b2c8 len 0
-00419923373i[     ] addr 9b2d0 len 0
-00419923373i[     ] addr 9b2d8 len 0
-00419923373i[     ] addr 9b2e0 len 0
-00419923373i[     ] addr 9b2e8 len 0
-00419923373i[     ] addr 9b2f0 len 0
-00419923373i[     ] addr 9b2f8 len 0
-00419923373i[     ] addr 9b300 len 0
-00419923373i[     ] addr 9b308 len 0
-00419923373i[     ] addr 9b310 len 0
-00419923373i[     ] addr 9b318 len 0
-00419923373i[     ] addr 9b320 len 0
-00419923373i[     ] addr 9b328 len 0
-00419923373i[     ] addr 9b330 len 0
-00419923373i[     ] addr 9b338 len 0
-00419923373i[     ] addr 9b340 len 0
-00419923373i[     ] addr 9b348 len 0
-00419923373i[     ] addr 9b350 len 0
-00419923373i[     ] addr 9b358 len 0
-00419923373i[     ] addr 9b360 len 0
-00419923373i[     ] addr 9b368 len 0
-00419923373i[     ] addr 9b370 len 0
-00419923373i[     ] addr 9cdb0 len 0
-00419923373i[     ] setting breakpoint at 76280
-00419923373i[     ] setting breakpoint at 8310
-00419923373i[     ] stepping
-00419923374i[     ] stopped with ac2
-00419923374i[     ] Removing breakpoint at 76280
-00419923374i[     ] Removing breakpoint at 8310
-00419923374i[     ] setting breakpoint at 76280
-00419923374i[     ] setting breakpoint at 8310
-00419923374i[     ] stepping
-00419923375i[     ] stopped with ac2
-00419923375i[     ] stepping
-00419923376i[     ] stopped with ac2
-00419923376i[     ] stepping
-00419923377i[     ] stopped with ac2
-00419923377i[     ] Removing breakpoint at 76280
-00419923377i[     ] Removing breakpoint at 8310
-00419923377i[     ] setting breakpoint at 76280
-00419923377i[     ] setting breakpoint at 8310
-00419923377i[     ] stepping
-00419923378i[     ] stopped with ac2
-00419923378i[     ] Removing breakpoint at 76280
-00419923378i[     ] Removing breakpoint at 8310
-00419923378i[     ] setting breakpoint at 76280
-00419923378i[     ] setting breakpoint at 8310
-00419923378i[     ] stepping
-00419923379i[     ] stopped with ac2
-00419923379i[     ] Removing breakpoint at 76280
-00419923379i[     ] Removing breakpoint at 8310
-00419923379i[     ] setting breakpoint at 76280
-00419923379i[     ] setting breakpoint at 8310
-00419923379i[     ] stepping
-00419923380i[     ] stopped with ac2
-00419923380i[     ] Removing breakpoint at 76280
-00419923380i[     ] Removing breakpoint at 8310
-00419923380i[     ] setting breakpoint at 76280
-00419923380i[     ] setting breakpoint at 8310
-00419923380i[     ] stepping
-00419923381i[     ] stopped with ac2
-00419923381i[     ] Removing breakpoint at 76280
-00419923381i[     ] Removing breakpoint at 8310
-00419923381i[     ] setting breakpoint at 76280
-00419923381i[     ] setting breakpoint at 8310
-00419923381i[     ] stepping
-00419923382i[     ] stopped with ac2
-00419923382i[     ] Removing breakpoint at 76280
-00419923382i[     ] Removing breakpoint at 8310
-00419923382i[     ] setting breakpoint at 76280
-00419923382i[     ] setting breakpoint at 8310
-00419923382i[     ] stepping
-00419923383i[     ] stopped with ac2
-00419923383i[     ] Removing breakpoint at 76280
-00419923383i[     ] Removing breakpoint at 8310
-00419923383i[     ] setting breakpoint at 76280
-00419923383i[     ] setting breakpoint at 8310
-00419923383i[     ] stepping
-00419923384i[     ] stopped with ac2
-00419923384i[     ] Removing breakpoint at 76280
-00419923384i[     ] Removing breakpoint at 8310
-00419923384i[     ] setting breakpoint at 76280
-00419923384i[     ] setting breakpoint at 8310
-00419923384i[     ] stepping
-00419923385i[     ] stopped with ac2
-00419923385i[     ] stepping
-00419923386i[     ] stopped with ac2
-00419923386i[     ] Removing breakpoint at 76280
-00419923386i[     ] Removing breakpoint at 8310
-00419923386i[     ] addr 9cdac len 0
-00419923386i[     ] addr 9b2a8 len 0
-00419923386i[     ] addr 9b2b0 len 0
-00419923386i[     ] addr 9b2b8 len 0
-00419923386i[     ] addr 9b2c0 len 0
-00419923386i[     ] addr 9b2c8 len 0
-00419923386i[     ] addr 9b2d0 len 0
-00419923386i[     ] addr 9b2d8 len 0
-00419923386i[     ] addr 9b2e0 len 0
-00419923386i[     ] addr 9b2e8 len 0
-00419923386i[     ] addr 9b2f0 len 0
-00419923386i[     ] addr 9b2f8 len 0
-00419923386i[     ] addr 9b300 len 0
-00419923386i[     ] addr 9b308 len 0
-00419923386i[     ] addr 9b310 len 0
-00419923386i[     ] addr 9b318 len 0
-00419923386i[     ] addr 9b320 len 0
-00419923386i[     ] addr 9b328 len 0
-00419923386i[     ] addr 9b330 len 0
-00419923386i[     ] addr 9b338 len 0
-00419923386i[     ] addr 9b340 len 0
-00419923386i[     ] addr 9b348 len 0
-00419923386i[     ] addr 9b350 len 0
-00419923386i[     ] addr 9b358 len 0
-00419923386i[     ] addr 9b360 len 0
-00419923386i[     ] addr 9b368 len 0
-00419923386i[     ] addr 9b370 len 0
-00419923386i[     ] addr 9cdb0 len 0
-00419923386i[     ] setting breakpoint at 76280
-00419923386i[     ] setting breakpoint at 8310
-00419923386i[     ] stepping
-00419923387i[     ] stopped with ac2
-00419923387i[     ] stepping
-00419923388i[     ] stopped with ac2
-00419923388i[     ] Removing breakpoint at 76280
-00419923388i[     ] Removing breakpoint at 8310
-00419923388i[     ] addr 9cdac len 0
-00419923388i[     ] addr 9b2a8 len 0
-00419923388i[     ] addr 9b2b0 len 0
-00419923388i[     ] addr 9b2b8 len 0
-00419923388i[     ] addr 9b2c0 len 0
-00419923388i[     ] addr 9b2c8 len 0
-00419923388i[     ] addr 9b2d0 len 0
-00419923388i[     ] addr 9b2d8 len 0
-00419923388i[     ] addr 9b2e0 len 0
-00419923388i[     ] addr 9b2e8 len 0
-00419923388i[     ] addr 9b2f0 len 0
-00419923388i[     ] addr 9b2f8 len 0
-00419923388i[     ] addr 9b300 len 0
-00419923388i[     ] addr 9b308 len 0
-00419923388i[     ] addr 9b310 len 0
-00419923388i[     ] addr 9b318 len 0
-00419923388i[     ] addr 9b320 len 0
-00419923388i[     ] addr 9b328 len 0
-00419923388i[     ] addr 9b330 len 0
-00419923388i[     ] addr 9b338 len 0
-00419923388i[     ] addr 9b340 len 0
-00419923388i[     ] addr 9b348 len 0
-00419923388i[     ] addr 9b350 len 0
-00419923388i[     ] addr 9b358 len 0
-00419923388i[     ] addr 9b360 len 0
-00419923388i[     ] addr 9b368 len 0
-00419923388i[     ] addr 9b370 len 0
-00419923388i[     ] addr 9cdb0 len 0
-00419923388i[     ] setting breakpoint at 76280
-00419923388i[     ] setting breakpoint at 8310
-00419923388i[     ] stepping
-00419923389i[     ] stopped with ac2
-00419923389i[     ] stepping
-00419923390i[     ] stopped with ac2
-00419923390i[     ] stepping
-00419923391i[     ] stopped with ac2
-00419923391i[     ] Removing breakpoint at 76280
-00419923391i[     ] Removing breakpoint at 8310
-00419923391i[     ] addr 9cdac len 0
-00419923391i[     ] addr 9b2a8 len 0
-00419923391i[     ] addr 9b2b0 len 0
-00419923391i[     ] addr 9b2b8 len 0
-00419923391i[     ] addr 9b2c0 len 0
-00419923391i[     ] addr 9b2c8 len 0
-00419923391i[     ] addr 9b2d0 len 0
-00419923391i[     ] addr 9b2d8 len 0
-00419923391i[     ] addr 9b2e0 len 0
-00419923391i[     ] addr 9b2e8 len 0
-00419923391i[     ] addr 9b2f0 len 0
-00419923391i[     ] addr 9b2f8 len 0
-00419923391i[     ] addr 9b300 len 0
-00419923391i[     ] addr 9b308 len 0
-00419923391i[     ] addr 9b310 len 0
-00419923391i[     ] addr 9b318 len 0
-00419923391i[     ] addr 9b320 len 0
-00419923391i[     ] addr 9b328 len 0
-00419923391i[     ] addr 9b330 len 0
-00419923391i[     ] addr 9b338 len 0
-00419923391i[     ] addr 9b340 len 0
-00419923391i[     ] addr 9b348 len 0
-00419923391i[     ] addr 9b350 len 0
-00419923391i[     ] addr 9b358 len 0
-00419923391i[     ] addr 9b360 len 0
-00419923391i[     ] addr 9b368 len 0
-00419923391i[     ] addr 9b370 len 0
-00419923391i[     ] addr 9cdb0 len 0
-00419923391i[     ] setting breakpoint at 76280
-00419923391i[     ] setting breakpoint at 8310
-00419923391i[     ] stepping
-00419923392i[     ] stopped with ac2
-00419923392i[     ] Removing breakpoint at 76280
-00419923392i[     ] Removing breakpoint at 8310
-00419923392i[     ] addr 9cdac len 0
-00419923392i[     ] addr 9b2a8 len 0
-00419923392i[     ] addr 9b2b0 len 0
-00419923392i[     ] addr 9b2b8 len 0
-00419923392i[     ] addr 9b2c0 len 0
-00419923392i[     ] addr 9b2c8 len 0
-00419923392i[     ] addr 9b2d0 len 0
-00419923392i[     ] addr 9b2d8 len 0
-00419923392i[     ] addr 9b2e0 len 0
-00419923392i[     ] addr 9b2e8 len 0
-00419923392i[     ] addr 9b2f0 len 0
-00419923392i[     ] addr 9b2f8 len 0
-00419923392i[     ] addr 9b300 len 0
-00419923392i[     ] addr 9b308 len 0
-00419923392i[     ] addr 9b310 len 0
-00419923392i[     ] addr 9b318 len 0
-00419923392i[     ] addr 9b320 len 0
-00419923392i[     ] addr 9b328 len 0
-00419923392i[     ] addr 9b330 len 0
-00419923392i[     ] addr 9b338 len 0
-00419923392i[     ] addr 9b340 len 0
-00419923392i[     ] addr 9b348 len 0
-00419923392i[     ] addr 9b350 len 0
-00419923392i[     ] addr 9b358 len 0
-00419923392i[     ] addr 9b360 len 0
-00419923392i[     ] addr 9b368 len 0
-00419923392i[     ] addr 9b370 len 0
-00419923392i[     ] addr 9cdb0 len 0
-00419923392i[     ] setting breakpoint at 76280
-00419923392i[     ] setting breakpoint at 8310
-00419923392i[     ] stepping
-00419923393i[     ] stopped with ac2
-00419923393i[     ] stepping
-00419923394i[     ] stopped with ac2
-00419923394i[     ] stepping
-00419923395i[     ] stopped with ac2
-00419923395i[     ] Removing breakpoint at 76280
-00419923395i[     ] Removing breakpoint at 8310
-00419923395i[     ] addr 9cdac len 0
-00419923395i[     ] addr 9b2a8 len 0
-00419923395i[     ] addr 9b2b0 len 0
-00419923395i[     ] addr 9b2b8 len 0
-00419923395i[     ] addr 9b2c0 len 0
-00419923395i[     ] addr 9b2c8 len 0
-00419923395i[     ] addr 9b2d0 len 0
-00419923395i[     ] addr 9b2d8 len 0
-00419923395i[     ] addr 9b2e0 len 0
-00419923395i[     ] addr 9b2e8 len 0
-00419923395i[     ] addr 9b2f0 len 0
-00419923395i[     ] addr 9b2f8 len 0
-00419923395i[     ] addr 9b300 len 0
-00419923395i[     ] addr 9b308 len 0
-00419923395i[     ] addr 9b310 len 0
-00419923395i[     ] addr 9b318 len 0
-00419923395i[     ] addr 9b320 len 0
-00419923395i[     ] addr 9b328 len 0
-00419923395i[     ] addr 9b330 len 0
-00419923395i[     ] addr 9b338 len 0
-00419923395i[     ] addr 9b340 len 0
-00419923395i[     ] addr 9b348 len 0
-00419923395i[     ] addr 9b350 len 0
-00419923395i[     ] addr 9b358 len 0
-00419923395i[     ] addr 9b360 len 0
-00419923395i[     ] addr 9b368 len 0
-00419923395i[     ] addr 9b370 len 0
-00419923395i[     ] addr 9cdb0 len 0
-00419923395i[     ] setting breakpoint at 76280
-00419923395i[     ] setting breakpoint at 8310
-00419923395i[     ] stepping
-00419923396i[     ] stopped with ac2
-00419923396i[     ] stepping
-00419923397i[     ] stopped with ac2
-00419923397i[     ] stepping
-00419923398i[     ] stopped with ac2
-00419923398i[     ] Removing breakpoint at 76280
-00419923398i[     ] Removing breakpoint at 8310
-00419923398i[     ] addr 9cdac len 0
-00419923398i[     ] addr 9b2a8 len 0
-00419923398i[     ] addr 9b2b0 len 0
-00419923398i[     ] addr 9b2b8 len 0
-00419923398i[     ] addr 9b2c0 len 0
-00419923398i[     ] addr 9b2c8 len 0
-00419923398i[     ] addr 9b2d0 len 0
-00419923398i[     ] addr 9b2d8 len 0
-00419923398i[     ] addr 9b2e0 len 0
-00419923398i[     ] addr 9b2e8 len 0
-00419923398i[     ] addr 9b2f0 len 0
-00419923398i[     ] addr 9b2f8 len 0
-00419923398i[     ] addr 9b300 len 0
-00419923398i[     ] addr 9b308 len 0
-00419923398i[     ] addr 9b310 len 0
-00419923398i[     ] addr 9b318 len 0
-00419923398i[     ] addr 9b320 len 0
-00419923398i[     ] addr 9b328 len 0
-00419923398i[     ] addr 9b330 len 0
-00419923398i[     ] addr 9b338 len 0
-00419923398i[     ] addr 9b340 len 0
-00419923398i[     ] addr 9b348 len 0
-00419923398i[     ] addr 9b350 len 0
-00419923398i[     ] addr 9b358 len 0
-00419923398i[     ] addr 9b360 len 0
-00419923398i[     ] addr 9b368 len 0
-00419923398i[     ] addr 9b370 len 0
-00419923398i[     ] addr 9cdb0 len 0
-00419923398i[     ] setting breakpoint at 76280
-00419923398i[     ] setting breakpoint at 8310
-00419923398i[     ] stepping
-00419923399i[     ] stopped with ac2
-00419923399i[     ] stepping
-00419923400i[     ] stopped with ac2
-00419923400i[     ] stepping
-00419923401i[     ] stopped with ac2
-00419923401i[     ] stepping
-00419923402i[     ] stopped with ac2
-00419923402i[     ] stepping
-00419923403i[     ] stopped with ac2
-00419923403i[     ] stepping
-00419923404i[     ] stopped with ac2
-00419923404i[     ] stepping
-00419923405i[     ] stopped with ac2
-00419923405i[     ] stepping
-00419923406i[     ] stopped with ac2
-00419923406i[     ] Removing breakpoint at 76280
-00419923406i[     ] Removing breakpoint at 8310
-00419923406i[     ] addr 9cd7c len 0
-00419923406i[     ] addr 9cd80 len 0
-00419923406i[     ] addr 9cd84 len 0
-00419923406i[     ] addr 9cd88 len 0
-00419923406i[     ] addr 9cd8c len 0
-00419923406i[     ] addr 9cd90 len 0
-00419923406i[     ] setting breakpoint at 76280
-00419923406i[     ] setting breakpoint at 8310
-00419923406i[     ] stepping
-00419923407i[     ] stopped with ac2
-00419923407i[     ] Removing breakpoint at 76280
-00419923407i[     ] Removing breakpoint at 8310
-00419923407i[     ] addr 9cd7c len 0
-00419923407i[     ] addr 9cd80 len 0
-00419923407i[     ] addr 9cd84 len 0
-00419923407i[     ] addr 9cd88 len 0
-00419923407i[     ] addr 9cd8c len 0
-00419923407i[     ] addr 9cd90 len 0
-00419923407i[     ] setting breakpoint at 76280
-00419923407i[     ] setting breakpoint at 8310
-00419923407i[     ] stepping
-00419923408i[     ] stopped with ac2
-00419923408i[     ] Removing breakpoint at 76280
-00419923408i[     ] Removing breakpoint at 8310
-00419923408i[     ] addr 9cd7c len 0
-00419923408i[     ] addr 9cd80 len 0
-00419923408i[     ] addr 9cd84 len 0
-00419923408i[     ] addr 9cd88 len 0
-00419923408i[     ] addr 9cd8c len 0
-00419923408i[     ] addr 9cd90 len 0
-00419923408i[     ] setting breakpoint at 76280
-00419923408i[     ] setting breakpoint at 8310
-00419923408i[     ] stepping
-00419923409i[     ] stopped with ac2
-00419923409i[     ] Removing breakpoint at 76280
-00419923409i[     ] Removing breakpoint at 8310
-00419923409i[     ] addr 9cd7c len 0
-00419923409i[     ] addr 9cd80 len 0
-00419923409i[     ] addr 9cd84 len 0
-00419923409i[     ] addr 9cd88 len 0
-00419923409i[     ] addr 9cd8c len 0
-00419923409i[     ] addr 9cd90 len 0
-00419923409i[     ] setting breakpoint at 76280
-00419923409i[     ] setting breakpoint at 8310
-00419923409i[     ] stepping
-00419923410i[     ] stopped with ac2
-00419923410i[     ] Removing breakpoint at 76280
-00419923410i[     ] Removing breakpoint at 8310
-00419923410i[     ] addr 9cd7c len 0
-00419923410i[     ] addr 9cd80 len 0
-00419923410i[     ] addr 9cd84 len 0
-00419923410i[     ] addr 9cd88 len 0
-00419923410i[     ] addr 9cd8c len 0
-00419923410i[     ] addr 9cd90 len 0
-00419923410i[     ] setting breakpoint at 76280
-00419923410i[     ] setting breakpoint at 8310
-00419923410i[     ] stepping
-00419923411i[     ] stopped with ac2
-00419923411i[     ] stepping
-00419923412i[     ] stopped with ac2
-00419923412i[     ] Removing breakpoint at 76280
-00419923412i[     ] Removing breakpoint at 8310
-00419923412i[     ] addr 9cd7c len 0
-00419923412i[     ] addr 9cd80 len 0
-00419923412i[     ] addr 9cd84 len 0
-00419923412i[     ] addr 9cd88 len 0
-00419923412i[     ] addr 9cd8c len 0
-00419923412i[     ] addr 9cd90 len 0
-00419923412i[     ] setting breakpoint at 76280
-00419923412i[     ] setting breakpoint at 8310
-00419923412i[     ] stepping
-00419923413i[     ] stopped with ac2
-00419923413i[     ] stepping
-00419923414i[     ] stopped with ac2
-00419923414i[     ] Removing breakpoint at 76280
-00419923414i[     ] Removing breakpoint at 8310
-00419923414i[     ] addr 9cd7c len 0
-00419923414i[     ] addr 9cd80 len 0
-00419923414i[     ] addr 9cd84 len 0
-00419923414i[     ] addr 9cd88 len 0
-00419923414i[     ] addr 9cd8c len 0
-00419923414i[     ] addr 9cd90 len 0
-00419923414i[     ] setting breakpoint at 76280
-00419923414i[     ] setting breakpoint at 8310
-00419923414i[     ] stepping
-00419923415i[     ] stopped with ac2
-00419923415i[     ] stepping
-00419923416i[     ] stopped with ac2
-00419923416i[     ] Removing breakpoint at 76280
-00419923416i[     ] Removing breakpoint at 8310
-00419923416i[     ] addr 9cd7c len 0
-00419923416i[     ] addr 9cd80 len 0
-00419923416i[     ] addr 9cd84 len 0
-00419923416i[     ] addr 9cd88 len 0
-00419923416i[     ] addr 9cd8c len 0
-00419923416i[     ] addr 9cd90 len 0
-00419923416i[     ] setting breakpoint at 76280
-00419923416i[     ] setting breakpoint at 8310
-00419923416i[     ] stepping
-00419923417i[     ] stopped with ac2
-00419923417i[     ] stepping
-00419923418i[     ] stopped with ac2
-00419923418i[     ] Removing breakpoint at 76280
-00419923418i[     ] Removing breakpoint at 8310
-00419923418i[     ] addr 9cd7c len 0
-00419923418i[     ] addr 9cd80 len 0
-00419923418i[     ] addr 9cd84 len 0
-00419923418i[     ] addr 9cd88 len 0
-00419923418i[     ] addr 9cd8c len 0
-00419923418i[     ] addr 9cd90 len 0
-00419923418i[     ] setting breakpoint at 76280
-00419923418i[     ] setting breakpoint at 8310
-00419923418i[     ] stepping
-00419923419i[     ] stopped with ac2
-00419923419i[     ] stepping
-00419923420i[     ] stopped with ac2
-00419923420i[     ] Removing breakpoint at 76280
-00419923420i[     ] Removing breakpoint at 8310
-00419923420i[     ] addr 9cd7c len 0
-00419923420i[     ] addr 9cd80 len 0
-00419923420i[     ] addr 9cd84 len 0
-00419923420i[     ] addr 9cd88 len 0
-00419923420i[     ] addr 9cd8c len 0
-00419923420i[     ] addr 9cd90 len 0
-00419923420i[     ] setting breakpoint at 76280
-00419923420i[     ] setting breakpoint at 8310
-00419923420i[     ] stepping
-00419923421i[     ] stopped with ac2
-00419923421i[     ] Removing breakpoint at 76280
-00419923421i[     ] Removing breakpoint at 8310
-00419923421i[     ] addr 9cd7c len 0
-00419923421i[     ] addr 9cd80 len 0
-00419923421i[     ] addr 9cd84 len 0
-00419923421i[     ] addr 9cd88 len 0
-00419923421i[     ] addr 9cd8c len 0
-00419923421i[     ] addr 9cd90 len 0
-00419923421i[     ] setting breakpoint at 76280
-00419923421i[     ] setting breakpoint at 8310
-00419923421i[     ] stepping
-00419923422i[     ] stopped with ac2
-00419923422i[     ] Removing breakpoint at 76280
-00419923422i[     ] Removing breakpoint at 8310
-00419923422i[     ] addr 9cd7c len 0
-00419923422i[     ] addr 9cd80 len 0
-00419923422i[     ] addr 9cd84 len 0
-00419923422i[     ] addr 9cd88 len 0
-00419923422i[     ] addr 9cd8c len 0
-00419923422i[     ] addr 9cd90 len 0
-00419923422i[     ] setting breakpoint at 76280
-00419923422i[     ] setting breakpoint at 8310
-00419923422i[     ] stepping
-00419923423i[     ] stopped with ac2
-00419923423i[     ] Removing breakpoint at 76280
-00419923423i[     ] Removing breakpoint at 8310
-00419923423i[     ] addr 9cd7c len 0
-00419923423i[     ] addr 9cd80 len 0
-00419923423i[     ] addr 9cd84 len 0
-00419923423i[     ] addr 9cd88 len 0
-00419923423i[     ] addr 9cd8c len 0
-00419923423i[     ] addr 9cd90 len 0
-00419923423i[     ] setting breakpoint at 76280
-00419923423i[     ] setting breakpoint at 8310
-00419923423i[     ] stepping
-00419923424i[     ] stopped with ac2
-00419923424i[     ] Removing breakpoint at 76280
-00419923424i[     ] Removing breakpoint at 8310
-00419923424i[     ] addr 9cd7c len 0
-00419923424i[     ] addr 9cd80 len 0
-00419923424i[     ] addr 9cd84 len 0
-00419923424i[     ] addr 9cd88 len 0
-00419923424i[     ] addr 9cd8c len 0
-00419923424i[     ] addr 9cd90 len 0
-00419923424i[     ] setting breakpoint at 76280
-00419923424i[     ] setting breakpoint at 8310
-00419923424i[     ] stepping
-00419923425i[     ] stopped with ac2
-00419923425i[     ] Removing breakpoint at 76280
-00419923425i[     ] Removing breakpoint at 8310
-00419923425i[     ] addr 9cd7c len 0
-00419923425i[     ] addr 9cd80 len 0
-00419923425i[     ] addr 9cd84 len 0
-00419923425i[     ] addr 9cd88 len 0
-00419923425i[     ] addr 9cd8c len 0
-00419923425i[     ] addr 9cd90 len 0
-00419923425i[     ] setting breakpoint at 76280
-00419923425i[     ] setting breakpoint at 8310
-00419923425i[     ] stepping
-00419923426i[     ] stopped with ac2
-00419923426i[     ] Removing breakpoint at 76280
-00419923426i[     ] Removing breakpoint at 8310
-00419923426i[     ] addr 9cd7c len 0
-00419923426i[     ] addr 9cd80 len 0
-00419923426i[     ] addr 9cd84 len 0
-00419923426i[     ] addr 9cd88 len 0
-00419923426i[     ] addr 9cd8c len 0
-00419923426i[     ] addr 9cd90 len 0
-00419923426i[     ] setting breakpoint at 76280
-00419923426i[     ] setting breakpoint at 8310
-00419923426i[     ] stepping
-00419923427i[     ] stopped with ac2
-00419923427i[     ] Removing breakpoint at 76280
-00419923427i[     ] Removing breakpoint at 8310
-00419923427i[     ] addr 9cd7c len 0
-00419923427i[     ] addr 9cd80 len 0
-00419923427i[     ] addr 9cd84 len 0
-00419923427i[     ] addr 9cd88 len 0
-00419923427i[     ] addr 9cd8c len 0
-00419923427i[     ] addr 9cd90 len 0
-00419923427i[     ] setting breakpoint at 76280
-00419923427i[     ] setting breakpoint at 8310
-00419923427i[     ] stepping
-00419923428i[     ] stopped with ac2
-00419923428i[     ] stepping
-00419923429i[     ] stopped with ac2
-00419923429i[     ] stepping
-00419923430i[     ] stopped with ac2
-00419923430i[     ] Removing breakpoint at 76280
-00419923430i[     ] Removing breakpoint at 8310
-00419923430i[     ] addr 9cd5c len 0
-00419923430i[     ] addr 9cd60 len 0
-00419923430i[     ] setting breakpoint at 76280
-00419923430i[     ] setting breakpoint at 8310
-00419923430i[     ] stepping
-00419923431i[     ] stopped with ac2
-00419923431i[     ] Removing breakpoint at 76280
-00419923431i[     ] Removing breakpoint at 8310
-00419923431i[     ] addr 9cd5c len 0
-00419923431i[     ] addr 9cd60 len 0
-00419923431i[     ] setting breakpoint at 76280
-00419923431i[     ] setting breakpoint at 8310
-00419923431i[     ] stepping
-00419923432i[     ] stopped with ac2
-00419923432i[     ] stepping
-00419923433i[     ] stopped with ac2
-00419923433i[     ] Removing breakpoint at 76280
-00419923433i[     ] Removing breakpoint at 8310
-00419923433i[     ] addr 9cd5c len 0
-00419923433i[     ] addr 9cd60 len 0
-00419923433i[     ] setting breakpoint at 76280
-00419923433i[     ] setting breakpoint at 8310
-00419923433i[     ] stepping
-00419923434i[     ] stopped with ac2
-00419923434i[     ] stepping
-00419923435i[     ] stopped with ac2
-00419923435i[     ] stepping
-00419923436i[     ] stopped with ac2
-00419923436i[     ] stepping
-00419923437i[     ] stopped with ac2
-00419923437i[     ] Removing breakpoint at 76280
-00419923437i[     ] Removing breakpoint at 8310
-00419923437i[     ] addr 9cd7c len 0
-00419923437i[     ] addr 9cd80 len 0
-00419923437i[     ] addr 9cd84 len 0
-00419923437i[     ] addr 9cd88 len 0
-00419923437i[     ] addr 9cd8c len 0
-00419923437i[     ] addr 9cd90 len 0
-00419923437i[     ] setting breakpoint at 76280
-00419923437i[     ] setting breakpoint at 8310
-00419923437i[     ] stepping
-00419923438i[     ] stopped with ac2
-00419923438i[     ] stepping
-00419923439i[     ] stopped with ac2
-00419923439i[     ] stepping
-00419923440i[     ] stopped with ac2
-00419923440i[     ] stepping
-00419923441i[     ] stopped with ac2
-00419923441i[     ] Removing breakpoint at 76280
-00419923441i[     ] Removing breakpoint at 8310
-00419923441i[     ] addr 9cdac len 0
-00419923441i[     ] addr 9b2a8 len 0
-00419923441i[     ] addr 9b2b0 len 0
-00419923441i[     ] addr 9b2b8 len 0
-00419923441i[     ] addr 9b2c0 len 0
-00419923441i[     ] addr 9b2c8 len 0
-00419923441i[     ] addr 9b2d0 len 0
-00419923441i[     ] addr 9b2d8 len 0
-00419923441i[     ] addr 9b2e0 len 0
-00419923441i[     ] addr 9b2e8 len 0
-00419923441i[     ] addr 9b2f0 len 0
-00419923441i[     ] addr 9b2f8 len 0
-00419923441i[     ] addr 9b300 len 0
-00419923441i[     ] addr 9b308 len 0
-00419923441i[     ] addr 9b310 len 0
-00419923441i[     ] addr 9b318 len 0
-00419923441i[     ] addr 9b320 len 0
-00419923441i[     ] addr 9b328 len 0
-00419923441i[     ] addr 9b330 len 0
-00419923441i[     ] addr 9b338 len 0
-00419923441i[     ] addr 9b340 len 0
-00419923441i[     ] addr 9b348 len 0
-00419923441i[     ] addr 9b350 len 0
-00419923441i[     ] addr 9b358 len 0
-00419923441i[     ] addr 9b360 len 0
-00419923441i[     ] addr 9b368 len 0
-00419923441i[     ] addr 9b370 len 0
-00419923441i[     ] addr 9cdb0 len 0
-00419923441i[     ] setting breakpoint at 76280
-00419923441i[     ] setting breakpoint at 8310
-00419923441i[     ] stepping
-00419923442i[     ] stopped with ac2
-00419923442i[     ] stepping
-00419923443i[     ] stopped with ac2
-00419923443i[     ] Removing breakpoint at 76280
-00419923443i[     ] Removing breakpoint at 8310
-00419923443i[     ] addr 9cdac len 0
-00419923443i[     ] addr 9b2a8 len 0
-00419923443i[     ] addr 9b2b0 len 0
-00419923443i[     ] addr 9b2b8 len 0
-00419923443i[     ] addr 9b2c0 len 0
-00419923443i[     ] addr 9b2c8 len 0
-00419923443i[     ] addr 9b2d0 len 0
-00419923443i[     ] addr 9b2d8 len 0
-00419923443i[     ] addr 9b2e0 len 0
-00419923443i[     ] addr 9b2e8 len 0
-00419923443i[     ] addr 9b2f0 len 0
-00419923443i[     ] addr 9b2f8 len 0
-00419923443i[     ] addr 9b300 len 0
-00419923443i[     ] addr 9b308 len 0
-00419923443i[     ] addr 9b310 len 0
-00419923443i[     ] addr 9b318 len 0
-00419923443i[     ] addr 9b320 len 0
-00419923443i[     ] addr 9b328 len 0
-00419923443i[     ] addr 9b330 len 0
-00419923443i[     ] addr 9b338 len 0
-00419923443i[     ] addr 9b340 len 0
-00419923443i[     ] addr 9b348 len 0
-00419923443i[     ] addr 9b350 len 0
-00419923443i[     ] addr 9b358 len 0
-00419923443i[     ] addr 9b360 len 0
-00419923443i[     ] addr 9b368 len 0
-00419923443i[     ] addr 9b370 len 0
-00419923443i[     ] addr 9cdb0 len 0
-00419923443i[     ] setting breakpoint at 76280
-00419923443i[     ] setting breakpoint at 8310
-00419923443i[     ] stepping
-00419923444i[     ] stopped with ac2
-00419923444i[     ] stepping
-00419923445i[     ] stopped with ac2
-00419923445i[     ] stepping
-00419923446i[     ] stopped with ac2
-00419923446i[     ] Removing breakpoint at 76280
-00419923446i[     ] Removing breakpoint at 8310
-00419923446i[     ] addr 9cdac len 0
-00419923446i[     ] addr 9b2a8 len 0
-00419923446i[     ] addr 9b2b0 len 0
-00419923446i[     ] addr 9b2b8 len 0
-00419923446i[     ] addr 9b2c0 len 0
-00419923446i[     ] addr 9b2c8 len 0
-00419923446i[     ] addr 9b2d0 len 0
-00419923446i[     ] addr 9b2d8 len 0
-00419923446i[     ] addr 9b2e0 len 0
-00419923446i[     ] addr 9b2e8 len 0
-00419923446i[     ] addr 9b2f0 len 0
-00419923446i[     ] addr 9b2f8 len 0
-00419923446i[     ] addr 9b300 len 0
-00419923446i[     ] addr 9b308 len 0
-00419923446i[     ] addr 9b310 len 0
-00419923446i[     ] addr 9b318 len 0
-00419923446i[     ] addr 9b320 len 0
-00419923446i[     ] addr 9b328 len 0
-00419923446i[     ] addr 9b330 len 0
-00419923446i[     ] addr 9b338 len 0
-00419923446i[     ] addr 9b340 len 0
-00419923446i[     ] addr 9b348 len 0
-00419923446i[     ] addr 9b350 len 0
-00419923446i[     ] addr 9b358 len 0
-00419923446i[     ] addr 9b360 len 0
-00419923446i[     ] addr 9b368 len 0
-00419923446i[     ] addr 9b370 len 0
-00419923446i[     ] addr 9cdb0 len 0
-00419923446i[     ] setting breakpoint at 76280
-00419923446i[     ] setting breakpoint at 8310
-00419923446i[     ] stepping
-00419923447i[     ] stopped with ac2
-00419923447i[     ] stepping
-00419923448i[     ] stopped with ac2
-00419923448i[     ] stepping
-00419923449i[     ] stopped with ac2
-00419923449i[     ] Removing breakpoint at 76280
-00419923449i[     ] Removing breakpoint at 8310
-00419923449i[     ] addr 9cd7c len 0
-00419923449i[     ] addr 9cd80 len 0
-00419923449i[     ] setting breakpoint at 76280
-00419923449i[     ] setting breakpoint at 8310
-00419923449i[     ] stepping
-00419923450i[     ] stopped with ac2
-00419923450i[     ] stepping
-00419923451i[     ] stopped with ac2
-00419923451i[     ] Removing breakpoint at 76280
-00419923451i[     ] Removing breakpoint at 8310
-00419923451i[     ] addr 9cd7c len 0
-00419923451i[     ] addr 9cd80 len 0
-00419923451i[     ] setting breakpoint at 76280
-00419923451i[     ] setting breakpoint at 8310
-00419923451i[     ] stepping
-00419923452i[     ] stopped with ac2
-00419923452i[     ] Removing breakpoint at 76280
-00419923452i[     ] Removing breakpoint at 8310
-00419923452i[     ] addr 9cd7c len 0
-00419923452i[     ] addr 9cd80 len 0
-00419923452i[     ] setting breakpoint at 76280
-00419923452i[     ] setting breakpoint at 8310
-00419923452i[     ] stepping
-00419923453i[     ] stopped with ac2
-00419923453i[     ] stepping
-00419923454i[     ] stopped with ac2
-00419923454i[     ] Removing breakpoint at 76280
-00419923454i[     ] Removing breakpoint at 8310
-00419923454i[     ] addr 9cd7c len 0
-00419923454i[     ] addr 9cd80 len 0
-00419923454i[     ] setting breakpoint at 76280
-00419923454i[     ] setting breakpoint at 8310
-00419923454i[     ] stepping
-00419923455i[     ] stopped with ac2
-00419923455i[     ] stepping
-00419923456i[     ] stopped with ac2
-00419923456i[     ] stepping
-00419923457i[     ] stopped with ac2
-00419923457i[     ] Removing breakpoint at 76280
-00419923457i[     ] Removing breakpoint at 8310
-00419923457i[     ] addr 9cd7c len 0
-00419923457i[     ] addr 9cd80 len 0
-00419923457i[     ] setting breakpoint at 76280
-00419923457i[     ] setting breakpoint at 8310
-00419923457i[     ] stepping
-00419923458i[     ] stopped with ac2
-00419923458i[     ] stepping
-00419923459i[     ] stopped with ac2
-00419923459i[     ] Removing breakpoint at 76280
-00419923459i[     ] Removing breakpoint at 8310
-00419923459i[     ] addr 9cd7c len 0
-00419923459i[     ] addr 9cd80 len 0
-00419923459i[     ] setting breakpoint at 76280
-00419923459i[     ] setting breakpoint at 8310
-00419923459i[     ] stepping
-00419923460i[     ] stopped with ac2
-00419923460i[     ] stepping
-00419923461i[     ] stopped with ac2
-00419923461i[     ] Removing breakpoint at 76280
-00419923461i[     ] Removing breakpoint at 8310
-00419923461i[     ] addr 9cd7c len 0
-00419923461i[     ] addr 9cd80 len 0
-00419923461i[     ] setting breakpoint at 76280
-00419923461i[     ] setting breakpoint at 8310
-00419923461i[     ] stepping
-00419923462i[     ] stopped with ac2
-00419923462i[     ] stepping
-00419923463i[     ] stopped with ac2
-00419923463i[     ] Removing breakpoint at 76280
-00419923463i[     ] Removing breakpoint at 8310
-00419923463i[     ] addr 9cd7c len 0
-00419923463i[     ] addr 9cd80 len 0
-00419923463i[     ] setting breakpoint at 76280
-00419923463i[     ] setting breakpoint at 8310
-00419923463i[     ] stepping
-00419923464i[     ] stopped with ac2
-00419923464i[     ] stepping
-00419923465i[     ] stopped with ac2
-00419923465i[     ] Removing breakpoint at 76280
-00419923465i[     ] Removing breakpoint at 8310
-00419923465i[     ] addr 9cd7c len 0
-00419923465i[     ] addr 9cd80 len 0
-00419923465i[     ] setting breakpoint at 76280
-00419923465i[     ] setting breakpoint at 8310
-00419923465i[     ] stepping
-00419923466i[     ] stopped with ac2
-00419923466i[     ] stepping
-00419923467i[     ] stopped with ac2
-00419923467i[     ] Removing breakpoint at 76280
-00419923467i[     ] Removing breakpoint at 8310
-00419923467i[     ] addr 9cd7c len 0
-00419923467i[     ] addr 9cd80 len 0
-00419923467i[     ] setting breakpoint at 76280
-00419923467i[     ] setting breakpoint at 8310
-00419923467i[     ] stepping
-00419923468i[     ] stopped with ac2
-00419923468i[     ] Removing breakpoint at 76280
-00419923468i[     ] Removing breakpoint at 8310
-00419923468i[     ] addr 9cd7c len 0
-00419923468i[     ] addr 9cd80 len 0
-00419923468i[     ] setting breakpoint at 76280
-00419923468i[     ] setting breakpoint at 8310
-00419923468i[     ] stepping
-00419923469i[     ] stopped with ac2
-00419923469i[     ] Removing breakpoint at 76280
-00419923469i[     ] Removing breakpoint at 8310
-00419923469i[     ] addr 9cd7c len 0
-00419923469i[     ] addr 9cd80 len 0
-00419923469i[     ] setting breakpoint at 76280
-00419923469i[     ] setting breakpoint at 8310
-00419923469i[     ] stepping
-00419923470i[     ] stopped with ac2
-00419923470i[     ] Removing breakpoint at 76280
-00419923470i[     ] Removing breakpoint at 8310
-00419923470i[     ] addr 9cd7c len 0
-00419923470i[     ] addr 9cd80 len 0
-00419923470i[     ] setting breakpoint at 76280
-00419923470i[     ] setting breakpoint at 8310
-00419923470i[     ] stepping
-00419923471i[     ] stopped with ac2
-00419923471i[     ] Removing breakpoint at 76280
-00419923471i[     ] Removing breakpoint at 8310
-00419923471i[     ] addr 9cd7c len 0
-00419923471i[     ] addr 9cd80 len 0
-00419923471i[     ] setting breakpoint at 76280
-00419923471i[     ] setting breakpoint at 8310
-00419923471i[     ] stepping
-00419923472i[     ] stopped with ac2
-00419923472i[     ] Removing breakpoint at 76280
-00419923472i[     ] Removing breakpoint at 8310
-00419923472i[     ] addr 9cd7c len 0
-00419923472i[     ] addr 9cd80 len 0
-00419923472i[     ] setting breakpoint at 76280
-00419923472i[     ] setting breakpoint at 8310
-00419923472i[     ] stepping
-00419923473i[     ] stopped with ac2
-00419923473i[     ] Removing breakpoint at 76280
-00419923473i[     ] Removing breakpoint at 8310
-00419923473i[     ] addr 9cd7c len 0
-00419923473i[     ] addr 9cd80 len 0
-00419923473i[     ] setting breakpoint at 76280
-00419923473i[     ] setting breakpoint at 8310
-00419923473i[     ] stepping
-00419923474i[     ] stopped with ac2
-00419923474i[     ] Removing breakpoint at 76280
-00419923474i[     ] Removing breakpoint at 8310
-00419923474i[     ] addr 9cd7c len 0
-00419923474i[     ] addr 9cd80 len 0
-00419923474i[     ] setting breakpoint at 76280
-00419923474i[     ] setting breakpoint at 8310
-00419923474i[     ] stepping
-00419923475i[     ] stopped with ac2
-00419923475i[     ] Removing breakpoint at 76280
-00419923475i[     ] Removing breakpoint at 8310
-00419923475i[     ] addr 9cd7c len 0
-00419923475i[     ] addr 9cd80 len 0
-00419923475i[     ] setting breakpoint at 76280
-00419923475i[     ] setting breakpoint at 8310
-00419923475i[     ] stepping
-00419923476i[     ] stopped with ac2
-00419923476i[     ] stepping
-00419923477i[     ] stopped with ac2
-00419923477i[     ] stepping
-00419923478i[     ] stopped with ac2
-00419923478i[     ] Removing breakpoint at 76280
-00419923478i[     ] Removing breakpoint at 8310
-00419923478i[     ] addr 9cd5c len 0
-00419923478i[     ] addr 9cd60 len 0
-00419923478i[     ] setting breakpoint at 76280
-00419923478i[     ] setting breakpoint at 8310
-00419923478i[     ] stepping
-00419923479i[     ] stopped with ac2
-00419923479i[     ] Removing breakpoint at 76280
-00419923479i[     ] Removing breakpoint at 8310
-00419923479i[     ] addr 9cd5c len 0
-00419923479i[     ] addr 9cd60 len 0
-00419923479i[     ] setting breakpoint at 76280
-00419923479i[     ] setting breakpoint at 8310
-00419923479i[     ] stepping
-00419923480i[     ] stopped with ac2
-00419923480i[     ] stepping
-00419923481i[     ] stopped with ac2
-00419923481i[     ] Removing breakpoint at 76280
-00419923481i[     ] Removing breakpoint at 8310
-00419923481i[     ] addr 9cd5c len 0
-00419923481i[     ] addr 9cd60 len 0
-00419923481i[     ] setting breakpoint at 76280
-00419923481i[     ] setting breakpoint at 8310
-00419923481i[     ] stepping
-00419923482i[     ] stopped with ac2
-00419923482i[     ] stepping
-00419923483i[     ] stopped with ac2
-00419923483i[     ] stepping
-00419923484i[     ] stopped with ac2
-00419923484i[     ] stepping
-00419923485i[     ] stopped with ac2
-00419923485i[     ] Removing breakpoint at 76280
-00419923485i[     ] Removing breakpoint at 8310
-00419923485i[     ] addr 9cd7c len 0
-00419923485i[     ] addr 9cd80 len 0
-00419923485i[     ] setting breakpoint at 76280
-00419923485i[     ] setting breakpoint at 8310
-00419923485i[     ] stepping
-00419923486i[     ] stopped with ac2
-00419923486i[     ] Removing breakpoint at 76280
-00419923486i[     ] Removing breakpoint at 8310
-00419923486i[     ] addr 9cd7c len 0
-00419923486i[     ] addr 9cd80 len 0
-00419923486i[     ] setting breakpoint at 76280
-00419923486i[     ] setting breakpoint at 8310
-00419923486i[     ] stepping
-00419923487i[     ] stopped with ac2
-00419923487i[     ] Removing breakpoint at 76280
-00419923487i[     ] Removing breakpoint at 8310
-00419923487i[     ] addr 9cd7c len 0
-00419923487i[     ] addr 9cd80 len 0
-00419923487i[     ] setting breakpoint at 76280
-00419923487i[     ] setting breakpoint at 8310
-00419923487i[     ] stepping
-00419923488i[     ] stopped with ac2
-00419923488i[     ] stepping
-00419923489i[     ] stopped with ac2
-00419923489i[     ] Removing breakpoint at 76280
-00419923489i[     ] Removing breakpoint at 8310
-00419923489i[     ] addr 9cdac len 0
-00419923489i[     ] addr 9b2a8 len 0
-00419923489i[     ] addr 9b2b0 len 0
-00419923489i[     ] addr 9b2b8 len 0
-00419923489i[     ] addr 9b2c0 len 0
-00419923489i[     ] addr 9b2c8 len 0
-00419923489i[     ] addr 9b2d0 len 0
-00419923489i[     ] addr 9b2d8 len 0
-00419923489i[     ] addr 9b2e0 len 0
-00419923489i[     ] addr 9b2e8 len 0
-00419923489i[     ] addr 9b2f0 len 0
-00419923489i[     ] addr 9b2f8 len 0
-00419923489i[     ] addr 9b300 len 0
-00419923489i[     ] addr 9b308 len 0
-00419923489i[     ] addr 9b310 len 0
-00419923489i[     ] addr 9b318 len 0
-00419923489i[     ] addr 9b320 len 0
-00419923489i[     ] addr 9b328 len 0
-00419923489i[     ] addr 9b330 len 0
-00419923489i[     ] addr 9b338 len 0
-00419923489i[     ] addr 9b340 len 0
-00419923489i[     ] addr 9b348 len 0
-00419923489i[     ] addr 9b350 len 0
-00419923489i[     ] addr 9b358 len 0
-00419923489i[     ] addr 9b360 len 0
-00419923489i[     ] addr 9b368 len 0
-00419923489i[     ] addr 9b370 len 0
-00419923489i[     ] addr 9cdb0 len 0
-00419923489i[     ] setting breakpoint at 8310
-00419923489i[     ] setting breakpoint at 1614e
-00419924136i[     ] found breakpoint at 1614e
-00419924136i[     ] stopped with ac1
-00419924136i[     ] reg 8 set to 1614e
-00419924136i[     ] reg 41 set to ffffffff
-00419924136i[     ] Removing breakpoint at 8310
-00419924136i[     ] Removing breakpoint at 1614e
-00419924136i[     ] addr 9cdac len 0
-00419924136i[     ] addr 9b2a8 len 0
-00419924136i[     ] addr 9cdb0 len 0
-00419924136i[     ] setting breakpoint at 8310
-27417632921i[     ] Got byte 24
-27417632921i[     ] stopped with ac3
-27417632921p[     ] >>PANIC<< Debugger asked us to quit
+00229123893i[CPU  ] MOV_RdCd: read of CR4
+00229538743i[     ] found breakpoint at 8310
+00229538743i[     ] stopped with ac1
+00229538743i[     ] reg 8 set to 8310
+00229538743i[     ] reg 41 set to ffffffff
+00229538743i[     ] Removing breakpoint at 8310
+00229538743i[     ] Removing breakpoint at 8313
+00229538743i[     ] addr 9ce1c len 0
+00229538743i[     ] addr 8e878 len 0
+00229538743i[     ] addr 8e880 len 0
+00229538743i[     ] addr 9ce20 len 0
+00229538743i[     ] addr 8db80 len 0
+00229538743i[     ] stepping
+00229538744i[     ] stopped with ac2
+00229538744i[     ] setting breakpoint at 8310
+00229538744i[     ] setting breakpoint at 8313
+00229538744i[     ] setting breakpoint at 8353
+00229538746i[     ] found breakpoint at 8313
+00229538746i[     ] stopped with ac1
+00229538746i[     ] reg 8 set to 8313
+00229538746i[     ] reg 41 set to ffffffff
+00229538746i[     ] Removing breakpoint at 8310
+00229538746i[     ] Removing breakpoint at 8313
+00229538746i[     ] Removing breakpoint at 8353
+00229538746i[     ] addr 9ce1c len 0
+00229538746i[     ] addr 8e878 len 0
+00229538746i[     ] addr 8e880 len 0
+00229538746i[     ] addr 9ce20 len 0
+00229538746i[     ] addr 8db80 len 0
+00229538746i[     ] addr 8db80 len 0
+00229538746i[     ] stepping
+00229538747i[     ] stopped with ac2
+00229538747i[     ] setting breakpoint at 8310
+00229538747i[     ] setting breakpoint at 8313
+00229538747i[     ] setting breakpoint at 8353
+00229538747i[     ] setting breakpoint at 83ae
+00229543794i[     ] found breakpoint at 8353
+00229543794i[     ] stopped with ac1
+00229543794i[     ] reg 8 set to 8353
+00229543794i[     ] reg 41 set to ffffffff
+00229543794i[     ] Removing breakpoint at 8310
+00229543794i[     ] Removing breakpoint at 8313
+00229543794i[     ] Removing breakpoint at 8353
+00229543794i[     ] Removing breakpoint at 83ae
+00229543794i[     ] addr 9ce1c len 0
+00229543794i[     ] addr 8e878 len 0
+00229543794i[     ] addr 9ce20 len 0
+00229543794i[     ] stepping
+00229543795i[     ] stopped with ac2
+00229543795i[     ] setting breakpoint at 8310
+00229543795i[     ] setting breakpoint at 8313
+00229543795i[     ] setting breakpoint at 8353
+00229543795i[     ] setting breakpoint at 83ae
+00229549692i[     ] found breakpoint at 83ae
+00229549692i[     ] stopped with ac1
+00229549692i[     ] reg 8 set to 83ae
+00229549692i[     ] reg 41 set to ffffffff
+00229549692i[     ] Removing breakpoint at 8310
+00229549692i[     ] Removing breakpoint at 8313
+00229549692i[     ] Removing breakpoint at 8353
+00229549692i[     ] Removing breakpoint at 83ae
+00229549692i[     ] addr 9ce1c len 0
+00229549692i[     ] addr 8e878 len 0
+00229549692i[     ] addr 9ce20 len 0
+00229549692i[     ] stepping
+00229549693i[     ] stopped with ac2
+00229549693i[     ] setting breakpoint at 8310
+00229549693i[     ] setting breakpoint at 8313
+00229549693i[     ] setting breakpoint at 8353
+00229549693i[     ] setting breakpoint at 83ae
+00229549693i[     ] setting breakpoint at 8617
+00229556767i[     ] found breakpoint at 83ae
+00229556767i[     ] stopped with ac1
+00229556767i[     ] reg 8 set to 83ae
+00229556767i[     ] reg 41 set to ffffffff
+00229556767i[     ] Removing breakpoint at 8310
+00229556767i[     ] Removing breakpoint at 8313
+00229556767i[     ] Removing breakpoint at 8353
+00229556767i[     ] Removing breakpoint at 83ae
+00229556767i[     ] Removing breakpoint at 8617
+00229556767i[     ] addr 9ce1c len 0
+00229556767i[     ] addr 8e878 len 0
+00229556767i[     ] addr 9ce20 len 0
+00229556767i[     ] stepping
+00229556768i[     ] stopped with ac2
+00229556768i[     ] setting breakpoint at 8310
+00229556768i[     ] setting breakpoint at 8313
+00229556768i[     ] setting breakpoint at 8353
+00229556768i[     ] setting breakpoint at 83ae
+00229556768i[     ] setting breakpoint at 8617
+00229761658i[     ] found breakpoint at 8617
+00229761658i[     ] stopped with ac1
+00229761658i[     ] reg 8 set to 8617
+00229761658i[     ] reg 41 set to ffffffff
+00229761658i[     ] Removing breakpoint at 8310
+00229761658i[     ] Removing breakpoint at 8313
+00229761658i[     ] Removing breakpoint at 8353
+00229761658i[     ] Removing breakpoint at 83ae
+00229761658i[     ] Removing breakpoint at 8617
+00229761658i[     ] addr 9ce1c len 0
+00229761658i[     ] addr 8e878 len 0
+00229761658i[     ] addr 9ce20 len 0
+00229761658i[     ] addr 5f220 len 0
+00229761658i[     ] addr 64fd0 len 0
+00229761658i[     ] addr 64fd0 len 0
+00229761658i[     ] addr 3a340 len 0
+00229761658i[     ] stepping
+00229761659i[     ] stopped with ac2
+00229761659i[     ] setting breakpoint at 8310
+00229761659i[     ] setting breakpoint at 8313
+00229761659i[     ] setting breakpoint at 8353
+00229761659i[     ] setting breakpoint at 83ae
+00229761659i[     ] setting breakpoint at 8617
+00229761659i[     ] setting breakpoint at 84c7
+00229781930i[     ] found breakpoint at 84c7
+00229781930i[     ] stopped with ac1
+00229781930i[     ] reg 8 set to 84c7
+00229781930i[     ] reg 41 set to ffffffff
+00229781930i[     ] Removing breakpoint at 8310
+00229781930i[     ] Removing breakpoint at 8313
+00229781930i[     ] Removing breakpoint at 8353
+00229781930i[     ] Removing breakpoint at 83ae
+00229781930i[     ] Removing breakpoint at 8617
+00229781930i[     ] Removing breakpoint at 84c7
+00229781930i[     ] addr 9ce1c len 0
+00229781930i[     ] addr 8e878 len 0
+00229781930i[     ] addr 9ce20 len 0
+00229781930i[     ] addr 3a340 len 0
+00229781930i[     ] addr 5ef80 len 0
+00229781930i[     ] addr 5ef80 len 0
+00229781930i[     ] addr 4 len 0
+00229781930i[     ] addr 8687c len 0
+00229781930i[     ] addr 9e60 len 0
+00229781930i[     ] addr 9e60 len 0
+00229781930i[     ] addr 9e60 len 0
+00229781930i[     ] addr 9e60 len 0
+00229781930i[     ] addr 9e60 len 0
+00229781930i[     ] addr 9e60 len 0
+00229781930i[     ] addr 9e61 len 0
+00229781930i[     ] addr 9e61 len 0
+00229781930i[     ] addr 9e61 len 0
+00229781930i[     ] addr 9e62 len 0
+00229781930i[     ] addr 9e63 len 0
+00229781930i[     ] addr 9e64 len 0
+00229781930i[     ] addr 9e60 len 0
+00229781930i[     ] addr 9e60 len 0
+00229781930i[     ] addr 9e60 len 0
+00229781930i[     ] addr 9e60 len 0
+00229781930i[     ] addr 9e60 len 0
+00229781930i[     ] addr 9e60 len 0
+00229781930i[     ] addr 9e61 len 0
+00229781930i[     ] addr 9e61 len 0
+00229781930i[     ] addr 9e61 len 0
+00229781930i[     ] addr 9e62 len 0
+00229781930i[     ] addr 9e63 len 0
+00229781930i[     ] addr 9e64 len 0
+00229781930i[     ] stepping
+00229781931i[     ] stopped with ac2
+00229781931i[     ] setting breakpoint at 8310
+00229781931i[     ] setting breakpoint at 8313
+00229781931i[     ] setting breakpoint at 8353
+00229781931i[     ] setting breakpoint at 83ae
+00229781931i[     ] setting breakpoint at 8617
+00229781931i[     ] setting breakpoint at 84c7
+00229781931i[     ] setting breakpoint at 9e60
+00229790890i[     ] found breakpoint at 9e60
+00229790890i[     ] stopped with ac1
+00229790890i[     ] reg 8 set to 9e60
+00229790890i[     ] reg 41 set to ffffffff
+00229790890i[     ] Removing breakpoint at 8310
+00229790890i[     ] Removing breakpoint at 8313
+00229790890i[     ] Removing breakpoint at 8353
+00229790890i[     ] Removing breakpoint at 83ae
+00229790890i[     ] Removing breakpoint at 8617
+00229790890i[     ] Removing breakpoint at 84c7
+00229790890i[     ] Removing breakpoint at 9e60
+00229790890i[     ] addr 61980 len 0
+00229790890i[     ] stepping
+00229790891i[     ] stopped with ac2
+00229790891i[     ] setting breakpoint at 8310
+00229790891i[     ] setting breakpoint at 8313
+00229790891i[     ] setting breakpoint at 8353
+00229790891i[     ] setting breakpoint at 83ae
+00229790891i[     ] setting breakpoint at 8617
+00229790891i[     ] setting breakpoint at 84c7
+00229790891i[     ] setting breakpoint at 9e60
+00229790891i[     ] setting breakpoint at 9e9d
+00240093943i[     ] found breakpoint at 9e9d
+00240093943i[     ] stopped with ac1
+00240093943i[     ] reg 8 set to 9e9d
+00240093943i[     ] reg 41 set to ffffffff
+00240093943i[     ] Removing breakpoint at 8310
+00240093943i[     ] Removing breakpoint at 8313
+00240093943i[     ] Removing breakpoint at 8353
+00240093943i[     ] Removing breakpoint at 83ae
+00240093943i[     ] Removing breakpoint at 8617
+00240093943i[     ] Removing breakpoint at 84c7
+00240093943i[     ] Removing breakpoint at 9e60
+00240093943i[     ] Removing breakpoint at 9e9d
+00240093943i[     ] stepping
+00240093944i[     ] stopped with ac2
+00240093944i[     ] setting breakpoint at 8310
+00240093944i[     ] setting breakpoint at 8313
+00240093944i[     ] setting breakpoint at 8353
+00240093944i[     ] setting breakpoint at 83ae
+00240093944i[     ] setting breakpoint at 8617
+00240093944i[     ] setting breakpoint at 84c7
+00240093944i[     ] setting breakpoint at 9e60
+00240093944i[     ] setting breakpoint at 9e9d
+00240093944i[     ] setting breakpoint at 9fd8
+00240253208i[     ] found breakpoint at 9fd8
+00240253208i[     ] stopped with ac1
+00240253208i[     ] reg 8 set to 9fd8
+00240253208i[     ] reg 41 set to ffffffff
+00240253208i[     ] Removing breakpoint at 8310
+00240253208i[     ] Removing breakpoint at 8313
+00240253208i[     ] Removing breakpoint at 8353
+00240253208i[     ] Removing breakpoint at 83ae
+00240253208i[     ] Removing breakpoint at 8617
+00240253208i[     ] Removing breakpoint at 84c7
+00240253208i[     ] Removing breakpoint at 9e60
+00240253208i[     ] Removing breakpoint at 9e9d
+00240253208i[     ] Removing breakpoint at 9fd8
+00240253208i[     ] addr 9e60 len 0
+00240253208i[     ] addr 9e60 len 0
+00240253208i[     ] addr 9e60 len 0
+00240253208i[     ] addr 9e60 len 0
+00240253208i[     ] addr 9e60 len 0
+00240253208i[     ] addr 9e60 len 0
+00240253208i[     ] addr 9e61 len 0
+00240253208i[     ] addr 9e61 len 0
+00240253208i[     ] addr 9e61 len 0
+00240253208i[     ] addr 9e62 len 0
+00240253208i[     ] addr 9e63 len 0
+00240253208i[     ] addr 9e64 len 0
+00240253208i[     ] stepping
+00240253209i[     ] stopped with ac2
+00240253209i[     ] setting breakpoint at 8310
+00240253209i[     ] setting breakpoint at 8313
+00240253209i[     ] setting breakpoint at 8353
+00240253209i[     ] setting breakpoint at 83ae
+00240253209i[     ] setting breakpoint at 8617
+00240253209i[     ] setting breakpoint at 84c7
+00240253209i[     ] setting breakpoint at 9e60
+00240253209i[     ] setting breakpoint at 9e9d
+00240253209i[     ] setting breakpoint at 9fd8
+00240253209i[     ] setting breakpoint at 9fe3
+04234721158i[     ] found breakpoint at 9fd8
+04234721158i[     ] stopped with ac1
+04234721158i[     ] reg 8 set to 9fd8
+04234721158i[     ] reg 41 set to ffffffff
+04234721158i[     ] Removing breakpoint at 8310
+04234721158i[     ] Removing breakpoint at 8313
+04234721158i[     ] Removing breakpoint at 8353
+04234721158i[     ] Removing breakpoint at 83ae
+04234721158i[     ] Removing breakpoint at 8617
+04234721158i[     ] Removing breakpoint at 84c7
+04234721158i[     ] Removing breakpoint at 9e60
+04234721158i[     ] Removing breakpoint at 9e9d
+04234721158i[     ] Removing breakpoint at 9fd8
+04234721158i[     ] Removing breakpoint at 9fe3
+04234721158i[     ] addr 9e60 len 0
+04234721158i[     ] addr 9e60 len 0
+04234721158i[     ] addr 9e60 len 0
+04234721158i[     ] addr 9e60 len 0
+04234721158i[     ] addr 9e60 len 0
+04234721158i[     ] addr 9e60 len 0
+04234721158i[     ] addr 9e61 len 0
+04234721158i[     ] addr 9e61 len 0
+04234721158i[     ] addr 9e61 len 0
+04234721158i[     ] addr 9e62 len 0
+04234721158i[     ] addr 9e63 len 0
+04234721158i[     ] addr 9e64 len 0
+04234721158i[     ] addr ff9ec7 len 0
+04234721158i[     ] stepping
+04234721159i[     ] stopped with ac2
+04234721159i[     ] setting breakpoint at 8310
+04234721159i[     ] setting breakpoint at 8313
+04234721159i[     ] setting breakpoint at 8353
+04234721159i[     ] setting breakpoint at 83ae
+04234721159i[     ] setting breakpoint at 8617
+04234721159i[     ] setting breakpoint at 84c7
+04234721159i[     ] setting breakpoint at 9e60
+04234721159i[     ] setting breakpoint at 9e9d
+04234721159i[     ] setting breakpoint at 9fd8
+04234721159i[     ] setting breakpoint at 9fe3
+06464481867i[     ] found breakpoint at 9fd8
+06464481867i[     ] stopped with ac1
+06464481867i[     ] reg 8 set to 9fd8
+06464481867i[     ] reg 41 set to ffffffff
+06464481867i[     ] Removing breakpoint at 8310
+06464481867i[     ] Removing breakpoint at 8313
+06464481867i[     ] Removing breakpoint at 8353
+06464481867i[     ] Removing breakpoint at 83ae
+06464481867i[     ] Removing breakpoint at 8617
+06464481867i[     ] Removing breakpoint at 84c7
+06464481867i[     ] Removing breakpoint at 9e60
+06464481867i[     ] Removing breakpoint at 9e9d
+06464481867i[     ] Removing breakpoint at 9fd8
+06464481867i[     ] Removing breakpoint at 9fe3
+06464481867i[     ] addr 9e60 len 0
+06464481867i[     ] addr 9e60 len 0
+06464481867i[     ] addr 9e60 len 0
+06464481867i[     ] addr 9e60 len 0
+06464481867i[     ] addr 9e60 len 0
+06464481867i[     ] addr 9e60 len 0
+06464481867i[     ] addr 9e61 len 0
+06464481867i[     ] addr 9e61 len 0
+06464481867i[     ] addr 9e61 len 0
+06464481867i[     ] addr 9e62 len 0
+06464481867i[     ] addr 9e63 len 0
+06464481867i[     ] addr 9e64 len 0
+06464481867i[     ] addr ff9ec7 len 0
+06464481867i[     ] addr ff9ec7 len 0
+06464481867i[     ] stepping
+06464481868i[     ] stopped with ac2
+06464481868i[     ] setting breakpoint at 8310
+06464481868i[     ] setting breakpoint at 8313
+06464481868i[     ] setting breakpoint at 8353
+06464481868i[     ] setting breakpoint at 83ae
+06464481868i[     ] setting breakpoint at 8617
+06464481868i[     ] setting breakpoint at 84c7
+06464481868i[     ] setting breakpoint at 9e60
+06464481868i[     ] setting breakpoint at 9e9d
+06464481868i[     ] setting breakpoint at 9fd8
+06464481868i[     ] setting breakpoint at 9fe3
+06464533338i[     ] found breakpoint at 9fd8
+06464533338i[     ] stopped with ac1
+06464533338i[     ] reg 8 set to 9fd8
+06464533338i[     ] reg 41 set to ffffffff
+06464533338i[     ] Removing breakpoint at 8310
+06464533338i[     ] Removing breakpoint at 8313
+06464533338i[     ] Removing breakpoint at 8353
+06464533338i[     ] Removing breakpoint at 83ae
+06464533338i[     ] Removing breakpoint at 8617
+06464533338i[     ] Removing breakpoint at 84c7
+06464533338i[     ] Removing breakpoint at 9e60
+06464533338i[     ] Removing breakpoint at 9e9d
+06464533338i[     ] Removing breakpoint at 9fd8
+06464533338i[     ] Removing breakpoint at 9fe3
+06464533338i[     ] addr 9e60 len 0
+06464533338i[     ] addr 9e60 len 0
+06464533338i[     ] addr 9e60 len 0
+06464533338i[     ] addr 9e60 len 0
+06464533338i[     ] addr 9e60 len 0
+06464533338i[     ] addr 9e60 len 0
+06464533338i[     ] addr 9e61 len 0
+06464533338i[     ] addr 9e61 len 0
+06464533338i[     ] addr 9e61 len 0
+06464533338i[     ] addr 9e62 len 0
+06464533338i[     ] addr 9e63 len 0
+06464533338i[     ] addr 9e64 len 0
+06464533338i[     ] addr ff9ec7 len 0
+06464533338i[     ] addr ff9ec7 len 0
+06464533338i[     ] stepping
+06464533339i[     ] stopped with ac2
+06464533339i[     ] setting breakpoint at 8310
+06464533339i[     ] setting breakpoint at 8313
+06464533339i[     ] setting breakpoint at 8353
+06464533339i[     ] setting breakpoint at 83ae
+06464533339i[     ] setting breakpoint at 8617
+06464533339i[     ] setting breakpoint at 84c7
+06464533339i[     ] setting breakpoint at 9e60
+06464533339i[     ] setting breakpoint at 9e9d
+06464533339i[     ] setting breakpoint at 9fd8
+06464533339i[     ] setting breakpoint at 9fe3
+06464631564i[     ] found breakpoint at 9fd8
+06464631564i[     ] stopped with ac1
+06464631564i[     ] reg 8 set to 9fd8
+06464631564i[     ] reg 41 set to ffffffff
+06464631564i[     ] Removing breakpoint at 8310
+06464631564i[     ] Removing breakpoint at 8313
+06464631564i[     ] Removing breakpoint at 8353
+06464631564i[     ] Removing breakpoint at 83ae
+06464631564i[     ] Removing breakpoint at 8617
+06464631564i[     ] Removing breakpoint at 84c7
+06464631564i[     ] Removing breakpoint at 9e60
+06464631564i[     ] Removing breakpoint at 9e9d
+06464631564i[     ] Removing breakpoint at 9fd8
+06464631564i[     ] Removing breakpoint at 9fe3
+06464631564i[     ] addr 9e60 len 0
+06464631564i[     ] addr 9e60 len 0
+06464631564i[     ] addr 9e60 len 0
+06464631564i[     ] addr 9e60 len 0
+06464631564i[     ] addr 9e60 len 0
+06464631564i[     ] addr 9e60 len 0
+06464631564i[     ] addr 9e61 len 0
+06464631564i[     ] addr 9e61 len 0
+06464631564i[     ] addr 9e61 len 0
+06464631564i[     ] addr 9e62 len 0
+06464631564i[     ] addr 9e63 len 0
+06464631564i[     ] addr 9e64 len 0
+06464631564i[     ] addr ff9ec7 len 0
+06464631564i[     ] addr ff9ec7 len 0
+06464631564i[     ] stepping
+06464631565i[     ] stopped with ac2
+06464631565i[     ] setting breakpoint at 8310
+06464631565i[     ] setting breakpoint at 8313
+06464631565i[     ] setting breakpoint at 8353
+06464631565i[     ] setting breakpoint at 83ae
+06464631565i[     ] setting breakpoint at 8617
+06464631565i[     ] setting breakpoint at 84c7
+06464631565i[     ] setting breakpoint at 9e60
+06464631565i[     ] setting breakpoint at 9e9d
+06464631565i[     ] setting breakpoint at 9fd8
+06464631565i[     ] setting breakpoint at 9fe3
+06464633560i[     ] found breakpoint at 9fd8
+06464633560i[     ] stopped with ac1
+06464633560i[     ] reg 8 set to 9fd8
+06464633560i[     ] reg 41 set to ffffffff
+06464633560i[     ] Removing breakpoint at 8310
+06464633560i[     ] Removing breakpoint at 8313
+06464633560i[     ] Removing breakpoint at 8353
+06464633560i[     ] Removing breakpoint at 83ae
+06464633560i[     ] Removing breakpoint at 8617
+06464633560i[     ] Removing breakpoint at 84c7
+06464633560i[     ] Removing breakpoint at 9e60
+06464633560i[     ] Removing breakpoint at 9e9d
+06464633560i[     ] Removing breakpoint at 9fd8
+06464633560i[     ] Removing breakpoint at 9fe3
+06464633560i[     ] addr 9e60 len 0
+06464633560i[     ] addr 9e60 len 0
+06464633560i[     ] addr 9e60 len 0
+06464633560i[     ] addr 9e60 len 0
+06464633560i[     ] addr 9e60 len 0
+06464633560i[     ] addr 9e60 len 0
+06464633560i[     ] addr 9e61 len 0
+06464633560i[     ] addr 9e61 len 0
+06464633560i[     ] addr 9e61 len 0
+06464633560i[     ] addr 9e62 len 0
+06464633560i[     ] addr 9e63 len 0
+06464633560i[     ] addr 9e64 len 0
+06464633560i[     ] addr ff9ec7 len 0
+06464633560i[     ] addr ff9ec7 len 0
+06464633560i[     ] stepping
+06464633561i[     ] stopped with ac2
+06464633561i[     ] setting breakpoint at 8310
+06464633561i[     ] setting breakpoint at 8313
+06464633561i[     ] setting breakpoint at 8353
+06464633561i[     ] setting breakpoint at 83ae
+06464633561i[     ] setting breakpoint at 8617
+06464633561i[     ] setting breakpoint at 84c7
+06464633561i[     ] setting breakpoint at 9e60
+06464633561i[     ] setting breakpoint at 9e9d
+06464633561i[     ] setting breakpoint at 9fd8
+06464633561i[     ] setting breakpoint at 9fe3
+08830773606i[     ] found breakpoint at 9fd8
+08830773606i[     ] stopped with ac1
+08830773606i[     ] reg 8 set to 9fd8
+08830773606i[     ] reg 41 set to ffffffff
+08830773606i[     ] Removing breakpoint at 8310
+08830773606i[     ] Removing breakpoint at 8313
+08830773606i[     ] Removing breakpoint at 8353
+08830773606i[     ] Removing breakpoint at 83ae
+08830773606i[     ] Removing breakpoint at 8617
+08830773606i[     ] Removing breakpoint at 84c7
+08830773606i[     ] Removing breakpoint at 9e60
+08830773606i[     ] Removing breakpoint at 9e9d
+08830773606i[     ] Removing breakpoint at 9fd8
+08830773606i[     ] Removing breakpoint at 9fe3
+08830773606i[     ] addr 9e60 len 0
+08830773606i[     ] addr 9e60 len 0
+08830773606i[     ] addr 9e60 len 0
+08830773606i[     ] addr 9e60 len 0
+08830773606i[     ] addr 9e60 len 0
+08830773606i[     ] addr 9e60 len 0
+08830773606i[     ] addr 9e61 len 0
+08830773606i[     ] addr 9e61 len 0
+08830773606i[     ] addr 9e61 len 0
+08830773606i[     ] addr 9e62 len 0
+08830773606i[     ] addr 9e63 len 0
+08830773606i[     ] addr 9e64 len 0
+08830773606i[     ] addr ff9ec7 len 0
+08830773606i[     ] addr ff9ec7 len 0
+08830773606p[     ] >>PANIC<< Debugger asked us to quit
 
-27417632921i[SYS  ] Last time is 1473851637
-27417632921i[XGUI ] Exit.
-27417632921i[     ] restoring default signal behavior
-27417632921i[CTRL ] quit_sim called with exit code 1
+08830773606i[SYS  ] Last time is 1475028315
+08830773606i[XGUI ] Exit.
+08830773606i[     ] restoring default signal behavior
+08830773606i[CTRL ] quit_sim called with exit code 1

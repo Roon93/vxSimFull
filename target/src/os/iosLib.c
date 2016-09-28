@@ -273,6 +273,7 @@ int iosDrvInstall
     /* Find a free driver table entry.  Never assign driver number 0. */
 
     for (drvnum = 1; drvnum < maxDrivers; drvnum++)
+   	{
 		if (! drvTable [drvnum].de_inuse)
 		{
 		    /* We've got a free entry */
@@ -280,7 +281,7 @@ int iosDrvInstall
 		    pDrvEntry = &drvTable [drvnum];
 		    break;
 		}
-
+    }
     if (pDrvEntry == NULL)
 	{
 	/* we couldn't find a free driver table entry */
@@ -303,7 +304,7 @@ int iosDrvInstall
     iosUnlock ();
 
     return (drvnum);
-    }
+}
 /*******************************************************************************
 *
 * iosDrvRemove - remove an I/O driver

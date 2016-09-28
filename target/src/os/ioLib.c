@@ -340,11 +340,11 @@ LOCAL int ioCreateOrOpen
 
     if ((name == NULL) || (name[0] == EOS))
 	{
-	errnoSet (S_ioLib_NO_FILENAME);
+		errnoSet (S_ioLib_NO_FILENAME);
 
 	/* fd is already defined as ERROR */
 
-	return (fd);
+		return (fd);
 	}
 
     if (_func_pthread_setcanceltype != NULL)
@@ -375,17 +375,17 @@ LOCAL int ioCreateOrOpen
     
     if (create == TRUE)
 	{
-	value = iosCreate (pDevHdr1, fullFileName, flags);
+		value = iosCreate (pDevHdr1, fullFileName, flags);
 	}
     else
 	{
-	value = iosOpen (pDevHdr1, fullFileName, flags, mode);
+		value = iosOpen (pDevHdr1, fullFileName, flags, mode);
 	}
     
     if (value == ERROR)
 	{
-	error = 2;
-	goto handleError;
+		error = 2;
+		goto handleError;
 	}
 
     
@@ -403,15 +403,15 @@ LOCAL int ioCreateOrOpen
 
 	if (linkCount++ > ioMaxLinkLevels)
 	    {
-	    errno = ELOOP;
-	    error = 2;
-	    goto handleError;
+		    errno = ELOOP;
+		    error = 2;
+		    goto handleError;
 	    }
 
 	if ((pDevHdr2 = iosDevFind (fullFileName, &pPartFileName)) == NULL)
 	    {
-	    error = 2;
-	    goto handleError;
+		    error = 2;
+		    goto handleError;
 	    }
 
 	if (fullFileName != pPartFileName)

@@ -203,16 +203,16 @@ void vxSseShow (int);
 */
 
 void vxShowInit (void)
-    {
+{
     const int features_edx = sysCpuId.featuresEdx;
 
     /* Bind the Streaming SIMD register show routine ? */
 
     if ((features_edx & SSE_FLAG) || (features_edx & SSE2_FLAG))
-        {
-        _func_sseTaskRegsShow = (FUNCPTR) vxSseShow;
-        }
+    {
+    	_func_sseTaskRegsShow = (FUNCPTR) vxSseShow;
     }
+}
 
 #if	FALSE	/* Unlike AE, 5.5 does not have TSS per task */
 

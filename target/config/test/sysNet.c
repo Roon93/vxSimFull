@@ -124,14 +124,14 @@ STATUS sysNetPciInit
     void *              pArg           /* reserved argument */
     )
     {
-    UINT32              classCodeReg;  /* store a 24-bit PCI class code */
+    UINT32  classCodeReg;  /* store a 24-bit PCI class code */
 
 
     pciConfigInLong (pciBus, pciDevice, pciFunc, PCI_CFG_REVISION,
                      &classCodeReg);
 
     if (((classCodeReg >> 8) & 0x00ffffff) == PCI_NET_ETHERNET_CLASS)
-        {
+    {
         UINT32        vendorId;    /* store a PCI vendor ID */
         UINT32        deviceId;    /* store a PCI device ID */
         UINT8         revisionId;  /* store a PCI revision ID */
@@ -156,18 +156,18 @@ STATUS sysNetPciInit
         /* find & exec. a PCI initialization routine for the device */
 		/*µ÷ÓÃsysLan97xPciInit*/
         for (i = 0; (vendorIdEnet[i].pPciInitRtn) != NULL; ++i)
-            {
+        {
             if ((vendorId == vendorIdEnet[i].vendorId) &&
                 (*(vendorIdEnet[i].pPciInitRtn))
                 (pciBus, pciDevice, pciFunc,
                  vendorId, deviceId, revisionId) == OK)
-                {
+            {
                 /* initialized the device - move on */
 
                 return OK;
-                }
             }
         }
+    }
 
     return (OK);
 

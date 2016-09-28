@@ -262,11 +262,11 @@ extern "C" {
 #define MONO			0
 #define COLOR			1
 #define	VGA_MEM_BASE		(UCHAR *) 0xb8000
-#define	VGA_SEL_REG		(UCHAR *) 0x3d4
-#define VGA_VAL_REG             (UCHAR *) 0x3d5
-#define MONO_MEM_BASE           (UCHAR *) 0xb0000
-#define MONO_SEL_REG            (UCHAR *) 0x3b4
-#define MONO_VAL_REG            (UCHAR *) 0x3b5
+#define	VGA_SEL_REG			(UCHAR *) 0x3d4
+#define VGA_VAL_REG         (UCHAR *) 0x3d5
+#define MONO_MEM_BASE       (UCHAR *) 0xb0000
+#define MONO_SEL_REG        (UCHAR *) 0x3b4
+#define MONO_VAL_REG        (UCHAR *) 0x3b5
 #define	CHR			2
 
 #define VESA_BIOS_DATA_ADDRESS  (0xbfb00)       /* BIOS data storage */

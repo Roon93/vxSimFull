@@ -117,8 +117,8 @@ void pentiumMcaShow (void)
 	    {
             pentiumMsrGet (MSR_P5_MC_ADDR, (LL_INT *)&addr);
             pentiumMsrGet (MSR_P5_MC_TYPE, (LL_INT *)&misc);
-	    printExc ("P5_MC_ADDR: 0x%.8x%.8x\n", addr[1], addr[0], 0, 0, 0);
-	    printExc ("P5_MC_TYPE: 0x%.8x%.8x\n", misc[1], misc[0], 0, 0, 0);
+	    	printExc ("P5_MC_ADDR: 0x%.8x%.8x\n", addr[1], addr[0], 0, 0, 0);
+	    	printExc ("P5_MC_TYPE: 0x%.8x%.8x\n", misc[1], misc[0], 0, 0, 0);
 	    }
 	pentiumMsrGet (MSR_MCG_STATUS, (LL_INT *)&stat);
 	stat[0] &= ~MCG_MCIP;

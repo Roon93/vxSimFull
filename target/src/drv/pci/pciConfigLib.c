@@ -1946,30 +1946,31 @@ STATUS pciConfigForeachFunc
 	/*PCI总线最大32个设备，每个设备最大8个功能*/
     for (device = 0; device < PCI_MAX_DEV; device++)
 	{
-	pciLocDevice = device;
+		pciLocDevice = device;
 
 	/* Check each function until an unused one is detected */
 
-	for (function = 0; function < PCI_MAX_FUNC; function++)
-	    {
-	    pciLocFunction = function;
-
-	    /* Check for a valid device/vendor number */
-	    pciConfigInLong (pciLocBus, pciLocDevice, pciLocFunction,
-			     PCI_CFG_VENDOR_ID, &devVend);
-
-	    /* If function 0 then check next dev else check next function */
-	    if ( ((devVend & 0x0ffff) == PCI_CONFIG_ABSENT_WORD_F) || 
-		 ((devVend & 0x0ffff) == PCI_CONFIG_ABSENT_WORD_0) )
+		for (function = 0; function < PCI_MAX_FUNC; function++)
 		{
-		if (function == 0)
-		    {
-		    break;	/* non-existent device, goto next device */
-		    }
-		else
-		    {
-		    continue;  /* function empty, try the next function */
-		    }
+		    pciLocFunction = function;
+
+		    /* Check for a valid device/vendor number */
+			/*pciConfigInLong通过busNum\DevNum\FuncNum读取配置空间数据*/
+		    pciConfigInLong (pciLocBus, pciLocDevice, pciLocFunction,
+				     PCI_CFG_VENDOR_ID, &devVend);
+
+		    /* If function == 0 then check next dev else check next function */
+		    if ( ((devVend & 0x0ffff) == PCI_CONFIG_ABSENT_WORD_F) || 
+			 ((devVend & 0x0ffff) == PCI_CONFIG_ABSENT_WORD_0) )
+			{
+				if (function == 0)
+				    {
+				    break;	/* non-existent device, goto next device */
+				    }
+				else
+				    {
+				    continue;  /* function empty, try the next function */
+				    }
 		}
 
 	    /* Check to see if this function belongs to a PCI-PCI bridge */
@@ -1996,21 +1997,21 @@ STATUS pciConfigForeachFunc
 		        status = pciConfigForeachFunc(secBus, recurse,
 						funcCheckRtn, pArg);
 		    else
-			status = OK;
+				status = OK;
 
 		    if ( status != OK )
-			return(ERROR);
+				return(ERROR);
 		    }
 		}
 
 	    /* Proceed to next device if this is a single function device */
 	    if (function == 0)
 		{
-		pciConfigInByte (pciLocBus, pciLocDevice, pciLocFunction,
-				 PCI_CFG_HEADER_TYPE, &btemp);
-		if ((btemp & PCI_HEADER_MULTI_FUNC) == 0)
+			pciConfigInByte (pciLocBus, pciLocDevice, pciLocFunction,
+					 PCI_CFG_HEADER_TYPE, &btemp);
+			if ((btemp & PCI_HEADER_MULTI_FUNC) == 0)
 		    {
-		    break; /* No more functions - proceed to next PCI device */
+		    	break; /* No more functions - proceed to next PCI device */
 		    }
 		}
 	    }

@@ -63,13 +63,13 @@ extern "C" {
  */
 
 typedef struct phys_mem_desc
-    {
+{
     void *virtualAddr;
     void *physicalAddr;
     UINT len;
     UINT initialStateMask;      /* mask parameter to vmStateSet */
     UINT initialState;          /* state parameter to vmStateSet */
-    } PHYS_MEM_DESC;
+} PHYS_MEM_DESC;
 
 IMPORT PHYS_MEM_DESC sysPhysMemDesc[];
 IMPORT int sysPhysMemDescNumEnt;

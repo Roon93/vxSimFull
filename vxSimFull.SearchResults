@@ -1,23 +1,4 @@
----- memPartAlignedAlloc Matches (22 in 10 files) ----
-loadLib.c (target\src\ostool):            *pSymAddr = (void *) memPartAlignedAlloc
-memLib.c (target\src\os):04n,22jun92,rdc  added memalign and memPartAlignedAlloc.
-memLib.c (target\src\os):    return (memPartAlignedAlloc (memSysPartId, size, alignment));
-memLib.h (target\h):03s,19aug96,dbt  added memPartAlignedAlloc prototype (fixed SPR #6898).
-memLib.h (target\h):03i,22jun92,rdc  added memalign and memPartAlignedAlloc.
-memLib.h (target\h):extern void *   memPartAlignedAlloc (PART_ID partId, unsigned nBytes,
-memLib.h (target\h):extern void *   memPartAlignedAlloc ();
-memPartLib.c (target\src\os):02b,23apr02,gls  added check for overflow in memPartAlignedAlloc (SPR #27741)
-memPartLib.c (target\src\os):memPartAlignedAlloc().
-memPartLib.c (target\src\os):* memPartAlignedAlloc - allocate aligned memory from a partition
-memPartLib.c (target\src\os):void *memPartAlignedAlloc 
-memPartLib.c (target\src\os):    return (memPartAlignedAlloc (partId, nBytes, memDefaultAlignment));
-memPartLibP.h (target\h\private):01e,19aug96,dbt  removed memPartAlignedAlloc prototype (fixed SPR #6898).
-memPartLibP.h (target\h\private): * NOTE: KHEAP_ALIGNED_ALLOC() uses memPartAlignedAlloc() instead of memalign()
-memPartLibP.h (target\h\private):        memPartAlignedAlloc(memSysPartId, (nBytes), (alignment))
-memPartLibP.h (target\h\private):        memPartAlignedAlloc(memSysPartId, (nBytes), (alignment))
-ossLib.c (target\src\usb):    pBfr = memPartAlignedAlloc (usbMemPartId, 
-ossLib.c (target\src\usb\target):    pBfr = memPartAlignedAlloc (usbMemPartId, 
-usbHcdOhciLib.c (target\src\drv\usb):    memPartAlignedAlloc (pHost->memPartId, \
-usbHcdOhciLib.c (target\src\drv\usb):    memPartAlignedAlloc (pHost->memPartId, bytes, alignment)
-usbHcdUhciLib.c (target\src\drv\usb):    memPartAlignedAlloc (pHost->memPartId, bytes, alignment)
-vxwMemPartLib.h (target\h):	return memPartAlignedAlloc (partid_, nBytes, alignment);
+---- VESA_BIOS_DATA_ADDRESS Matches (3 in 2 files) ----
+Pc.h (target\config\test):#define VESA_BIOS_DATA_ADDRESS  (0xbfb00)       /* BIOS data storage */
+Pc.h (target\config\test):#define VESA_BIOS_DATA_PREFIX   (VESA_BIOS_DATA_ADDRESS - 8)
+romInit.s (target\config\test):	movl	$ VESA_BIOS_DATA_ADDRESS,%edi	/* load EDI with dest addr */

@@ -151,7 +151,7 @@ STATUS sysClkConnect
     {
 #ifdef	_WRS_VXWORKS_5_X
     if (sysClkConnected == FALSE)
-	sysHwInit2 ();	/* VxAE does this in the prjConfig */
+		sysHwInit2 ();	/* VxAE does this in the prjConfig */
 #endif	/* _WRS_VXWORKS_5_X */
 
     sysClkRoutine   = routine;

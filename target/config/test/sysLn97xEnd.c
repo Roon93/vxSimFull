@@ -417,9 +417,9 @@ STATUS sysLan97xPciInit
 
     if ((boardType = sysLn97xDev2Type (vendorId, deviceId, revisionId))
         == BOARD_TYPE_UNKNOWN)
-        {
-        return (ERROR);
-        }
+    {
+    	return (ERROR);
+    }
 
 
     pciConfigInLong  (pciBus, pciDevice, pciFunc,
@@ -435,7 +435,7 @@ STATUS sysLan97xPciInit
     if (sysMmuMapAdd ((void *)(memIo32 & PCI_DEV_MMU_MSK),
         PCI_DEV_ADRS_SIZE, VM_STATE_MASK_FOR_ALL, VM_STATE_FOR_PCI) == ERROR)
         {
-        return (ERROR);
+        	return (ERROR);
         }
 
 
@@ -472,7 +472,7 @@ STATUS sysLan97xPciInit
     ++ln97XUnits;  /* increment number of units initialized */
 
     return (OK);
-    }
+}
 
 /*******************************************************************************
 *

@@ -309,7 +309,7 @@ IMPORT VOID        sysUsbOhciPciInit (void);  /* USB OHCI Init */
 /* globals */
 
 PHYS_MEM_DESC sysPhysMemDesc [] =
-    {
+{
     /* adrs and length parameters must be page-aligned (multiples of 4KB/4MB) */
 
 #if	(VM_PAGE_SIZE == PAGE_SIZE_4KB)
@@ -333,17 +333,17 @@ PHYS_MEM_DESC sysPhysMemDesc [] =
     (void *) 0x0,
     _WRS_BSP_VM_PAGE_OFFSET,
 
-#   ifdef _WRS_BSP_DEBUG_NULL_ACCESS
+#ifdef _WRS_BSP_DEBUG_NULL_ACCESS
 
     VM_STATE_MASK_VALID | VM_STATE_MASK_WRITABLE | VM_STATE_MASK_CACHEABLE,
     VM_STATE_VALID_NOT  | VM_STATE_WRITABLE_NOT  | VM_STATE_CACHEABLE_NOT
 
-#   else
+#else
 
     VM_STATE_MASK_FOR_ALL,
     VM_STATE_FOR_MEM_OS
 
-#   endif /* _WRS_BSP_DEBUG_NULL_ACCESS */
+#endif /* _WRS_BSP_DEBUG_NULL_ACCESS */
     },
 
     /* lower memory for valid access */
@@ -364,7 +364,7 @@ PHYS_MEM_DESC sysPhysMemDesc [] =
     VM_STATE_FOR_IO
     },
 
-#   if (LOCAL_MEM_LOCAL_ADRS >= 0x00100000)
+#if (LOCAL_MEM_LOCAL_ADRS >= 0x00100000)
 
     /* upper memory for OS */
     {
@@ -384,7 +384,7 @@ PHYS_MEM_DESC sysPhysMemDesc [] =
     VM_STATE_FOR_MEM_APPLICATION
     },
 
-#   else /* LOCAL_MEM_LOCAL_ADRS is 0x0 */
+#else /* LOCAL_MEM_LOCAL_ADRS is 0x0 */
 
     /* upper memory for OS */
     {
@@ -404,9 +404,9 @@ PHYS_MEM_DESC sysPhysMemDesc [] =
     VM_STATE_FOR_MEM_APPLICATION
     },
 
-#   endif /* (LOCAL_MEM_LOCAL_ADRS >= 0x00100000) */
+#endif /* (LOCAL_MEM_LOCAL_ADRS >= 0x00100000) */
 
-#   if defined(INCLUDE_SM_NET) && (SM_MEM_ADRS != 0x0)
+#if defined(INCLUDE_SM_NET) && (SM_MEM_ADRS != 0x0)
 
     /* upper memory for sm net/obj pool */
     {
@@ -417,9 +417,9 @@ PHYS_MEM_DESC sysPhysMemDesc [] =
     VM_STATE_FOR_MEM_APPLICATION
     },
 
-#   endif /* defined(INCLUDE_SM_NET) && (SM_MEM_ADRS != 0x0) */
+#endif /* defined(INCLUDE_SM_NET) && (SM_MEM_ADRS != 0x0) */
 
-#   ifdef INCLUDE_IACSFL
+#ifdef INCLUDE_IACSFL
 
     {
     (void *) 0xFFF80000,
@@ -429,7 +429,7 @@ PHYS_MEM_DESC sysPhysMemDesc [] =
     VM_STATE_FOR_MEM_APPLICATION
     },
 
-#   endif /* INCLUDE_IACSFL */
+#endif /* INCLUDE_IACSFL */
     
 #else	/* VM_PAGE_SIZE is 2/4MB */
 
@@ -442,7 +442,7 @@ PHYS_MEM_DESC sysPhysMemDesc [] =
     VM_STATE_FOR_MEM_OS
     },
 
-#   if (LOCAL_MEM_LOCAL_ADRS >= VM_PAGE_SIZE)
+#if (LOCAL_MEM_LOCAL_ADRS >= VM_PAGE_SIZE)
 
     /* 2nd 2/4MB: upper memory for OS */
     {
@@ -462,7 +462,7 @@ PHYS_MEM_DESC sysPhysMemDesc [] =
     VM_STATE_FOR_MEM_APPLICATION
     },
 
-#   else /* LOCAL_MEM_LOCAL_ADRS is 0x0 */
+#else /* LOCAL_MEM_LOCAL_ADRS is 0x0 */
 
     /* 2nd 2/4MB: upper memory for OS */
     {
@@ -482,7 +482,7 @@ PHYS_MEM_DESC sysPhysMemDesc [] =
     VM_STATE_FOR_MEM_APPLICATION
     },
 
-#   endif /* (LOCAL_MEM_LOCAL_ADRS >= VM_PAGE_SIZE) */
+#endif /* (LOCAL_MEM_LOCAL_ADRS >= VM_PAGE_SIZE) */
 
 #endif	/* (VM_PAGE_SIZE == PAGE_SIZE_4KB) */
 
@@ -497,7 +497,7 @@ PHYS_MEM_DESC sysPhysMemDesc [] =
     DUMMY_MMU_ENTRY,
     DUMMY_MMU_ENTRY,
 
-    };
+};
 
 int sysPhysMemDescNumEnt; 	/* number Mmu entries to be mapped */
 
@@ -1090,8 +1090,8 @@ void sysHwInit (void)
      */
 
     {
-    IMPORT FUNCPTR excMcaInfoShow;
-    excMcaInfoShow = (FUNCPTR) pentiumMcaShow;
+	    IMPORT FUNCPTR excMcaInfoShow;
+	    excMcaInfoShow = (FUNCPTR) pentiumMcaShow;
     }
 
     vxShowInit ();
@@ -1265,7 +1265,7 @@ void sysHwInit2 (void)
      * (SPR#21338).  This is no longer performed in bootConfig.c
      */
 
-#   if (ADDED_BOOTMEM_SIZE != 0x0)
+#if (ADDED_BOOTMEM_SIZE != 0x0)
  
     /*
      * if &end (compiler symbol) is in lower memory, then we assume 
@@ -1282,7 +1282,7 @@ void sysHwInit2 (void)
                           ADDED_BOOTMEM_SIZE);
             }
         }
-#   endif /* (ADDED_BOOTMEM_SIZE !=0) */
+#endif /* (ADDED_BOOTMEM_SIZE !=0) */
 #endif	/* INCLUDE_ADD_BOOTMEM defined */
  
     /* connect sys clock interrupt and auxiliary clock interrupt*/
@@ -1366,6 +1366,7 @@ __inline__ static void WRITE_MEMORY_TEST_PATTERN
     pTestAddr[1] = TEST_PATTERN_B;
     pTestAddr[2] = TEST_PATTERN_C;
 
+	/*将CACHE中的内容flush进内存*/
     cacheFlush (DATA_CACHE, pTestAddr, 16);
     }
 
@@ -1443,6 +1444,11 @@ __inline__ static void RESTORE_MEMORY_TEST_ADDRS
 *
 * RETURNS:  The address of the top of physical memory.
 */
+/*
+*通过二分法查找实际物理内存最大值，通过向相关内存地址写数据判断内存是否可写，
+*进而判断相关地址处是否是物理地址。
+*该函数返回实际物理地址的最大值。
+*/
 char * sysPhysMemTop (void)
 {
     PHYS_MEM_DESC * pMmu;       /* points to memory desc. table entries */
@@ -1452,13 +1458,13 @@ char * sysPhysMemTop (void)
 
 
     if (memTopPhys != NULL)
-        {
+    {
         return (memTopPhys);
-        }
+    }
 
 
 #ifdef	LOCAL_MEM_AUTOSIZE
-    {
+{
     /* Do not use a page-sized stride larger than 4Kb, as the end of usable
      * memory could possibly be within a 2Mb or 4Mb page memory range.
      */
@@ -1490,11 +1496,11 @@ char * sysPhysMemTop (void)
     /* find out the actual size of the memory (up to PHYS_MEM_MAX) */
 
     for (pPage += (pageSize * delta); delta != 0; delta >>= 1)
-        {
+    {
         WRITE_MEMORY_TEST_PATTERN ((int *) pPage, &temp[0]);
 
         if (*((int *) pPage) != TEST_PATTERN_A)
-            {
+        {
             /* The test pattern was not written, so assume that <pPage> is the
              * base address of a page beyond available memory.  Test the
              * next lowest page.  If the test pattern is writable there, assume
@@ -1507,18 +1513,18 @@ char * sysPhysMemTop (void)
             WRITE_MEMORY_TEST_PATTERN ((int *) pPrevPage, &temp[0]);
 
             if (*((int *) pPrevPage) == TEST_PATTERN_A)
-                {
+            {
                 RESTORE_MEMORY_TEST_ADDRS ((int *) pPrevPage, &temp[0]);
 
                 memTopPhys = pPage;
                 found      = TRUE;
                 break;
-                }
-
-            pPage -= (pageSize * HALF (delta));
             }
+			/*二分法查找*/
+            pPage -= (pageSize * HALF (delta));
+        }
         else
-            {
+        {
             /* The test pattern was written, so assume that <pPage> is the base
              * address of a page in available memory.  Test the next highest
              * page.  If the test pattern is not writable there, assume that
@@ -1533,25 +1539,25 @@ char * sysPhysMemTop (void)
             WRITE_MEMORY_TEST_PATTERN ((int *) pNextPage, &temp[0]);
 
             if (*((int *) pNextPage) != TEST_PATTERN_A)
-                {
+            {
                 memTopPhys = pNextPage;
                 found      = TRUE;
                 break;
-                }
+            }
 
             RESTORE_MEMORY_TEST_ADDRS ((int *) pNextPage, &temp[0]);
-
+			/*二分法查找*/
             pPage += (pageSize * HALF (delta));
-            }
-        }
-    }
+         }
+       }
+}
 #endif	/* LOCAL_MEM_AUTOSIZE */
 
 
     if (!found)
-        {
+    {
         memTopPhys = (char *)(LOCAL_MEM_LOCAL_ADRS + LOCAL_MEM_SIZE);
-        }
+    }
 
     /* copy the global descriptor table from RAM/ROM to RAM */
 
@@ -1568,18 +1574,18 @@ char * sysPhysMemTop (void)
 
 #if	!defined (INCLUDE_PCI) && \
 	!defined (INCLUDE_MMU_BASIC) && !defined (INCLUDE_MMU_FULL)
-    {
+{
     int   ix;
     GDT * pGdt  = pSysGdt;
     int   limit = (((UINT32) memTopPhys) >> 12) - 1;
 
     for (ix = 1; ix < GDT_ENTRIES; ++ix)
-        {
+    {
         ++pGdt;
         pGdt->limit00 = limit & 0x0ffff;
         pGdt->limit01 = ((limit & 0xf0000) >> 16) | (pGdt->limit01 & 0xf0);
-        }
     }
+}
 #endif	/* INCLUDE_PCI */
 
     /* load the global descriptor table. set the MMU table */
@@ -1596,6 +1602,7 @@ char * sysPhysMemTop (void)
      */
 
     memTopPhys -= ROM_SIZE;
+	/*从ROM_BASE_ADRS拷贝ROM_SIZE个字节到memTopPhys，ROM_BASE_ADRS处保存的是bootrom*/
     bcopy ((char *)ROM_BASE_ADRS, memTopPhys, ROM_SIZE);
     *(UINT16 *)(memTopPhys + ROM_SIZE - 2) = 
         checksum ((UINT16 *)memTopPhys, ROM_SIZE - 2);
@@ -1641,9 +1648,13 @@ char * sysMemTop (void)
         memTop = sysPhysMemTop () - USER_RESERVED_MEM;
 
         if ((UINT32)(&end) < 0x100000)		/* this is for bootrom */
+        {
             memTop = (char *)EBDA_START;	/* preserve the MP table */
+        }
         else if ((UINT32)(&end) < RAM_LOW_ADRS)	/* bootrom in upper mem */
+        {
             memTop = (char *)(RAM_LOW_ADRS & 0xfff00000);
+        }
      }
 
     return (memTop);

@@ -85,14 +85,14 @@ typedef struct mtrr		/* MTRR */
 typedef MTRR *		MTRR_ID;
 
 typedef struct gdt		/* GDT */
-    {
+{
     unsigned short	limit00;
     unsigned short	base00;
     unsigned char	base01;
     unsigned char	type;
     unsigned char	limit01;
     unsigned char	base02;
-    } GDT;
+} GDT;
 
 typedef struct tss		/* TSS - 80x86 Task State Segment */
     {

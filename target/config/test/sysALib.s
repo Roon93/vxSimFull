@@ -450,7 +450,7 @@ FUNC_LABEL(sysReboot)
 * UINT sysCpuProbe (void)
 
 */
-
+/*EAX == main leaf  ECX == sub leaf*/
         .balign 16,0x90
 FUNC_LABEL(sysCpuProbe)
 	cmpl	$ NONE, FUNC(sysProcessor) /* is it executed already? sysProcessor为初始化完成标志位*/

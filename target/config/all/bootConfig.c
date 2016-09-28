@@ -1016,7 +1016,8 @@ void usrInit
 
     while (trapValue1 != TRAP_VALUE_1 || trapValue2 != TRAP_VALUE_2)
 	{
-	/* infinite loop */;
+		/* infinite loop */
+		;
 	}
     
 #if (CPU_FAMILY == SPARC)
@@ -1035,7 +1036,7 @@ void usrInit
 
 	/*
 	*获取CPU相关信息，保存在sysProcessor和sysCpuId中
-	*
+	*eflags bit21为ID标志位，从486开始引入，如果能修改此标志位，则表示支持CPUID指令
 	*
 	*/
     SYS_HW_INIT_0 ();
@@ -1154,7 +1155,7 @@ void usrRoot
 #endif  /* INCLUDE_SELECT */
 
     /* initialize I/O and file system */
-
+	/*drvTables里面有20个表项*/
     iosInit (NUM_DRIVERS, NUM_FILES, "/null");
     consoleFd = NONE;
 
@@ -1245,7 +1246,14 @@ void usrRoot
     ioGlobalStdSet (STD_OUT, consoleFd);
     ioGlobalStdSet (STD_ERR, consoleFd);
 
+	/*只有标准输出初始化完成后才可以在界面上显示字符，
+	*也就是说从这里之后的printf才可以打印出东西，放在前面无法显示
+	*/
+	printf("VGA init success!!\n");
+
     pipeDrv ();					/* install pipe driver */
+
+
 
 #if     defined(INCLUDE_EXC_HANDLING) && defined(INCLUDE_EXC_TASK)
 #ifdef  INCLUDE_EXC_SHOW
@@ -1300,13 +1308,17 @@ void usrRoot
                                        pDevTbl->endLoadString,
                                        pDevTbl->endLoan, pDevTbl->pBSP);
         if (cookieTbl[count].pCookie == NULL)
-            {
+        {
             printf ("muxLoad failed!\n");
-            }
+			while(1)
+			{
+				taskDelay(60);
+			}
+        }
 
         cookieTbl[count].unitNo=pDevTbl->unit;
-	bzero((void *)cookieTbl[count].devName,END_NAME_MAX);
-	pDevTbl->endLoadFunc((char*)cookieTbl[count].devName, NULL);
+		bzero((void *)cookieTbl[count].devName,END_NAME_MAX);
+		pDevTbl->endLoadFunc((char*)cookieTbl[count].devName, NULL);
 
         }
 #endif /* INCLUDE_END */
@@ -1361,7 +1373,9 @@ LOCAL void bootCmdLoop (void)
     (void) ioctl (STD_IN, FIOFLUSH, 0 /*XXX*/);
 
     if (sysStartType & BOOT_CLEAR)
-			printBootLogo ();
+	{
+		printBootLogo ();
+	}
 
     usrBootLineInit (sysStartType);
 
@@ -1436,20 +1450,20 @@ LOCAL void bootCmdLoop (void)
 	    fioRdString (STD_IN, line, sizeof (line));
 	    }
 
-	adr = adr2 = 0;
-	nwords = 0;
+		adr = adr2 = 0;
+		nwords = 0;
 
-	/* take blanks off end of line */
+		/* take blanks off end of line */
 
-	pLine = line + strlen (line) - 1;		/* point at last char */
-	while ((pLine >= line) && (*pLine == ' '))
+		pLine = line + strlen (line) - 1;		/* point at last char */
+		while ((pLine >= line) && (*pLine == ' '))
 	    {
-	    *pLine = EOS;
-	    pLine--;
+		    *pLine = EOS;
+		    pLine--;
 	    }
 
-	pLine = line;
-	skipSpace (&pLine);
+		pLine = line;
+		skipSpace (&pLine);
 
 	switch (*(pLine++))
 	    {
@@ -1567,23 +1581,23 @@ LOCAL void bootCmdLoop (void)
 #endif  /* INCLUDE_NETWORK */
 
 	    case '?':			/* help */
-            case 'h':			/* help */
-		bootHelp ();
-		break;
+       	case 'h':			/* help */
+			bootHelp ();
+			break;
 
-            case '@':			/* load and go with internal params */
+        case '@':			/* load and go with internal params */
 	    case '$':			/* load and go with internal params */
 
-		if (bootLoad (pLine, &entry) == OK)
-		    {
-		    go (entry);
-		    }
-		else
-		    {
-		    taskDelay (sysClkRateGet ());	/* pause a second */
-		    reboot (BOOT_NO_AUTOBOOT);		/* something is awry */
-		    }
-		break;
+			if (bootLoad (pLine, &entry) == OK)
+			    {
+			    go (entry);
+			    }
+			else
+			    {
+			    taskDelay (sysClkRateGet ());	/* pause a second */
+			    reboot (BOOT_NO_AUTOBOOT);		/* something is awry */
+			    }
+			break;
 
 	    case 'l':			/* load with internal params */
 

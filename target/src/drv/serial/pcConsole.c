@@ -92,8 +92,7 @@ STATUS pcConDrv (void)
 
 	/*安装到drvTable中*/
     pcConDrvNum = iosDrvInstall (pcConDrvOpen, (FUNCPTR) NULL, pcConDrvOpen,
-				(FUNCPTR) NULL, tyRead, tyWrite, pcConDrvIoctl
-				 );
+				(FUNCPTR) NULL, tyRead, tyWrite, pcConDrvIoctl);
 
     return (pcConDrvNum == ERROR ? ERROR : OK);
     }

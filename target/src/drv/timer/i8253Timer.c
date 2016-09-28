@@ -275,14 +275,14 @@ void sysClkEnable (void)
     if (!sysClkRunning)
 	{
 	
-	tc0 = PIT_CLOCK / sysClkTicksPerSecond;
+		tc0 = PIT_CLOCK / sysClkTicksPerSecond;
         tc2 = PIT_CLOCK / sysClkTicksPerSecond * 2;
 
         oldLevel = intLock ();				/* LOCK INTERRUPT */
 
-	sysOutByte (PIT_CMD (PIT_BASE_ADR), 0x36);
-	sysOutByte (PIT_CNT0 (PIT_BASE_ADR), LSB(tc0));
-	sysOutByte (PIT_CNT0 (PIT_BASE_ADR), MSB(tc0));
+		sysOutByte (PIT_CMD (PIT_BASE_ADR), 0x36);
+		sysOutByte (PIT_CNT0 (PIT_BASE_ADR), LSB(tc0));
+		sysOutByte (PIT_CNT0 (PIT_BASE_ADR), MSB(tc0));
 
 #ifdef	INCLUDE_TIMESTAMP_PIT2
         sysOutByte (PIT_CMD (PIT_BASE_ADR), 0xb6);
@@ -297,10 +297,10 @@ void sysClkEnable (void)
         
         intUnlock (oldLevel);				/* UNLOCK INTERRUPT */
 
-	/* enable clock interrupt */
-	sysIntEnablePIC (PIT0_INT_LVL);
-	
-	sysClkRunning = TRUE;
+		/* enable clock interrupt */
+		sysIntEnablePIC (PIT0_INT_LVL);
+		
+		sysClkRunning = TRUE;
 
 #if	defined (INCLUDE_TIMESTAMP_TSC)
 	if (sysTimestampFreqValue == 0)			/* get TSC freq */
